@@ -1,40 +1,24 @@
-import React, { useState } from "react"
-import Navbar from "./components/Navbar"
-import Hero from "./components/Hero"
-import Presentation from "./components/Presentation"
-import About from "./components/About"
-import Methodology from "./components/Methodology"
-import Services from "./components/Services"
-import Engagements from "./components/Engagements"
-import Realisations from "./components/Realisations"
-import Footer from "./components/Footer"
-import TunnelDevis from "./components/TunnelDevis"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Services from './pages/Services';
+import About from './pages/About';
 
 function App() {
-  const [isDevisOpen, setIsDevisOpen] = useState(false);
-
   return (
-    <div className="bg-[#FBFBFA] text-zinc-900 overflow-hidden font-sans selection:bg-[#D4AF37]/30 relative">
-      
-      {/* Injection de la commande de contrôle dans la Navbar */}
-      <Navbar onOpenDevis={() => setIsDevisOpen(true)} />
-      
-      <Hero />
-      <Presentation/>
-      <Methodology />
-      <About />
-      <Services />
-      <Engagements />
-      <Realisations />
-      <Footer />
-
-      {/* Rendu dynamique du pop-up isolé en calque d'overlay global */}
-      {isDevisOpen && (
-        <TunnelDevis onClose={() => setIsDevisOpen(false)} />
-      )}
-      
-    </div>
-  )
+    <Router>
+      <div className="min-h-screen bg-white">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/a-propos" element={<About />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
+  );
 }
 
 export default App;

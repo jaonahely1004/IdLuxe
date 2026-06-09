@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Mail, Phone, Globe, MapPin, ArrowUpRight } from 'lucide-react';
 
 function Footer() {
@@ -10,7 +11,7 @@ function Footer() {
   ];
 
   return (
-    <footer className="bg-black border-t border-zinc-900 text-zinc-400 mt-24 font-sans antialiased w-full relative">
+    <footer className="bg-zinc-950 border-t border-zinc-900 text-zinc-400 mt-24 font-sans antialiased w-full relative">
       
       {/* EFFET LUMINEUX DISCRET EN ARRIÈRE-PLAN */}
       <div className="absolute top-0 right-1/4 w-72 h-72 bg-amber-500/[0.03] rounded-full blur-[100px] pointer-events-none" />
