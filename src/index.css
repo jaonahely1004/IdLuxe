@@ -12,3 +12,23 @@
     @apply bg-white text-idluxe-black font-sans leading-relaxed;
   }
 }
+
+@keyframes goldPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(198,166,108,.3);
+  }
+
+  50% {
+    box-shadow:
+      0 0 25px rgba(198,166,108,.8),
+      0 0 50px rgba(198,166,108,.5);
+  }
+
+  100% {
+    box-shadow: 0 0 10px rgba(198,166,108,.3);
+  }
+}
+
+.gold-pulse {
+  animation: goldPulse 3s infinite;
+}

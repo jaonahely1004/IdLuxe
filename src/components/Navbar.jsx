@@ -25,10 +25,10 @@ const Navbar = () => {
         {/* Menu Desktop - Visible uniquement sur md et plus */}
         <div className="hidden md:flex space-x-10 font-sans text-[10px] uppercase tracking-[0.2em] text-idluxe-black">
           <Link to="/a-propos" className="hover:text-idluxe-gold transition-colors">À propos</Link>
-          <Link to="/services" className="hover:text-idluxe-gold transition-colors">Nos services</Link>
+          <Link to="/services" className="hover:text-idluxe-gold transition-colors">Services</Link>
           <Link to="/engagements" className="hover:text-idluxe-gold transition-colors">Nos engagements</Link>
           <Link to="/realisations" className="hover:text-idluxe-gold transition-colors">Réalisations</Link>
-          <Link to="/contact" className="hover:text-idluxe-gold transition-colors">Nous contacter</Link>
+          <Link to="/contact" className="hover:text-idluxe-gold transition-colors">Contact</Link>
         </div>
 
         {/* Bouton Hamburger - Caché sur desktop (md:hidden) */}
@@ -46,10 +46,10 @@ const Navbar = () => {
       <div className={`md:hidden fixed inset-0 h-screen w-full bg-white z-[105] flex flex-col justify-center items-center transition-transform duration-500 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex flex-col space-y-8 text-center font-serif text-2xl text-idluxe-black">
           <Link to="/a-propos" onClick={closeMenu}>À propos</Link>
-          <Link to="/services" onClick={closeMenu}>Nos services</Link>
+          <Link to="/services" onClick={closeMenu}>Services</Link>
           <Link to="/engagements" onClick={closeMenu}>Nos engagements</Link>
           <Link to="/realisations" onClick={closeMenu}>Réalisations</Link>
-          <Link to="/contact" onClick={closeMenu}>Nous contacter</Link>
+          <Link to="/contact" onClick={closeMenu}>Contact</Link>
         </div>
       </div>
     </nav>
