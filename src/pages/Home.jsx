@@ -11,7 +11,7 @@ const Home = () => {
   ];
 
   return (
-    <main className="bg-white pt-24">
+    <main className="bg-white pt-18">
       {/* 1. HERO SECTION */}
       <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
