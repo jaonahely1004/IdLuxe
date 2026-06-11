@@ -16,22 +16,25 @@ const Home = () => {
       <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80" alt="Bureau luxe" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]"></div>
+          <div className="absolute inset-0 bg-white/12 backdrop-blur-[2px]"></div>
         </div>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="relative z-10 font-sans text-idluxe-gold text-[10px] uppercase tracking-[0.8em] mb-12">
           IDLUXE Marketing
         </motion.p>
-        <motion.h1 initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8 }} className="relative z-10 font-serif text-6xl md:text-[120px] text-idluxe-black leading-[0.9] mb-16 select-none">
-          STRATÉGIE.<br />
-          <span className="italic text-idluxe-gold">CRÉATIVITÉ.</span><br />
-          IMPACT.
+        
+        {/* Texte modifié selon votre image */}
+        <motion.h1 initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8 }} className="relative z-10 font-serif text-5xl md:text-8xl text-idluxe-black leading-[1.1] mb-16 select-none">
+          LET'S GLOW OUT<br />
+          <span className="italic text-idluxe-gold">YOUR BUSINESS</span>
         </motion.h1>
+
         <button className="group relative z-10 font-sans text-[11px] uppercase tracking-[0.3em] border border-idluxe-black px-14 py-6 text-idluxe-black overflow-hidden transition-all duration-500 hover:text-white">
           <span className="relative z-10">Découvrir notre expertise</span>
           <div className="absolute inset-0 bg-idluxe-black translate-y-full transition-transform duration-500 group-hover:translate-y-0"></div>
         </button>
       </section>
 
+      {/* Reste du code inchangé... */}
       {/* 2. SECTION VISION */}
       <section className="py-40 px-10 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-24 items-center">
@@ -55,7 +58,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 3. SECTION DAPAM (Cards style Service) */}
+      {/* 3. SECTION DAPAM (Cards) */}
       <section className="py-2 bg-zinc-50 px-10 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <h2 className="font-serif text-5xl md:text-6xl text-idluxe-black mb-24 text-center">
