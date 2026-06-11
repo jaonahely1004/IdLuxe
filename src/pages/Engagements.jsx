@@ -27,7 +27,6 @@ const Engagements = () => {
       side: 'left'
     }
   ];
-
   const actions = [
     {
       title: 'Social',
@@ -50,7 +49,6 @@ const Engagements = () => {
         "Assurer une vie sereine grâce à des actions de santé et de nutrition."
     }
   ];
-
   return (
     <section className="py-32 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
@@ -70,7 +68,6 @@ const Engagements = () => {
             ancré dans le développement local à Madagascar.
           </p>
         </div>
-
         {/* Alternance blocs avec images */}
         <div className="space-y-16">
 
@@ -91,7 +88,6 @@ const Engagements = () => {
                   {item.description}
                 </p>
               </div>
-
               {/* IMAGE (remplace le point décoratif) */}
               <div className="md:w-1/2">
                 <div className="relative overflow-hidden rounded-xl shadow-lg">
@@ -104,18 +100,14 @@ const Engagements = () => {
               </div>
             </div>
           ))}
-
           {/* Brand New Madagascar */}
           <div className="mt-32">
-
             <p className="text-idluxe-gold uppercase tracking-[0.4em] text-xs mb-6 text-center">
               Impact Positif
             </p>
-
             <h3 className="font-serif text-4xl text-center mb-10 text-idluxe-black">
               Un engagement concret pour Madagascar
             </h3>
-
             <p className="text-gray-600 max-w-4xl mx-auto text-center leading-relaxed mb-20">
               Travailler avec IDLUXE Marketing, c’est aussi contribuer à des actions à impact positif à Madagascar.
               Une partie de nos bénéfices est réservée à
@@ -124,25 +116,19 @@ const Engagements = () => {
               </span>,
               une association engagée dans l’amélioration durable des conditions de vie des populations vulnérables.
             </p>
-
             <div className="grid md:grid-cols-4 gap-12 text-center">
-
               {actions.map((item, index) => (
                 <div key={index}>
                   <h4 className="font-serif text-2xl text-idluxe-gold mb-3">
                     {item.title}
                   </h4>
-
                   <p className="text-gray-600 text-sm leading-relaxed">
                     {item.description}
                   </p>
                 </div>
               ))}
-
             </div>
-
           </div>
-
         </div>
       </div>
     </section>

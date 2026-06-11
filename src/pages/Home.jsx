@@ -21,20 +21,16 @@ const Home = () => {
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="relative z-10 font-sans text-idluxe-gold text-[10px] uppercase tracking-[0.8em] mb-12">
           IDLUXE Marketing
         </motion.p>
-        
-        {/* Texte modifié selon votre image */}
         <motion.h1 initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8 }} className="relative z-10 font-serif text-5xl md:text-8xl text-idluxe-black leading-[1.1] mb-16 select-none">
           LET'S GLOW OUT<br />
           <span className="italic text-idluxe-gold">YOUR BUSINESS</span>
         </motion.h1>
-
         <button className="group relative z-10 font-sans text-[11px] uppercase tracking-[0.3em] border border-idluxe-black px-14 py-6 text-idluxe-black overflow-hidden transition-all duration-500 hover:text-white">
           <span className="relative z-10">Découvrir notre expertise</span>
           <div className="absolute inset-0 bg-idluxe-black translate-y-full transition-transform duration-500 group-hover:translate-y-0"></div>
         </button>
       </section>
-
-      {/* Reste du code inchangé... */}
+      
       {/* 2. SECTION VISION */}
       <section className="py-40 px-10 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-24 items-center">

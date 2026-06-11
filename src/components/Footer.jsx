@@ -80,7 +80,7 @@ function Footer() {
               </a>
             </div>
 
-            {/* FACEBOOK INTEGRÉ */}
+            {/* FACEBOOK */}
             <a 
               href="https://web.facebook.com/idluxe.marketing" 
               target="_blank" 

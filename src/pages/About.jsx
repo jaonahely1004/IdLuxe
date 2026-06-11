@@ -55,7 +55,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* SECTION 3 : POURQUOI NOUS ? (Fond Blanc + Overlay doré au survol) */}
+      {/* SECTION 3 : POURQUOI NOUS ? Fond Blanc */}
       <section className="py-20 px-10 max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <h2 className="font-serif text-5xl text-[#111111] mb-6">Pourquoi travailler avec <span className="italic">nous ?</span></h2>
