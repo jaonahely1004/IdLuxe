@@ -55,29 +55,38 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 3. SECTION DAPAM (Cards) */}
-      <section className="py-40 bg-zinc-50 px-10 overflow-hidden">
+      {/* 3. SECTION DAPAM (Cards style Service) */}
+      <section className="py-2 bg-zinc-50 px-10 overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <h2 className="font-serif text-5xl md:text-6xl text-idluxe-black mb-24">Méthodologie <span className="italic">DAPAM</span></h2>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid grid-cols-1 md:grid-cols-5">
+          <h2 className="font-serif text-5xl md:text-6xl text-idluxe-black mb-24 text-center">
+            Méthodologie <span className="italic">DAPAM</span>
+          </h2>
+          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
             {steps.map((step, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} className="group relative bg-white p-12 border-r border-b border-gray-100 flex flex-col h-[450px] justify-between hover:bg-idluxe-black transition-colors duration-700">
-                <span className="absolute -right-4 -top-4 font-serif text-[120px] text-gray-50 opacity-0 group-hover:opacity-10 transition-all duration-700 text-idluxe-gold">{i+1}</span>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 mb-10 flex items-center justify-center border border-idluxe-gold/30 rounded-full group-hover:border-idluxe-gold transition-colors">
-                    <i className={`fas ${step.icon} text-idluxe-gold text-lg`}></i>
-                  </div>
-                  <h3 className="font-serif text-2xl text-idluxe-black group-hover:text-idluxe-gold mb-6 transition-colors">{step.title}</h3>
-                  <p className="text-sm font-light text-gray-500 group-hover:text-gray-300 leading-relaxed transition-colors">{step.desc}</p>
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, y: 30 }} 
+                whileInView={{ opacity: 1, y: 0 }} 
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }} 
+                className="group bg-[#111111] p-8 rounded-2xl border border-[#C6A66C] cursor-pointer hover:-translate-y-2 transition-all duration-500 flex flex-col shadow-[0_5px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_rgba(198,166,108,0.15)]"
+              >
+                <div className="w-12 h-12 mb-6 flex items-center justify-center border border-[#C6A66C]/30 rounded-full group-hover:border-[#C6A66C] transition-colors">
+                  <i className={`fas ${step.icon} text-[#C6A66C] text-lg`}></i>
                 </div>
+                <h3 className="text-xl font-light text-white mb-3">{step.title}</h3>
+                <div className="w-10 h-[2px] bg-[#C6A66C] mb-4" />
+                <p className="text-sm text-gray-300 leading-relaxed flex-grow">
+                  {step.desc}
+                </p>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* 4. SECTION MÉTHODOLOGIE CIRCULAIRE */}
-      <section className="py-30 bg-white px-6 overflow-hidden">
+      <section className="py-20 bg-white px-6 overflow-hidden">
         <div className="max-w-5xl mx-auto text-center mb-20">
           <h2 className="font-serif text-5xl text-idluxe-black">Notre Écosystème <span className="italic text-idluxe-gold">d'Impact</span></h2>
         </div>
@@ -119,13 +128,13 @@ const Home = () => {
       </section>
 
       {/* 5. FOOTER CTA */}
-      <section className="py-32 bg-zinc-50 text-center px-6">
-         <h2 className="font-serif text-4xl md:text-5xl text-idluxe-black mb-12 max-w-4xl mx-auto italic">
-            Prêt à donner à votre marque la <span className="text-idluxe-gold">stature</span> qu'elle mérite ?
-         </h2>
-         <button className="font-sans text-[11px] uppercase tracking-[0.5em] bg-idluxe-black text-white px-16 py-7 hover:bg-idluxe-gold transition-all duration-500">
-            Contactez notre cabinet
-         </button>
+      <section className="py-10 bg-zinc-50 text-center px-6">
+        <h2 className="font-serif text-4xl md:text-5xl text-idluxe-black mb-12 max-w-4xl mx-auto italic">
+          Prêt à donner à votre marque la <span className="text-idluxe-gold">stature</span> qu'elle mérite ?
+        </h2>
+        <button className="font-sans text-[11px] uppercase tracking-[0.5em] bg-idluxe-black text-white px-16 py-7 hover:bg-idluxe-gold transition-all duration-500">
+          Contactez notre cabinet
+        </button>
       </section>
     </main>
   );

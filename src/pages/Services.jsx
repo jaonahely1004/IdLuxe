@@ -53,33 +53,58 @@ const Services = () => {
   ];
 
   return (
-    <div className="pt-32 pb-24 px-6 max-w-7xl mx-auto bg-gray-50">
+    <div className="pt-40 pb-32 px-6 max-w-7xl mx-auto bg-white">
       <div className="mb-20 text-center">
         <p className="font-sans text-idluxe-gold text-xs uppercase tracking-[0.5em] mb-4">Notre Expertise</p>
-        <h1 className="font-serif text-5xl text-idluxe-black">Nos Services</h1>
+        <h1 className="text-6xl text-[#111111] font-light tracking-tight">
+          Nos Services
+        </h1>
       </div>
-
+      
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {categories.map((cat, i) => (
-          <div key={i} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
+          <div
+            key={i}
+            className="group bg-white rounded-2xl overflow-hidden border border-[#E5E5E5] hover:border-[#C6A66C] hover:-translate-y-2 transition-all duration-500 flex flex-col shadow-[0_5px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)]"
+          >
             {/* Image de la carte */}
-            <div className="h-40 overflow-hidden">
-              <img src={cat.image} alt={cat.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+            <div className="h-56 overflow-hidden relative">
+              <img
+                src={cat.image}
+                alt={cat.title}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-all duration-500" />
+              <div className="absolute top-4 left-4">
+                <span className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-[#C6A66C] font-semibold shadow-md">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+              </div>
             </div>
-            
+
             {/* Contenu */}
-            <div className="p-6 flex flex-col flex-grow">
-              <h2 className="font-serif text-xl mb-2 text-idluxe-black">{cat.title}</h2>
-              <p className="text-gray-500 text-xs mb-4 italic">{cat.description}</p>
-              
-              <ul className="space-y-2 mt-auto">
+            <div className="p-7 flex flex-col flex-grow">
+              <h2 className="text-2xl font-light text-[#111111] mb-3">
+                {cat.title}
+              </h2>
+              <div className="w-12 h-[2px] bg-[#C6A66C] mb-4" />
+              <p className="text-sm text-[#444444] leading-relaxed mb-6">
+                {cat.description}
+              </p>
+              <ul className="space-y-3 mb-8">
                 {cat.items.slice(0, 4).map((item, j) => (
-                  <li key={j} className="text-gray-600 text-xs flex items-center">
-                    <span className="w-1 h-1 bg-idluxe-gold mr-2 rounded-full"></span>
+                  <li
+                    key={j}
+                    className="text-sm text-[#222222] flex items-center"
+                  >
+                    <span className="w-2 h-2 bg-[#C6A66C] rounded-full mr-3"></span>
                     {item}
                   </li>
                 ))}
               </ul>
+              <button className="mt-auto self-start text-[#C6A66C] uppercase tracking-[0.2em] text-xs font-medium hover:tracking-[0.3em] transition-all">
+                Découvrir →
+              </button>
             </div>
           </div>
         ))}
