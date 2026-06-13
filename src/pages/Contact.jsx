@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <main className="pt-32 pb-20 bg-[#FFFFFF] min-h-screen">
+    <main className="pt-32 pb-20 bg-[#FFFFFF] min-h-screen font-sans">
       <div className="max-w-6xl mx-auto px-6">
         
         {/* EN-TÊTE */}

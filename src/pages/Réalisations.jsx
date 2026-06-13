@@ -33,7 +33,7 @@ const Realisation = () => {
     <main className="pt-32 bg-[#FAF8F3] min-h-screen">
       {/* HERO */}
       <section className="px-6 max-w-5xl mx-auto text-center mb-32">
-        <p className="uppercase tracking-[0.5em] text-[#D4AF37] text-xs font-semibold mb-6">
+        <p className="font-sans uppercase tracking-[0.5em] text-[#D4AF37] text-xs font-semibold mb-6">
           Nos Réalisations
         </p>
         <h1 className="font-serif text-6xl md:text-8xl text-[#111111] leading-none mb-8">
@@ -42,7 +42,7 @@ const Realisation = () => {
             l'action
           </span>
         </h1>
-        <p className="max-w-3xl mx-auto text-gray-600 text-lg leading-relaxed">
+        <p className="font-sans max-w-3xl mx-auto text-gray-600 text-lg leading-relaxed">
           Chaque projet est pensé comme une signature. Une alliance entre
           stratégie, créativité et excellence pour construire des marques,
           des institutions et des événements à forte valeur ajoutée.
@@ -81,14 +81,14 @@ const Realisation = () => {
 
             {/* TEXTE */}
             <div className="space-y-8">
-              <span className="inline-flex items-center border border-[#D4AF37] px-4 py-2 text-[11px] uppercase tracking-[0.25em] text-[#D4AF37] font-semibold">
+              <span className="font-sans inline-flex items-center border border-[#D4AF37] px-4 py-2 text-[11px] uppercase tracking-[0.25em] text-[#D4AF37] font-semibold">
                 {proj.category}
               </span>
               <h2 className="font-serif text-4xl lg:text-5xl text-[#111111] leading-tight">
                 {proj.title}
               </h2>
               <div className="w-24 h-[2px] bg-[#D4AF37]" />
-              <p className="text-gray-600 text-lg leading-relaxed">
+              <p className="font-sans text-gray-600 text-lg leading-relaxed">
                 {proj.desc}
               </p>
               <div className="bg-white border-l-4 border-[#D4AF37] shadow-md p-6">
@@ -101,20 +101,20 @@ const Realisation = () => {
         ))}
       </section>
 
-      {/* CTA FINAL */}
+      {/* CTA FINAL - Texte corrigé en noir pour lisibilité */}
       <section className="bg-white py-28 px-6 text-center">
-        <p className="uppercase tracking-[0.4em] text-[#D4AF37] text-xs mb-6">
+        <p className="font-sans uppercase tracking-[0.4em] text-[#D4AF37] text-xs mb-6">
           Construisons ensemble
         </p>
-        <h2 className="font-serif text-5xl md:text-6xl text-white mb-8">
+        <h2 className="font-serif text-5xl md:text-6xl text-[#111111] mb-8">
           Donnons vie à votre vision
         </h2>
-        <p className="max-w-2xl mx-auto text-gray-400 mb-12 leading-relaxed">
+        <p className="font-sans max-w-2xl mx-auto text-gray-600 mb-12 leading-relaxed">
           Nous accompagnons les marques, institutions et organisations
           ambitieuses dans la création d'expériences mémorables et d'une
           image forte.
         </p>
-        <button className="bg-[#111111] text-white px-12 py-5 uppercase tracking-[0.25em] text-sm font-semibold transition-all duration-500 hover:bg-[#D4AF37] hover:text-[#111111]">
+        <button className="font-sans bg-[#111111] text-white px-12 py-5 uppercase tracking-[0.25em] text-sm font-semibold transition-all duration-500 hover:bg-[#D4AF37] hover:text-[#111111]">
           Démarrer un projet
         </button>
       </section>

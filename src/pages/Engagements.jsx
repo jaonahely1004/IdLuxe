@@ -70,7 +70,7 @@ const Engagements = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="text-idluxe-gold uppercase tracking-[0.5em] text-xs mb-4">
+          <p className="font-sans text-idluxe-gold uppercase tracking-[0.5em] text-xs mb-4">
             Notre Vision
           </p>
 
@@ -78,7 +78,7 @@ const Engagements = () => {
             Nos Engagements
           </h2>
 
-          <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="font-sans text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Un cabinet à impact positif avec une dimension responsable et collaborative,
             ancré dans le développement local à Madagascar.
           </p>
@@ -106,7 +106,7 @@ const Engagements = () => {
 
                 <div className="w-16 h-[2px] bg-idluxe-gold mb-6"></div>
 
-                <p className="text-gray-600 leading-relaxed">
+                <p className="font-sans text-gray-600 leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -134,7 +134,7 @@ const Engagements = () => {
             transition={{ duration: 0.8 }}
             className="mt-20"
           >
-            <p className="text-idluxe-gold uppercase tracking-[0.4em] text-xs mb-6 text-center">
+            <p className="font-sans text-idluxe-gold uppercase tracking-[0.4em] text-xs mb-6 text-center">
               Impact Positif
             </p>
 
@@ -142,7 +142,7 @@ const Engagements = () => {
               Un engagement concret pour Madagascar
             </h3>
 
-            <p className="text-gray-600 max-w-4xl mx-auto text-center leading-relaxed mb-14">
+            <p className="font-sans text-gray-600 max-w-4xl mx-auto text-center leading-relaxed mb-14">
               Travailler avec IDLUXE Marketing, c’est aussi contribuer à des actions à impact positif à Madagascar.
               Une partie de nos bénéfices est réservée à
               <span className="text-idluxe-gold font-medium">
@@ -195,7 +195,7 @@ const Engagements = () => {
                     ></div>
 
                     {/* Description */}
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="font-sans text-gray-600 text-sm leading-relaxed">
                       {item.description}
                     </p>
                   </motion.div>
