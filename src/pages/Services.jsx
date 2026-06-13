@@ -55,7 +55,7 @@ const Services = () => {
   return (
     <div className="pt-40 pb-32 px-6 max-w-7xl mx-auto bg-white">
       <div className="mb-20 text-center">
-        <p className="font-sans text-idluxe-gold text-xs uppercase tracking-[0.5em] mb-4">Notre Expertise</p>
+        <p className="font-sans text-[#D4AF37] text-xs uppercase tracking-[0.5em] mb-4">Notre Expertise</p>
         <h1 className="text-6xl text-[#111111] font-light tracking-tight">
           Nos Services
         </h1>
@@ -65,7 +65,7 @@ const Services = () => {
         {categories.map((cat, i) => (
           <div
             key={i}
-            className="group bg-white rounded-2xl overflow-hidden border border-[#E5E5E5] hover:border-[#C6A66C] hover:-translate-y-2 transition-all duration-500 flex flex-col shadow-[0_5px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)]"
+            className="group bg-white rounded-2xl overflow-hidden border border-[#E5E5E5] hover:border-[#D4AF37] hover:-translate-y-2 transition-all duration-500 flex flex-col shadow-[0_5px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)]"
           >
             {/* Image de la carte */}
             <div className="h-56 overflow-hidden relative">
@@ -76,7 +76,7 @@ const Services = () => {
               />
               <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-all duration-500" />
               <div className="absolute top-4 left-4">
-                <span className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-[#C6A66C] font-semibold shadow-md">
+                <span className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-[#D4AF37] font-semibold shadow-md">
                   {String(i + 1).padStart(2, '0')}
                 </span>
               </div>
@@ -87,7 +87,7 @@ const Services = () => {
               <h2 className="text-2xl font-light text-[#111111] mb-3">
                 {cat.title}
               </h2>
-              <div className="w-12 h-[2px] bg-[#C6A66C] mb-4" />
+              <div className="w-12 h-[2px] bg-[#D4AF37] mb-4" />
               <p className="text-sm text-[#444444] leading-relaxed mb-6">
                 {cat.description}
               </p>
@@ -97,12 +97,12 @@ const Services = () => {
                     key={j}
                     className="text-sm text-[#222222] flex items-center"
                   >
-                    <span className="w-2 h-2 bg-[#C6A66C] rounded-full mr-3"></span>
+                    <span className="w-2 h-2 bg-[#D4AF37] rounded-full mr-3"></span>
                     {item}
                   </li>
                 ))}
               </ul>
-              <button className="mt-auto self-start text-[#C6A66C] uppercase tracking-[0.2em] text-xs font-medium hover:tracking-[0.3em] transition-all">
+              <button className="mt-auto self-start text-[#D4AF37] uppercase tracking-[0.2em] text-xs font-medium hover:tracking-[0.3em] transition-all">
                 Découvrir →
               </button>
             </div>

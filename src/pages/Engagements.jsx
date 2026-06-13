@@ -1,5 +1,8 @@
 import React from 'react';
-import talentsLocaux from '../assets/locaux.jpg';
+import { motion } from 'framer-motion';
+import { Users, Baby, User, Heart } from 'lucide-react';
+
+import talentsLocaux from '../assets/locaux.jpeg';
 import pme from '../assets/accompagnementPME.jpeg';
 import luxeResponsable from '../assets/marketingLuxe.jpeg';
 
@@ -27,34 +30,46 @@ const Engagements = () => {
       side: 'left'
     }
   ];
+
   const actions = [
     {
+      icon: Users,
       title: 'Social',
       description:
         "Améliorer le niveau de vie des familles en créant des sources de revenu stables."
     },
     {
+      icon: Baby,
       title: 'Enfant',
       description:
         "Soutenir les parents dans l’éducation et la santé des enfants."
     },
     {
+      icon: User,
       title: 'Femme',
       description:
         "Participer à l’autonomisation des femmes à travers des projets durables."
     },
     {
+      icon: Heart,
       title: 'Personnes âgées',
       description:
         "Assurer une vie sereine grâce à des actions de santé et de nutrition."
     }
   ];
+
   return (
     <section className="py-32 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
-        <div className="text-center mb-28">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
           <p className="text-idluxe-gold uppercase tracking-[0.5em] text-xs mb-4">
             Notre Vision
           </p>
@@ -67,13 +82,18 @@ const Engagements = () => {
             Un cabinet à impact positif avec une dimension responsable et collaborative,
             ancré dans le développement local à Madagascar.
           </p>
-        </div>
-        {/* Alternance blocs avec images */}
-        <div className="space-y-16">
+        </motion.div>
+
+        {/* Engagements */}
+        <div className="space-y-20">
 
           {sections.map((item, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
               className={`flex flex-col md:flex-row items-center gap-12 ${
                 item.side === 'right' ? 'md:flex-row-reverse' : ''
               }`}
@@ -84,31 +104,45 @@ const Engagements = () => {
                   {item.title}
                 </h3>
 
+                <div className="w-16 h-[2px] bg-idluxe-gold mb-6"></div>
+
                 <p className="text-gray-600 leading-relaxed">
                   {item.description}
                 </p>
               </div>
-              {/* IMAGE (remplace le point décoratif) */}
+
+              {/* Image */}
               <div className="md:w-1/2">
-                <div className="relative overflow-hidden rounded-xl shadow-lg">
+                <div className="group relative overflow-hidden rounded-xl shadow-lg">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-[320px] object-cover hover:scale-105 transition-transform duration-700"
+                    className="w-full h-[280px] object-cover transition-transform duration-1000 group-hover:scale-110"
                   />
+
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-all duration-700"></div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-          {/* Brand New Madagascar */}
-          <div className="mt-32">
+
+          {/* Impact Social */}
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mt-20"
+          >
             <p className="text-idluxe-gold uppercase tracking-[0.4em] text-xs mb-6 text-center">
               Impact Positif
             </p>
+
             <h3 className="font-serif text-4xl text-center mb-10 text-idluxe-black">
               Un engagement concret pour Madagascar
             </h3>
-            <p className="text-gray-600 max-w-4xl mx-auto text-center leading-relaxed mb-20">
+
+            <p className="text-gray-600 max-w-4xl mx-auto text-center leading-relaxed mb-14">
               Travailler avec IDLUXE Marketing, c’est aussi contribuer à des actions à impact positif à Madagascar.
               Une partie de nos bénéfices est réservée à
               <span className="text-idluxe-gold font-medium">
@@ -116,19 +150,61 @@ const Engagements = () => {
               </span>,
               une association engagée dans l’amélioration durable des conditions de vie des populations vulnérables.
             </p>
-            <div className="grid md:grid-cols-4 gap-12 text-center">
-              {actions.map((item, index) => (
-                <div key={index}>
-                  <h4 className="font-serif text-2xl text-idluxe-gold mb-3">
-                    {item.title}
-                  </h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
+
+            {/* Cartes */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+              {actions.map((item, index) => {
+                const Icon = item.icon;
+
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.5,
+                      delay: index * 0.1
+                    }}
+                    className="group bg-gray-50 p-6 rounded-xl border border-gray-100 hover:border-idluxe-gold/40 
+                    hover:-translate-y-2 hover:shadow-xl transition-all duration-500"
+                  >
+                    {/* Icône */}
+                    <div
+                      className="w-8 h-8 rounded-full bg-idluxe-gold/10 flex items-center justify-center mb-6
+                        group-hover:bg-idluxe-gold/20 group-hover:scale-110 transition-all duration-500"
+                    >
+                      <Icon
+                        size={20}
+                        className="text-idluxe-gold"
+                      />
+                    </div>
+
+                    {/* Titre */}
+                    <h4
+                      className="font-serif text-xl text-idluxe-black mb-3 group-hover:text-idluxe-gold transition-colors
+                        duration-500"
+                    >
+                      {item.title}
+                    </h4>
+
+                    {/* Ligne décorative */}
+                    <div
+                      className="w-10 h-px bg-idluxe-gold mb-4 transition-all duration-500 group-hover:w-16"
+                    ></div>
+
+                    {/* Description */}
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {item.description}
+                    </p>
+                  </motion.div>
+                );
+              })}
+
             </div>
-          </div>
+          </motion.div>
+
         </div>
       </div>
     </section>

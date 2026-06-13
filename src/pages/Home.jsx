@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import home from '../assets/home.jpg';
 
 const Home = () => {
   const steps = [
@@ -12,22 +13,22 @@ const Home = () => {
 
   return (
     <main className="bg-white pt-18">
-      {/* 1. HERO SECTION */}
-      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
+       {/* 1. HERO SECTION */}
+       <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80" alt="Bureau luxe" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-white/12 backdrop-blur-[2px]"></div>
+          <img src={home} alt="Parfum" className="w-full h-full object-cover scale-107 -translate-x-11.5" style={{ objectPosition: "center 8%" }} />
+          <div className="absolute inset-0 bg-black/14 backdrop-blur-[1.5px]"></div>
         </div>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="relative z-10 font-sans text-idluxe-gold text-[10px] uppercase tracking-[0.8em] mb-12">
           IDLUXE Marketing
         </motion.p>
-        <motion.h1 initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8 }} className="relative z-10 font-serif text-5xl md:text-8xl text-idluxe-black leading-[1.1] mb-16 select-none">
+        <motion.h1 initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8 }} className="relative z-10 font-serif text-5xl md:text-8xl text-white leading-[1.1] mb-16 select-none">
           LET'S GLOW OUT<br />
           <span className="italic text-idluxe-gold">YOUR BUSINESS</span>
         </motion.h1>
-        <button className="group relative z-10 font-sans text-[11px] uppercase tracking-[0.3em] border border-idluxe-black px-14 py-6 text-idluxe-black overflow-hidden transition-all duration-500 hover:text-white">
+        <button className="group relative z-10 font-sans text-[11px] uppercase tracking-[0.3em] border border-white px-14 py-6 text-white overflow-hidden transition-all duration-500 hover:border-idluxe-gold hover:text-black">
           <span className="relative z-10">Découvrir notre expertise</span>
-          <div className="absolute inset-0 bg-idluxe-black translate-y-full transition-transform duration-500 group-hover:translate-y-0"></div>
+          <div className="absolute inset-0 bg-idluxe-gold translate-y-full transition-transform duration-500 group-hover:translate-y-0"></div>
         </button>
       </section>
       
@@ -124,16 +125,6 @@ const Home = () => {
             <div className="absolute w-[460px] h-[460px] border border-idluxe-gold/10 rounded-full z-0"></div>
           </div>
         </div>
-      </section>
-
-      {/* 5. FOOTER CTA */}
-      <section className="py-10 bg-zinc-50 text-center px-6">
-        <h2 className="font-serif text-4xl md:text-5xl text-idluxe-black mb-12 max-w-4xl mx-auto italic">
-          Prêt à donner à votre marque la <span className="text-idluxe-gold">stature</span> qu'elle mérite ?
-        </h2>
-        <button className="font-sans text-[11px] uppercase tracking-[0.5em] bg-idluxe-black text-white px-16 py-7 hover:bg-idluxe-gold transition-all duration-500">
-          Contactez notre cabinet
-        </button>
       </section>
     </main>
   );

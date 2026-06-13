@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-idluxe-gold: #C6A66C;
-  --color-idluxe-black: #0F0F0F;
+  --color-idluxe-gold: #D4AF37;
+  --color-idluxe-black: #111111;
   --font-serif: "Playfair Display", Georgia, serif;
   --font-sans: "Montserrat", sans-serif;
 }

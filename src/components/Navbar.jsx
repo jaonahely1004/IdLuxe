@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import logo from "../assets/idluxeFBLC.jpeg";
+import logo from "../assets/logoOFF_BK.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,12 +25,12 @@ const Navbar = () => {
         <img
           src={logo}
           alt="IDLUXE"
-          className="h-12 md:h-14 lg:h-16 w-auto object-contain scale-[1.05] *"
+          className="h-12 md:h-14 lg:h-16 w-auto object-contain scale-[1.09] * -translate-x-5"
         />
       </Link>
 
       {/* MENU DESKTOP */}
-      <div className="hidden md:flex space-x-10 font-sans text-[10px] uppercase tracking-[0.2em] text-idluxe-black">
+      <div className="hidden md:flex space-x-10 font-sans text-[10px] uppercase tracking-[0.2em] text-idluxe-black -translate-x-87">
         <Link to="/a-propos" className="hover:text-idluxe-gold transition-colors">À propos</Link>
         <Link to="/services" className="hover:text-idluxe-gold transition-colors">Services</Link>
         <Link to="/engagements" className="hover:text-idluxe-gold transition-colors">Engagements</Link>

@@ -22,9 +22,9 @@ const About = () => {
       <section className="px-10 max-w-7xl mx-auto mb-32">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
-            <p className="font-sans text-[#C6A66C] text-xs uppercase tracking-[0.5em]">À Propos d'IDLUXE</p>
+            <p className="font-sans text-[#D4AF37] text-xs uppercase tracking-[0.5em]">À Propos d'IDLUXE</p>
             <h1 className="font-serif text-4xl md:text-6xl text-[#111111] leading-tight">
-              Le premier cabinet responsable spécialisé en <span className="italic text-[#C6A66C]">marketing de luxe</span> à Madagascar.
+              Le premier cabinet responsable spécialisé en <span className="italic text-[#D4AF37]">marketing de luxe</span> à Madagascar.
             </h1>
             <p className="font-sans text-gray-600 font-light text-lg leading-relaxed">
               Nous accompagnons les marques émergentes, les PME et les institutions dans leur montée en gamme, le développement de leur image, leur visibilité et leur positionnement. Notre approche allie stratégie, créativité et impact positif.
@@ -36,18 +36,18 @@ const About = () => {
         </div>
       </section>
 
-      {/* SECTION 2 : NOS VALEURS (Fond Noir + Bordure Dorée) */}
-      <section className="py-10 bg-zinc-50 px-10">
+      {/* SECTION 2 : NOS VALEURS */}
+      <section className="py-20 bg-zinc-50 px-10">
         <div className="max-w-7xl mx-auto">
           <h2 className="font-serif text-5xl text-center mb-20 text-[#111111]">Nos <span className="italic">Valeurs</span></h2>                  
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {values.map((v, i) => (
-              <div key={i} className="group bg-[#111111] p-8 rounded-2xl border border-[#C6A66C] cursor-pointer hover:-translate-y-2 transition-all duration-500 flex flex-col shadow-lg">
-                <div className="w-12 h-12 mb-6 flex items-center justify-center border border-[#C6A66C]/30 rounded-full group-hover:border-[#C6A66C] transition-colors">
-                  <i className={`fas ${v.icon} text-[#C6A66C] text-lg`}></i>
+              <div key={i} className="group bg-[#111111] p-8 rounded-2xl border border-[#D4AF37] cursor-pointer hover:-translate-y-2 transition-all duration-500 flex flex-col shadow-lg">
+                <div className="w-12 h-12 mb-6 flex items-center justify-center border border-[#D4AF37]/30 rounded-full group-hover:border-[#D4AF37] transition-colors">
+                  <i className={`fas ${v.icon} text-[#D4AF37] text-lg`}></i>
                 </div>
                 <h3 className="text-xl font-light text-white mb-3">{v.title}</h3>
-                <div className="w-10 h-[2px] bg-[#C6A66C] mb-4" />
+                <div className="w-10 h-[2px] bg-[#D4AF37] mb-4" />
                 <p className="text-sm text-gray-300 leading-relaxed flex-grow">{v.desc}</p>
               </div>
             ))}
@@ -55,11 +55,11 @@ const About = () => {
         </div>
       </section>
 
-      {/* SECTION 3 : POURQUOI NOUS ? Fond Blanc */}
+      {/* SECTION 3 : POURQUOI NOUS ? */}
       <section className="py-20 px-10 max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <h2 className="font-serif text-5xl text-[#111111] mb-6">Pourquoi travailler avec <span className="italic">nous ?</span></h2>
-          <div className="h-px w-24 bg-[#C6A66C] mx-auto"></div>
+          <div className="h-px w-24 bg-[#D4AF37] mx-auto"></div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -68,25 +68,15 @@ const About = () => {
               <div className="h-64 overflow-hidden relative">
                 <img src={adv.img} alt={adv.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 {/* Overlay doré au survol */}
-                <div className="absolute inset-0 bg-[#C6A66C]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-[#D4AF37]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
               <div className="p-10 space-y-4">
                 <h3 className="font-serif text-2xl text-[#111111]">{adv.title}</h3>
                 <p className="text-sm font-light text-gray-500 leading-relaxed italic">{adv.desc}</p>
-                <div className="h-[2px] w-12 bg-[#C6A66C] group-hover:w-24 transition-all duration-500"></div>
+                <div className="h-[2px] w-12 bg-[#D4AF37] group-hover:w-24 transition-all duration-500"></div>
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* SECTION 4 : ENGAGEMENT */}
-      <section className="py-2 bg-white px-10 border-t border-gray-100">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h2 className="font-serif text-3xl text-[#111111] italic">"Nous créons des stratégies où l’intelligence marketing rencontre l’émotion humaine."</h2>
-          <button className="mt-8 font-sans text-[11px] uppercase tracking-widest border border-[#111111] px-12 py-5 text-[#111111] hover:bg-[#111111] hover:text-white transition-all duration-500">
-            Démarrer un projet
-          </button>
         </div>
       </section>
     </main>
