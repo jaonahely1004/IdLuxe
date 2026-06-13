@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import home from '../assets/home.jpg';
 
 const Home = () => {
@@ -14,22 +15,33 @@ const Home = () => {
   return (
     <main className="bg-white pt-18">
        {/* 1. HERO SECTION */}
-       <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
+      <section className="h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={home} alt="Parfum" className="w-full h-full object-cover scale-107 -translate-x-11.5" style={{ objectPosition: "center 8%" }} />
-          <div className="absolute inset-0 bg-black/14 backdrop-blur-[1.5px]"></div>
+          <img 
+            src={home} 
+            alt="Parfum" 
+            className="w-full h-full object-cover" 
+            style={{ objectPosition: "center 8%" }} 
+          />
+          <div className="absolute inset-0 bg-black/20 backdrop-blur-[2px]"></div>
         </div>
+        
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="relative z-10 font-sans text-idluxe-gold text-[10px] uppercase tracking-[0.8em] mb-12">
           IDLUXE Marketing
         </motion.p>
+        
         <motion.h1 initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8 }} className="relative z-10 font-serif text-5xl md:text-8xl text-white leading-[1.1] mb-16 select-none">
           LET'S GLOW OUT<br />
           <span className="italic text-idluxe-gold">YOUR BUSINESS</span>
         </motion.h1>
-        <button className="group relative z-10 font-sans text-[11px] uppercase tracking-[0.3em] border border-white px-14 py-6 text-white overflow-hidden transition-all duration-500 hover:border-idluxe-gold hover:text-black">
+        
+        <Link 
+          to="/services" 
+          className="group relative z-10 font-sans text-[11px] uppercase tracking-[0.3em] border border-white px-14 py-6 text-white overflow-hidden transition-all duration-500 hover:border-idluxe-gold hover:text-black inline-block"
+        >
           <span className="relative z-10">Découvrir notre expertise</span>
           <div className="absolute inset-0 bg-idluxe-gold translate-y-full transition-transform duration-500 group-hover:translate-y-0"></div>
-        </button>
+        </Link>
       </section>
       
       {/* 2. SECTION VISION */}
