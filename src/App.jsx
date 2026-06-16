@@ -7,12 +7,14 @@ import About from './pages/About';
 import Engagements from './pages/Engagements';
 import Realisations from './pages/Réalisations';
 import Contact from './pages/Contact';
+import DevisModal from './components/DevisModal';
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen bg-white">
         <Navbar />
+        <DevisModal />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/a-propos" element={<About />} />

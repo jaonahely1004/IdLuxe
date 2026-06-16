@@ -1,6 +1,10 @@
-import React from 'react';
+import React , { useState } from 'react';
+import { Link } from 'react-router-dom';
+import DevisModal from "../components/DevisModal";
 
 const Services = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const categories = [
     {
       title: "Branding & Rebranding",
@@ -55,11 +59,8 @@ const Services = () => {
   return (
     <div className="pt-40 pb-32 px-6 max-w-7xl mx-auto bg-white">
       <div className="mb-20 text-center">
-        {/* Style mis à jour : Typographie cohérente */}
         <p className="font-sans text-[#D4AF37] text-xs uppercase tracking-[0.5em] mb-4">Notre Expertise</p>
-        <h1 className="font-serif text-6xl text-[#111111] leading-tight">
-          Nos Services
-        </h1>
+        <h1 className="font-serif text-6xl text-[#111111] leading-tight">Nos Services</h1>
       </div>
       
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -69,11 +70,7 @@ const Services = () => {
             className="group bg-white rounded-2xl overflow-hidden border border-[#E5E5E5] hover:border-[#D4AF37] hover:-translate-y-2 transition-all duration-500 flex flex-col shadow-[0_5px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)]"
           >
             <div className="h-56 overflow-hidden relative">
-              <img
-                src={cat.image}
-                alt={cat.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
+              <img src={cat.image} alt={cat.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-all duration-500" />
               <div className="absolute top-4 left-4">
                 <span className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-[#D4AF37] font-semibold shadow-md">
@@ -83,32 +80,39 @@ const Services = () => {
             </div>
 
             <div className="p-7 flex flex-col flex-grow">
-              {/* Style mis à jour : Police Serif pour le titre */}
-              <h2 className="font-serif text-2xl text-[#111111] mb-3">
-                {cat.title}
-              </h2>
+              <h2 className="font-serif text-2xl text-[#111111] mb-3">{cat.title}</h2>
               <div className="w-12 h-[2px] bg-[#D4AF37] mb-4" />
-              <p className="font-sans text-sm text-[#444444] leading-relaxed mb-6">
-                {cat.description}
-              </p>
+              <p className="font-sans text-sm text-[#444444] leading-relaxed mb-6">{cat.description}</p>
               <ul className="space-y-3 mb-8">
                 {cat.items.slice(0, 4).map((item, j) => (
-                  <li
-                    key={j}
-                    className="font-sans text-sm text-[#222222] flex items-center"
-                  >
+                  <li key={j} className="font-sans text-sm text-[#222222] flex items-center">
                     <span className="w-2 h-2 bg-[#D4AF37] rounded-full mr-3"></span>
                     {item}
                   </li>
                 ))}
               </ul>
-              <button className="font-sans mt-auto self-start text-[#D4AF37] uppercase tracking-[0.2em] text-xs font-medium hover:tracking-[0.3em] transition-all">
-                Découvrir →
-              </button>
+              
+              {/* Bloc d'actions en bas de carte */}
+              <div className="mt-auto flex flex-col gap-3">
+                <Link
+                  to="/realisations"
+                  className="font-sans text-[#D4AF37] uppercase tracking-[0.2em] text-xs font-medium hover:tracking-[0.3em] transition-all"
+                >               
+                  Découvrir →
+                </Link>
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="font-sans text-[#111111] uppercase tracking-[0.2em] text-xs font-bold hover:text-[#D4AF37] transition-all underline decoration-[#D4AF37] underline-offset-4 self-start"
+                >
+                  Demande de devis
+                </button>
+              </div>
             </div>
           </div>
         ))}
       </div>
+
+      <DevisModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };

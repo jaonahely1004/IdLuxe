@@ -14,8 +14,7 @@ const Home = () => {
 
   return (
     <main className="bg-white pt-18">
-       {/* 1. HERO SECTION */}
-      <section className="h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
+      <section className="h-[70vh] flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src={home} 
@@ -23,29 +22,25 @@ const Home = () => {
             className="w-full h-full object-cover" 
             style={{ objectPosition: "center 8%" }} 
           />
-          <div className="absolute inset-0 bg-black/20 backdrop-blur-[2px]"></div>
+          <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
         </div>
-        
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="relative z-10 font-sans text-idluxe-gold text-[10px] uppercase tracking-[0.8em] mb-12">
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="relative z-10 font-sans text-idluxe-gold text-[11px] uppercase tracking-[0.9em] mb-8">
           IDLUXE Marketing
         </motion.p>
-        
-        <motion.h1 initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8 }} className="relative z-10 font-serif text-5xl md:text-8xl text-white leading-[1.1] mb-16 select-none">
+        <motion.h1 initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8 }} className="relative z-10 font-serif text-5xl md:text-7xl text-white leading-[1.1] mb-12 select-none">
           LET'S GLOW OUT<br />
           <span className="italic text-idluxe-gold">YOUR BUSINESS</span>
         </motion.h1>
-        
         <Link 
           to="/services" 
-          className="group relative z-10 font-sans text-[11px] uppercase tracking-[0.3em] border border-white px-14 py-6 text-white overflow-hidden transition-all duration-500 hover:border-idluxe-gold hover:text-black inline-block"
+          className="group relative z-10 font-sans text-[11px] uppercase tracking-[0.3em] border border-white px-12 py-5 text-white overflow-hidden transition-all duration-500 hover:border-idluxe-gold hover:text-black inline-block"
         >
           <span className="relative z-10">Découvrir notre expertise</span>
           <div className="absolute inset-0 bg-idluxe-gold translate-y-full transition-transform duration-500 group-hover:translate-y-0"></div>
         </Link>
-      </section>
-      
+      </section>     
       {/* 2. SECTION VISION */}
-      <section className="py-40 px-10 max-w-7xl mx-auto">
+      <section className="py-10 px-10 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-24 items-center">
           <div className="space-y-12">
             <h2 className="font-serif text-4xl md:text-5xl text-idluxe-black leading-tight italic">
