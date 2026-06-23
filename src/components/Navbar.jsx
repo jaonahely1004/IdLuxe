@@ -4,64 +4,121 @@ import logo from "../assets/logoOFF_BK.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
   const closeMenu = () => setIsOpen(false);
+  const toggleMenu = () => setIsOpen(v => !v);
 
-  // Empêcher le scroll du body quand le menu est ouvert
+  // 🔥 Scroll effect (Apple style)
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // 🔒 lock scroll mobile menu (fix bug resize)
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    return () => (document.body.style.overflow = '');
   }, [isOpen]);
-  
+
+  // ✅ MENU FIXE (PLUS DE BUG / PLUS DE SLUG AUTO)
+  const menuItems = [
+    { name: 'À propos', link: '/a-propos' },
+    { name: 'Services', link: '/services' },
+    { name: 'Engagements', link: '/engagements' },
+    { name: 'Réalisations', link: '/realisations' },
+    { name: 'Contact', link: '/contact' },
+  ];
+
   return (
-    <nav className="fixed top-0 left-0 w-full z-[100] bg-white/70 backdrop-blur-md border-b border-white/20 h-16 md:h-17 transition-all duration-300">
-
-    <div className="flex justify-between items-center px-8 md:px-12 h-full">
-
-      {/* LOGO */}
-      <Link to="/" onClick={closeMenu} className="flex items-center flex-shrink-0">
-        <img
-          src={logo}
-          alt="IDLUXE"
-          className="h-12 md:h-14 lg:h-16 w-auto object-contain scale-[1.09] * -translate-x-5"
-        />
-      </Link>
-
-      {/* MENU DESKTOP */}
-      <div className="hidden md:flex space-x-10 font-sans text-[10px] uppercase tracking-[0.2em] text-idluxe-black -translate-x-87">
-        <Link to="/a-propos" className="hover:text-idluxe-gold transition-colors">À propos</Link>
-        <Link to="/services" className="hover:text-idluxe-gold transition-colors">Services</Link>
-        <Link to="/engagements" className="hover:text-idluxe-gold transition-colors">Engagements</Link>
-        <Link to="/realisations" className="hover:text-idluxe-gold transition-colors">Réalisations</Link>
-        <Link to="/contact" className="hover:text-idluxe-gold transition-colors">Contact</Link>
-      </div>
-
-      {/* HAMBURGER */}
-      <button
-        className="md:hidden z-[110] flex flex-col justify-between h-4 w-6 focus:outline-none"
-        onClick={() => setIsOpen(!isOpen)}
+    <>
+      {/* NAVBAR */}
+      <nav
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500
+        ${
+          scrolled
+            ? 'h-14 bg-white/60 backdrop-blur-xl shadow-md'
+            : 'h-16 bg-white/30 backdrop-blur-md'
+        }`}
       >
-        <span className={`h-[1px] w-full bg-idluxe-black transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-[7px] bg-idluxe-gold' : ''}`}></span>
-        <span className={`h-[1px] w-full bg-idluxe-black transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
-        <span className={`h-[1px] w-full bg-idluxe-black transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-[7px] bg-idluxe-gold' : ''}`}></span>
-      </button>
+        {/* gradient overlay subtil */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/40 to-white/60 pointer-events-none" />
 
-    </div>
+        <div className="relative flex items-center justify-between h-full pl-3 pr-4 sm:pl-4 sm:pr-6 md:pl-6 md:pr-10">
 
-    {/* MENU MOBILE */}
-    <div className={`md:hidden fixed inset-0 h-screen w-full bg-white z-[105] flex flex-col justify-center items-center transition-transform duration-500 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-      <div className="flex flex-col space-y-8 text-center font-serif text-2xl text-idluxe-black">
-        <Link to="/a-propos" onClick={closeMenu}>À propos</Link>
-        <Link to="/services" onClick={closeMenu}>Services</Link>
-        <Link to="/engagements" onClick={closeMenu}>Engagements</Link>
-        <Link to="/realisations" onClick={closeMenu}>Réalisations</Link>
-        <Link to="/contact" onClick={closeMenu}>Contact</Link>
+          {/* LOGO */}
+          <Link to="/" onClick={closeMenu} className="z-50">
+            <img
+              src={logo}
+              alt="logo"
+              className={`w-auto transition-all duration-500 ${
+                scrolled ? 'h-8 md:h-10' : 'h-10 md:h-14'
+              }`}
+            />
+          </Link>
+
+          {/* DESKTOP MENU CENTER */}
+          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 gap-10 text-[11px] uppercase tracking-[0.2em] z-40">
+            {menuItems.map((item, i) => (
+              <Link
+                key={i}
+                to={item.link}
+                className="hover:text-black/60 transition"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* HAMBURGER PRO */}
+          <button
+            onClick={toggleMenu}
+            className="md:hidden z-50 w-10 h-10 flex items-center justify-center"
+          >
+            <div className="w-6 h-5 flex flex-col justify-between">
+              <span className={`h-[2px] bg-black transition-all duration-300 ${
+                isOpen ? 'rotate-45 translate-y-[6px]' : ''
+              }`} />
+              <span className={`h-[2px] bg-black transition-all duration-300 ${
+                isOpen ? 'opacity-0 scale-0' : ''
+              }`} />
+              <span className={`h-[2px] bg-black transition-all duration-300 ${
+                isOpen ? '-rotate-45 -translate-y-[6px]' : ''
+              }`} />
+            </div>
+          </button>
+
+        </div>
+      </nav>
+
+      {/* 🔥 MOBILE MENU PRO (FIX + STABLE) */}
+      <div
+        className={`fixed inset-0 z-[999] bg-white/90 backdrop-blur-2xl flex flex-col items-center justify-center md:hidden transition-all duration-500 ${
+          isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        <div className="flex flex-col space-y-8 text-center font-serif text-2xl">
+
+          {menuItems.map((item, i) => (
+            <Link
+              key={i}
+              to={item.link}
+              onClick={closeMenu}
+              className={`transition-all duration-500 ${
+                isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+              }`}
+            >
+              {item.name}
+            </Link>
+          ))}
+
+        </div>
       </div>
-    </div>
-
-    </nav>
+    </>
   );
 };
 
