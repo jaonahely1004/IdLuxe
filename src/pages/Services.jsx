@@ -1,10 +1,12 @@
-import React , { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 const Services = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [dbCategories, setDbCategories] = useState([]);
 
-  const categories = [
+  const defaultCategories = [
     {
       title: "Branding & Rebranding",
       description: "Création ou refonte d'identité visuelle pour une marque forte.",
@@ -54,6 +56,23 @@ const Services = () => {
       items: ["Hôtesses", "Animateurs", "Ambassadeurs", "Figurants", "Enquêteurs"]
     }
   ];
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/api/content/page/services')
+      .then(res => {
+        const rawData = res.data;
+        const grouped = rawData.reduce((acc, curr) => {
+          if (!acc[curr.group_id]) acc[curr.group_id] = { id: curr.group_id };
+          if (curr.item_key === 'items') acc[curr.group_id][curr.item_key] = curr.content.split(', ');
+          else acc[curr.group_id][curr.item_key] = curr.content;
+          return acc;
+        }, {});
+        setDbCategories(Object.values(grouped));
+      })
+      .catch(err => console.error("Erreur API:", err));
+  }, []);
+
+  const categories = dbCategories.length > 0 ? dbCategories : defaultCategories;
 
   return (
     <div className="pt-40 pb-32 px-6 max-w-7xl mx-auto bg-white">
