@@ -1,6 +1,5 @@
 import React , { useState } from 'react';
 import { Link } from 'react-router-dom';
-import DevisModal from "../components/DevisModal";
 
 const Services = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -111,8 +110,6 @@ const Services = () => {
           </div>
         ))}
       </div>
-
-      <DevisModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };
