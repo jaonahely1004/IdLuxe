@@ -69,6 +69,71 @@ app.post('/api/content/update', (req, res) => {
     });
 });
 
+// pour le formulaire de contact
+// Import de nodemailer pour l'envoi d'emails
+const nodemailer = require('nodemailer');
+
+// Configuration du transporteur SMTP (à adapter avec vos infos réelles)
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS
+    }
+  });
+  transporter.verify((err, success) => {
+    if (err) {
+      console.error('Erreur SMTP :', err);
+    } else {
+      console.log('Serveur SMTP connecté.');
+    }
+  });
+// Route pour le formulaire de contact
+app.post('/api/contact', async (req, res) => {
+    // 1. Récupération du nouveau champ 'phone'
+    const { name, email, phone, subject, message } = req.body;
+ 
+    if (!name || !email || !message) {
+      return res.status(400).json({ error: 'Champs requis manquants.' });
+    }
+ 
+    try {
+      // 2. Mise à jour de la requête SQL
+      const query = 'INSERT INTO contact_messages (name, email, phone, subject, message) VALUES (?, ?, ?, ?, ?)';
+ 
+      await db.promise().query(query, [
+        name, 
+        email, 
+        phone || '', // Enregistre vide si non fourni
+        subject || '', 
+        message
+      ]);
+ 
+      // 3. Ajout du téléphone dans l'email reçu
+      await transporter.sendMail({
+        from: `"IDLUXE Website" <${process.env.EMAIL_USER}>`,
+        to: process.env.EMAIL_USER,
+        replyTo: email,
+        subject: `Nouvelle demande : ${subject || 'Sans sujet'}`,
+        text: `
+Nom : ${name}
+Email : ${email}
+Téléphone : ${phone || 'Non renseigné'}
+Sujet : ${subject || 'Sans sujet'}
+
+Message :
+${message}
+        `
+      });
+ 
+      res.status(200).json({ success: true, message: 'Message enregistré.' });
+    } catch (err) {
+      console.error('Erreur :', err);
+      res.status(500).json({ error: "Erreur lors de l'envoi." });
+    }
+});
+
+
 // Lancement du serveur
 app.listen(5000, () => {
     console.log("Serveur démarré sur le port 5000");
