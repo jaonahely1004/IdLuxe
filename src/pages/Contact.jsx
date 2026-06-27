@@ -11,7 +11,7 @@ const Contact = () => {
     const formData = {
       name: e.target.name.value,
       email: e.target.email.value,
-      phone: e.target.phone.value, // Ajout du champ téléphone
+      phone: e.target.phone.value,
       subject: e.target.subject.value,
       message: e.target.message.value,
     };
@@ -85,7 +85,7 @@ const Contact = () => {
                 <label className="text-[10px] uppercase tracking-[0.2em] text-[#888]">Adresse Email</label>
                 <input name="email" type="email" required className="w-full bg-transparent border-b border-[#E5E5E5] py-3 focus:border-[#D4AF37] outline-none transition-colors" placeholder="jean@exemple.com" />
               </div>
-              {/* Nouveau champ téléphone ajouté ici */}
+              {/*champ téléphone ajouté ici */}
               <div className="md:col-span-2 space-y-2">
                 <label className="text-[10px] uppercase tracking-[0.2em] text-[#888]">Numéro WhatsApp</label>
                 <input name="phone" type="tel" className="w-full bg-transparent border-b border-[#E5E5E5] py-3 focus:border-[#D4AF37] outline-none transition-colors" placeholder="+261 34 00 000 00" />

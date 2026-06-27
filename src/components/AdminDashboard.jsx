@@ -10,7 +10,7 @@ const AdminDashboard = () => {
     axios.get('http://localhost:5000/api/content') 
       .then(res => {
         setContent(res.data);
-        // On définit la première page disponible dès que les données arrivent
+        //définir la première page disponible dès que les données arrivent
         if (res.data.length > 0) {
           const firstPage = res.data[0].page_name;
           setSelectedPage(firstPage);
@@ -25,7 +25,6 @@ const AdminDashboard = () => {
 
   // Extraire les pages uniques une fois que content n'est plus vide
   const uniquePages = [...new Set(content.map(item => item.page_name))];
-
   const handleLocalChange = (id, newValue) => {
     setContent(prev => prev.map(item => item.id === id ? { ...item, content: newValue } : item));
   };
@@ -38,13 +37,10 @@ const AdminDashboard = () => {
       alert("Erreur lors de l'enregistrement");
     }
   };
-
   if (loading) return <div className="p-10">Chargement des données...</div>;
-
   return (
     <div className="max-w-4xl mx-auto p-10 font-sans min-h-screen bg-white">
       <h1 className="text-3xl font-bold mb-8 border-b pb-4">Panneau d'Administration</h1>
-
       {/* SÉLECTEUR DE PAGE */}
       <div className="mb-8">
         <label className="block text-sm font-bold text-gray-700 mb-2">Choisir la page à modifier :</label>
@@ -56,13 +52,11 @@ const AdminDashboard = () => {
           {uniquePages.map(page => <option key={page} value={page}>{page}</option>)}
         </select>
       </div>
-
       {/* AFFICHAGE */}
       <div className="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-100">
         <h2 className="text-xl font-bold uppercase mb-6 text-[#D4AF37] border-b pb-2">
           Contenu : {selectedPage}
-        </h2>
-        
+        </h2>       
         {content
           .filter(item => item.page_name === selectedPage)
           .map((item) => (

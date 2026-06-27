@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
   const [pass, setPass] = useState("");
   const navigate = useNavigate();
-
   const handleLogin = () => {
     if (pass === "?idluxe_2026?") {
       localStorage.setItem("isAdmin", "true");
@@ -13,7 +12,6 @@ const Login = () => {
       alert("Mot de passe incorrect");
     }
   };
-
   return (
     <div className="flex justify-center items-center h-screen">
       <input 

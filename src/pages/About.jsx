@@ -3,33 +3,28 @@ import axios from 'axios';
 
 const About = () => {
   const [content, setContent] = useState({ values: [], advantages: [] });
-
   useEffect(() => {
     axios.get('http://localhost:5000/api/content/page/about')
       .then(res => {
         const rawData = res.data;
 
         const transformData = (sectionName) => {
-          const items = rawData.filter(item => item.section_name === sectionName);
-          
+          const items = rawData.filter(item => item.section_name === sectionName);         
           // Regroupement par group_id
           const grouped = items.reduce((acc, curr) => {
             if (!acc[curr.group_id]) acc[curr.group_id] = { id: curr.group_id };
             acc[curr.group_id][curr.item_key] = curr.content;
             return acc;
-          }, {});
-          
+          }, {});         
           return Object.values(grouped);
         };
-
         setContent({
           values: transformData('values'),
           advantages: transformData('advantages')
         });
       })
       .catch(err => console.error("Erreur de chargement API:", err));
-  }, []);
-  
+  }, []);  
   // Données par défaut pour éviter le rendu vide
   const defaultValues = [
     { title: "Excellence", desc: "Exigence, précision et sens du détail pour offrir des stratégies à forte valeur ajoutée.", icon: "fa-crown" },
@@ -38,24 +33,19 @@ const About = () => {
     { title: "Authenticité", desc: "Des communications humaines, sincères et alignées avec l'identité profonde des marques.", icon: "fa-handshake" },
     { title: "Engagement durable", desc: "Stratégies responsables pensées pour générer un impact positif et humain.", icon: "fa-leaf" }
   ];
-
   const defaultAdvantages = [
     { title: "Expertise Locale", desc: "15 ans d'expériences sur le marché malgache avec une spécialisation en C4D et projets sociaux.", img: "https://images.unsplash.com/photo-1596752316480-49652514c049?auto=format&fit=crop&q=80" },
     { title: "Collaboration Experts", desc: "Système de partenariat interne collaboratif avec des prestataires professionnels et expérimentés.", img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80" },
     { title: "Suivi & Performance", desc: "Étude post-campagne gratuite, analyse de vos KPIs et formations pratiques incluses.", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80" }
   ];
-
   // Logique de fusion : Si l'API renvoie des données, on les utilise, sinon le défaut
   const displayValues = content.values.length > 0 ? content.values : defaultValues;
   const displayAdvantages = content.advantages.length > 0 ? content.advantages : defaultAdvantages;
-
   useEffect(() => {
     console.log("Données reçues de l'API :", content);
   }, [content]);
-
   return (
-    <main className="pt-32 bg-white min-h-screen">
-      
+    <main className="pt-32 bg-white min-h-screen">     
       {/* SECTION 1 : INTRODUCTION (Statique comme demandé) */}
       <section className="px-10 max-w-7xl mx-auto mb-32">
         <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -73,7 +63,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
       {/* SECTION 2 : NOS VALEURS (Dynamique liée à la BD) */}
       <section className="py-20 bg-zinc-50 px-10">
         <div className="max-w-7xl mx-auto">
@@ -92,14 +81,12 @@ const About = () => {
           </div>
         </div>
       </section>
-
       {/* SECTION 3 : POURQUOI NOUS ? (Dynamique liée à la BD) */}
       <section className="py-20 px-10 max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <h2 className="font-serif text-5xl text-[#111111] mb-6">Pourquoi travailler avec <span className="italic">nous ?</span></h2>
           <div className="h-px w-24 bg-[#D4AF37] mx-auto"></div>
         </div>
-
         <div className="grid md:grid-cols-3 gap-8">
           {displayAdvantages.map((adv, i) => (
             <div key={i} className="group bg-white border border-gray-100 overflow-hidden cursor-pointer hover:shadow-2xl transition-all duration-500">

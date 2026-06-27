@@ -11,7 +11,6 @@ const Home = () => {
     { title: 'ACTIVER', desc: 'Déploiement créatif et communication omnicanale stratégique.', icon: 'fa-rocket' },
     { title: 'MESURER', desc: 'Analyse des performances et optimisation continue des KPIs.', icon: 'fa-chart-line' }
   ];
-
   return (
     <main className="bg-white pt-18">
       <section className="h-[70vh] flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
@@ -61,7 +60,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/* 3. SECTION DAPAM (Cards) */}
       <section className="py-2 bg-zinc-50 px-10 overflow-hidden">
         <div className="max-w-7xl mx-auto">
@@ -91,7 +89,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/* 4. SECTION MÉTHODOLOGIE CIRCULAIRE */}
       <section className="py-20 bg-white px-6 overflow-hidden">
         <div className="max-w-5xl mx-auto text-center mb-20">

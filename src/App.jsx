@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Outlet, Navigate } from 'react-router-dom';
-
 // Importation des composants
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -12,13 +11,15 @@ import About from './pages/About';
 import Engagements from './pages/Engagements';
 import Realisations from './pages/Realisations';
 import Contact from './pages/Contact';
+import BrandNew from './pages/engagements/BrandNew';
+import PlateformePro from './pages/engagements/PlateformePro';
+import Communication from './pages/engagements/Communication';
 
 // Protection de route : vérifie si l'admin est connecté
 const ProtectedRoute = ({ children }) => {
   const isAuth = localStorage.getItem("isAdmin") === "true";
   return isAuth ? children : <Navigate to="/login" />;
 };
-
 const PublicLayout = () => (
   <div className="min-h-screen bg-white">
     <Navbar />
@@ -26,7 +27,6 @@ const PublicLayout = () => (
     <Footer />
   </div>
 );
-
 function App() {
   return (
     <Router>
@@ -36,7 +36,12 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/a-propos" element={<About />} />
           <Route path="/services" element={<Services />} />
+          {/* Routes des engagements */}
           <Route path="/engagements" element={<Engagements />} />
+          <Route path="/engagements/brand-new-madagascar" element={<BrandNew />} />
+          <Route path="/engagements/plateforme-des-pro" element={<PlateformePro />} />
+          <Route path="/engagements/Communication-responsable" element={<Communication />} />
+          
           <Route path="/realisations" element={<Realisations />} />
           <Route path="/contact" element={<Contact />} />
         </Route>

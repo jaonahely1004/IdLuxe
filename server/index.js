@@ -1,8 +1,8 @@
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
-require('dotenv').config();
 
+require('dotenv').config();
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -14,7 +14,6 @@ const db = mysql.createConnection({
     password: 'jaolamasiny10',
     database: 'idluxe_db'
 });
-
 // Connexion à la BDD
 db.connect((err) => {
     if (err) {
@@ -23,7 +22,6 @@ db.connect((err) => {
     }
     console.log('Connecté à la base de données MySQL.');
 });
-
 // 1. Route pour récupérer TOUT le contenu (pour le menu du dashboard)
 app.get('/api/content', (req, res) => {
     const query = "SELECT * FROM site_content";
@@ -35,12 +33,10 @@ app.get('/api/content', (req, res) => {
         res.json(results);
     });
 });
-
-// 2. Route pour récupérer le contenu d'une page spécifique (pour tes pages React)
+// 2. Route pour récupérer le contenu d'une page spécifique (pour les pages)
 app.get('/api/content/page/:pageName', (req, res) => {
     const pageName = req.params.pageName;
-    const query = "SELECT * FROM site_content WHERE page_name = ?";
-    
+    const query = "SELECT * FROM site_content WHERE page_name = ?";   
     db.query(query, [pageName], (err, results) => {
         if (err) {
             console.error("Erreur SELECT PAGE:", err);
@@ -49,15 +45,12 @@ app.get('/api/content/page/:pageName', (req, res) => {
         res.json(results);
     });
 });
-
 // 3. Route pour mettre à jour un contenu spécifique
 app.post('/api/content/update', (req, res) => {
-    const { id, newContent } = req.body;
-    
+    const { id, newContent } = req.body;    
     if (!id || newContent === undefined) {
         return res.status(400).json({ error: "Données manquantes (id ou newContent)" });
     }
-
     const query = "UPDATE site_content SET content = ? WHERE id = ?";
     db.query(query, [newContent, id], (err, result) => {
         if (err) {
@@ -70,7 +63,6 @@ app.post('/api/content/update', (req, res) => {
 });
 
 // pour le formulaire de contact
-// Import de nodemailer pour l'envoi d'emails
 const nodemailer = require('nodemailer');
 
 // Configuration du transporteur SMTP (à adapter avec vos infos réelles)
@@ -92,15 +84,12 @@ const transporter = nodemailer.createTransport({
 app.post('/api/contact', async (req, res) => {
     // 1. Récupération du nouveau champ 'phone'
     const { name, email, phone, subject, message } = req.body;
- 
     if (!name || !email || !message) {
       return res.status(400).json({ error: 'Champs requis manquants.' });
     }
- 
     try {
       // 2. Mise à jour de la requête SQL
       const query = 'INSERT INTO contact_messages (name, email, phone, subject, message) VALUES (?, ?, ?, ?, ?)';
- 
       await db.promise().query(query, [
         name, 
         email, 
@@ -108,7 +97,6 @@ app.post('/api/contact', async (req, res) => {
         subject || '', 
         message
       ]);
- 
       // 3. Ajout du téléphone dans l'email reçu
       await transporter.sendMail({
         from: `"IDLUXE Website" <${process.env.EMAIL_USER}>`,
@@ -116,24 +104,19 @@ app.post('/api/contact', async (req, res) => {
         replyTo: email,
         subject: `Nouvelle demande : ${subject || 'Sans sujet'}`,
         text: `
-Nom : ${name}
-Email : ${email}
-Téléphone : ${phone || 'Non renseigné'}
-Sujet : ${subject || 'Sans sujet'}
-
-Message :
-${message}
-        `
+        Nom : ${name}
+        Email : ${email}
+        Téléphone : ${phone || 'Non renseigné'}
+        Sujet : ${subject || 'Sans sujet'}
+        Message :
+        ${message}       `
       });
- 
       res.status(200).json({ success: true, message: 'Message enregistré.' });
     } catch (err) {
       console.error('Erreur :', err);
       res.status(500).json({ error: "Erreur lors de l'envoi." });
     }
 });
-
-
 // Lancement du serveur
 app.listen(5000, () => {
     console.log("Serveur démarré sur le port 5000");

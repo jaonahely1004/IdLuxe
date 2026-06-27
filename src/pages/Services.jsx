@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 const Services = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [dbCategories, setDbCategories] = useState([]);
-
   const defaultCategories = [
     {
       title: "Branding & Rebranding",
@@ -56,7 +55,6 @@ const Services = () => {
       items: ["Hôtesses", "Animateurs", "Ambassadeurs", "Figurants", "Enquêteurs"]
     }
   ];
-
   useEffect(() => {
     axios.get('http://localhost:5000/api/content/page/services')
       .then(res => {
@@ -71,16 +69,13 @@ const Services = () => {
       })
       .catch(err => console.error("Erreur API:", err));
   }, []);
-
   const categories = dbCategories.length > 0 ? dbCategories : defaultCategories;
-
   return (
     <div className="pt-40 pb-32 px-6 max-w-7xl mx-auto bg-white">
       <div className="mb-20 text-center">
         <p className="font-sans text-[#D4AF37] text-xs uppercase tracking-[0.5em] mb-4">Notre Expertise</p>
         <h1 className="font-serif text-6xl text-[#111111] leading-tight">Nos Services</h1>
-      </div>
-      
+      </div>     
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {categories.map((cat, i) => (
           <div
@@ -96,7 +91,6 @@ const Services = () => {
                 </span>
               </div>
             </div>
-
             <div className="p-7 flex flex-col flex-grow">
               <h2 className="font-serif text-2xl text-[#111111] mb-3">{cat.title}</h2>
               <div className="w-12 h-[2px] bg-[#D4AF37] mb-4" />
@@ -108,8 +102,7 @@ const Services = () => {
                     {item}
                   </li>
                 ))}
-              </ul>
-              
+              </ul>             
               {/* Bloc d'actions en bas de carte */}
               <div className="mt-auto flex flex-col gap-3">
                 <Link

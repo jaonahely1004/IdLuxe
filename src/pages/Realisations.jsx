@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Realisation = () => {
   const projects = [
@@ -114,9 +115,12 @@ const Realisation = () => {
           ambitieuses dans la création d'expériences mémorables et d'une
           image forte.
         </p>
-        <button className="font-sans bg-[#111111] text-white px-12 py-5 uppercase tracking-[0.25em] text-sm font-semibold transition-all duration-500 hover:bg-[#D4AF37] hover:text-[#111111]">
+        <Link
+          to="/contact"
+          className="font-sans bg-[#111111] text-white px-8 py-4 rounded-lg uppercase tracking-[0.2em] text-xs font-medium hover:bg-[#D4AF37] transition-all"
+        >
           Démarrer un projet
-        </button>
+        </Link>
       </section>
     </main>
   );

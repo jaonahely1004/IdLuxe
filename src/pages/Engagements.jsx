@@ -59,8 +59,7 @@ const Engagements = () => {
       })
       .catch(err => console.error("Erreur de chargement API:", err));
   }, []);
-
-  // On fusionne les données API pour le texte, mais on force les images locales
+  //fusionne les données API pour le texte, mais on force les images locales
   const displaySections = content.sections.length > 0 
     ? content.sections.map((item, index) => ({
         ...item,
@@ -68,13 +67,10 @@ const Engagements = () => {
         side: defaultSections[index]?.side || 'left'
       })) 
     : defaultSections;
-
   const displayActions = content.impacts.length > 0 ? content.impacts : defaultActions;
-
   return (
     <section className="py-32 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
-
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -94,7 +90,6 @@ const Engagements = () => {
             ancré dans le développement local à Madagascar.
           </p>
         </motion.div>
-
         {/* Engagements */}
         <div className="space-y-20">
           {displaySections.map((item, index) => (
@@ -126,7 +121,6 @@ const Engagements = () => {
               </div>
             </motion.div>
           ))}
-
           {/* Impact Social */}
           <motion.div
             initial={{ opacity: 0, y: 60 }}
@@ -146,7 +140,6 @@ const Engagements = () => {
               Une partie de nos bénéfices est réservée à <span className="text-idluxe-gold font-medium">Brand New Madagascar</span>, 
               une association engagée dans l’amélioration durable des conditions de vie des populations vulnérables.
             </p>
-
             {/* Cartes */}
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {displayActions.map((item, index) => {
