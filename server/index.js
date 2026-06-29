@@ -88,12 +88,16 @@ app.post('/api/contact', async (req, res) => {
       return res.status(400).json({ error: 'Champs requis manquants.' });
     }
     try {
+      const { name, email, phone, company, position, sector, subject, message } = req.body;
       // 2. Mise à jour de la requête SQL
-      const query = 'INSERT INTO contact_messages (name, email, phone, subject, message) VALUES (?, ?, ?, ?, ?)';
+      const query = 'INSERT INTO contact_messages (name, email, phone, company, position, sector, subject, message) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
       await db.promise().query(query, [
         name, 
         email, 
-        phone || '', // Enregistre vide si non fourni
+        phone || '', 
+        company || '', 
+        position || '', 
+        sector || '', 
         subject || '', 
         message
       ]);
@@ -104,18 +108,25 @@ app.post('/api/contact', async (req, res) => {
         replyTo: email,
         subject: `Nouvelle demande : ${subject || 'Sans sujet'}`,
         text: `
+        Nouvelle demande de contact reçue :
+
         Nom : ${name}
         Email : ${email}
         Téléphone : ${phone || 'Non renseigné'}
+        Société : ${company || 'Non renseigné'}
+        Fonction : ${position || 'Non renseigné'}
+        Secteur : ${sector || 'Non renseigné'}
         Sujet : ${subject || 'Sans sujet'}
+        
         Message :
-        ${message}       `
-      });
-      res.status(200).json({ success: true, message: 'Message enregistré.' });
-    } catch (err) {
-      console.error('Erreur :', err);
-      res.status(500).json({ error: "Erreur lors de l'envoi." });
-    }
+        ${message}
+      `
+    });
+    res.status(200).json({ success: true, message: 'Message enregistré.' });
+  } catch (err) {
+    console.error('Erreur :', err);
+    res.status(500).json({ error: "Erreur lors de l'envoi." });
+  }
 });
 // Lancement du serveur
 app.listen(5000, () => {

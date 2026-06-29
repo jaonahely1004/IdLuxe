@@ -111,12 +111,6 @@ const Services = () => {
                 >               
                   Découvrir →
                 </Link>
-                <button
-                  onClick={() => setIsModalOpen(true)}
-                  className="font-sans text-[#111111] uppercase tracking-[0.2em] text-xs font-bold hover:text-[#D4AF37] transition-all underline decoration-[#D4AF37] underline-offset-4 self-start"
-                >
-                  Demande de devis
-                </button>
               </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, CheckCircle, Loader2 } from 'lucide-react';
+import { Mail, Phone, MapPin, CheckCircle, Loader2, Globe, Share2 } from 'lucide-react';
 
 const Contact = () => {
   const [status, setStatus] = useState('idle'); // 'idle' | 'sending' | 'success' | 'error'
@@ -12,6 +12,9 @@ const Contact = () => {
       name: e.target.name.value,
       email: e.target.email.value,
       phone: e.target.phone.value,
+      company: e.target.company.value,
+      position: e.target.position.value,
+      sector: e.target.sector.value,
       subject: e.target.subject.value,
       message: e.target.message.value,
     };
@@ -71,6 +74,26 @@ const Contact = () => {
                 <div className="flex items-center gap-4">
                   <MapPin className="w-4 h-4 text-[#D4AF37]" /> Antananarivo, Madagascar
                 </div>
+
+                {/* Section Réseaux Sociaux */}
+                <div className="pt-6 border-t border-[#E5E5E5] space-y-6">
+                  <a 
+                    href="https://web.facebook.com/idluxe.marketing" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center gap-4 hover:text-[#D4AF37] transition-colors"
+                  >
+                    <Globe className="w-4 h-4 text-[#D4AF37]" /> Facebook
+                  </a>
+                  <a 
+                    href="https://www.linkedin.com/company/idluxe" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center gap-4 hover:text-[#D4AF37] transition-colors"
+                  >
+                    <Share2 className="w-4 h-4 text-[#D4AF37]" /> LinkedIn
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -85,7 +108,29 @@ const Contact = () => {
                 <label className="text-[10px] uppercase tracking-[0.2em] text-[#888]">Adresse Email</label>
                 <input name="email" type="email" required className="w-full bg-transparent border-b border-[#E5E5E5] py-3 focus:border-[#D4AF37] outline-none transition-colors" placeholder="jean@exemple.com" />
               </div>
-              {/*champ téléphone ajouté ici */}
+              
+              <div className="space-y-2">
+                <label className="text-[10px] uppercase tracking-[0.2em] text-[#888]">Société</label>
+                <input name="company" type="text" className="w-full bg-transparent border-b border-[#E5E5E5] py-3 focus:border-[#D4AF37] outline-none transition-colors" placeholder="Société" />
+              </div>
+              <div className="space-y-2">
+                <label className="text-[10px] uppercase tracking-[0.2em] text-[#888]">Fonction</label>
+                <input name="position" type="text" className="w-full bg-transparent border-b border-[#E5E5E5] py-3 focus:border-[#D4AF37] outline-none transition-colors" placeholder="Fonction" />
+              </div>
+
+              <div className="md:col-span-2 space-y-2">
+                <label className="text-[10px] uppercase tracking-[0.2em] text-[#888]">Secteur d'activité</label>
+                <select name="sector" className="w-full bg-transparent border-b border-[#E5E5E5] py-3 focus:border-[#D4AF37] outline-none cursor-pointer">
+                  <option value="">Sélectionnez un secteur</option>
+                  <option>Tourisme, hotêllerie, Restauration (THR)</option>
+                  <option>Assurance, banque, finance</option>
+                  <option>Concessionnaire automobile</option>
+                  <option>Mode et bien-être</option>
+                  <option>Immobilier</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+
               <div className="md:col-span-2 space-y-2">
                 <label className="text-[10px] uppercase tracking-[0.2em] text-[#888]">Numéro WhatsApp</label>
                 <input name="phone" type="tel" className="w-full bg-transparent border-b border-[#E5E5E5] py-3 focus:border-[#D4AF37] outline-none transition-colors" placeholder="+261 34 00 000 00" />
@@ -96,6 +141,7 @@ const Contact = () => {
                   <option>Branding & Rebranding</option>
                   <option>Stratégie & Conseil</option>
                   <option>Communication Digitale</option>
+                  <option>Autres</option>
                 </select>
               </div>
               <div className="md:col-span-2 space-y-2">
