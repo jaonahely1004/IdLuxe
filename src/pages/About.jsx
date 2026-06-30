@@ -170,7 +170,7 @@ const About = () => {
     <div className="text-center">
       <Link
         to="/services"
-        className="inline-block px-8 py-4 border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-white rounded-full uppercase tracking-[0.2em] text-xs font-medium transition-all duration-500"
+        className="font-sans bg-[#111111] text-white px-8 py-4 rounded-lg uppercase tracking-[0.2em] text-xs font-medium hover:bg-[#D4AF37] transition-all"
       >
         Découvrir nos solutions
       </Link>

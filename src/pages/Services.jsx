@@ -10,49 +10,49 @@ const Services = () => {
       title: "Branding & Rebranding",
       description: "Création ou refonte d'identité visuelle pour une marque forte.",
       image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=800",
-      items: ["Création logo", "Charte graphique", "Refonte logo", "Identité visuelle", "Branding retail"]
+      items: ["Logo et charte graphique", "Identité de marque", "Créations graphiques", "Enseignes et branding retail",]
     },
     {
-      title: "Conseil & Stratégie",
-      description: "Accompagnement pour optimiser vos performances.",
+      title: "Conseil & Stratégie marketing",
+      description: "Accompagnement pour un positionnement haut de gamme.",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
-      items: ["Diagnostic marketing", "Benchmark", "Positionnement", "Copy stratégie", "Plan d'action"]
+      items: ["Audit marketing", "Benchmark et analyse concurrentielle", "Copy stratégie", "Stratégie et plan d'action"]
     },
     {
-      title: "Communication Digitale",
-      description: "Développement de votre présence en ligne.",
+      title: "Communication pour le développement",
+      description: "Méthodologies et stratégies pour le changement de comportement.",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-      items: ["Création site web", "Audit digital", "Community management", "SEO, SEA, SMA", "Mailing"]
+      items: ["Enquêtes", "Analyse des besoins et analyse anthropologique", "Gestion du changement et CCC", "Relation publique",]
     },
     {
-      title: "Événementiel & RP",
-      description: "Organisation d'événements haut de gamme.",
+      title: "Événementiel haut de gamme",
+      description: "Organisation d'événements corporate, protocolaires et haut de gamme.",
       image: "https://images.unsplash.com/photo-1511578314322-37d9b574066f?auto=format&fit=crop&q=80&w=800",
-      items: ["Conférences de presse", "Inaugurations", "Défilés de mode", "Cocktails pros", "Cérémonies"]
+      items: ["Conférences de presse", "Inaugurations et vernissage", "Cocktails professionnels", "Salon et ateliers", "Cérémonie protocolaire/institutionnelle"]
     },
     {
-      title: "Multimédia",
-      description: "Supports visuels uniques pour votre image.",
+      title: "Communication 360",
+      description: "Maximisez votre visibilité.",
       image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800",
-      items: ["Production audiovisuelle", "Shooting photo pro", "Relation media"]
+      items: ["Stratégie de communication", "Production audiovisuelle", "Relation media", "Travaux d'impression"]
     },
     {
-      title: "Personal Branding",
-      description: "Valorisation de l'image des dirigeants.",
+      title: "Marketing digital",
+      description: "Optimisez votre présence en ligne",
       image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=800",
-      items: ["Analyse personnalité", "E-réputation", "Conseil style", "Communication"]
+      items: ["Stratégie digitale", "Community management", "Content marketing", "SEA, SMA"]
     },
     {
-      title: "Tenues Pro",
-      description: "Confection de tenues adaptées.",
+      title: "Externalisation marketing",
+      description: "Confiez votre service marketing à une equipe d'expert.",
       image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&q=80&w=800",
-      items: ["Uniformes", "Tenues corporate", "Tenues d'accueil"]
+      items: ["Analyse des besoins", "Mise a disposition d'une équipe complète en remote",]
     },
     {
-      title: "RH Événementielles",
-      description: "Profils qualifiés pour vos événements.",
+      title: "Externalisation RSE",
+      description: "Transformez votre RSE en actions qui changent des vies.",
       image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=800",
-      items: ["Hôtesses", "Animateurs", "Ambassadeurs", "Figurants", "Enquêteurs"]
+      items: ["Analyse des besoins et étude anthropologique", "Accompagnement en théorie du changement(TOC)", "Plan de Travail et Budget annuel(PTBA)", "Mise à disposition volontaires", "Suivi et évaluation"]
     }
   ];
   useEffect(() => {
@@ -115,6 +115,18 @@ const Services = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="mt-10 mb-0 flex flex-col items-center justify-center space-y-8">
+        <p className="font-serif text-xl md:text-2xl text-[#111111] italic text-center px-4">
+          Besoin d'accompagnement pour trouver la solution adaptée à votre marché ?
+        </p>
+        
+        <Link
+          to="/contact"
+          className="font-sans bg-[#111111] text-white px-4 py-4 rounded-full uppercase tracking-[0.2em] text-xs font-medium hover:bg-[#D4AF37] transition-all duration-500 shadow-lg hover:shadow-[#D4AF37]/20"
+        >
+          CONTACTEZ-NOUS POUR UN DIAGNOSTIC
+        </Link>
       </div>
     </div>
   );
