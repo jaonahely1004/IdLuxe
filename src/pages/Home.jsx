@@ -5,12 +5,13 @@ import home from '../assets/home.jpg';
 
 const Home = () => {
   const steps = [
-    { title: 'DÉCOUVRIR', desc: 'Immersion dans votre univers, votre marché et vos ambitions.', icon: 'fa-compass' },
-    { title: 'ANALYSER', desc: 'Analyse stratégique des audiences, tendances et concurrents.', icon: 'fa-chart-pie' },
-    { title: 'POSITIONNER', desc: 'Construction d’un positionnement clair, différenciant et mémorable.', icon: 'fa-bullseye' },
-    { title: 'ACTIVER', desc: 'Déploiement créatif et communication omnicanale stratégique.', icon: 'fa-rocket' },
-    { title: 'MESURER', desc: 'Analyse des performances et optimisation continue des KPIs.', icon: 'fa-chart-line' }
+    { title: 'DÉCOUVRIR', desc: 'Immersion dans votre univers, votre marché et votre vision', icon: 'fa-compass' },
+    { title: 'ANALYSER', desc: 'Analyse des audiences, analyse des concurrents', icon: 'fa-chart-pie' },
+    { title: 'POSITIONNER', desc: 'Construction d’un positionnement clair et différenciant', icon: 'fa-bullseye' },
+    { title: 'ACTIVER', desc: 'Déploiement et communication omnicanale', icon: 'fa-rocket' },
+    { title: 'MESURER', desc: 'Analyse de performance, suivi et optimisation', icon: 'fa-chart-line' }
   ];
+
   return (
     <main className="bg-white pt-18">
       <section className="h-[70vh] flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
@@ -37,29 +38,45 @@ const Home = () => {
           <span className="relative z-10">Découvrir notre expertise</span>
           <div className="absolute inset-0 bg-idluxe-gold translate-y-full transition-transform duration-500 group-hover:translate-y-0"></div>
         </Link>
-      </section>     
-      {/* 2. SECTION VISION */}
-      <section className="py-10 px-10 max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-24 items-center">
-          <div className="space-y-12">
-            <h2 className="font-serif text-4xl md:text-5xl text-idluxe-black leading-tight italic">
-              "À Madagascar, les marques ont besoin d'une image forte, cohérente et impactante."
-            </h2>
-            <p className="font-sans text-gray-600 font-light leading-relaxed text-xl max-w-lg">
-              Parce qu'une marque a une responsabilité envers la société, nous construisons des stratégies qui valorisent votre image tout en renforçant votre <span className="text-idluxe-gold italic">contribution positive</span>.
+      </section>    
+      
+      {/* 2. SECTION VISION - Grille uniforme */}
+      <section className="py-20 px-6 md:px-10 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-12 gap-12 lg:gap-20 items-start">
+          
+          {/* Colonne Texte (6/12) */}
+          <div className="md:col-span-6 space-y-8">
+            <p className="font-sans text-gray-700 leading-relaxed text-lg text-justify">
+              Aujourd'hui à Madagascar, les entreprises ont besoin de plus qu'une simple visibilité : elles ont besoin d'une marque forte et impactante.
+            </p>
+            <p className="font-sans text-gray-700 leading-relaxed text-lg text-justify">
+              <span className="font-bold text-idluxe-black">IDLuxe Consulting</span> est le premier cabinet marketing responsable spécialisé dans le Luxe et le Développement durable à Madagascar qui aide les acteurs du haut de gamme à devenir et rester une référence incontournable.
+            </p>
+            <p className="font-sans text-gray-700 leading-relaxed text-lg text-justify">
+              Parce qu'une marque forte doit aussi avoir une responsabilité envers la société et l'environnement, nous défendons une vision du luxe plus éthique, plus humaine et plus solidaire.
+            </p>
+            <p className="font-sans text-gray-700 leading-relaxed text-lg text-justify">
+              Nous construisons avec vous une stratégie qui valorise votre image tout en renforçant votre contribution positive à la société.
             </p>
           </div>
-          <div className="relative">
-            <div className="bg-idluxe-black p-16 text-white relative z-10">
-              <h3 className="text-idluxe-gold font-serif text-3xl mb-8">Brand Impact</h3>
+
+          {/* Colonne Bloc Impact (6/12) */}
+          <div className="md:col-span-6 relative">
+            <div className="bg-idluxe-black p-10 md:p-16 text-white relative z-10">
+              <h3 className="text-idluxe-gold font-serif text-3xl mb-8 leading-tight">
+                Brand impact grâce à notre approche immersive
+              </h3>
               <p className="text-base font-light leading-relaxed opacity-90 italic">
-                Notre méthodologie combine intelligence marketing, émotion humaine et impact durable. Nous transformons les entreprises en marques d'élite.
+                Notre méthodologie combine études anthropologiques, analyses stratégiques approfondies, et activation ciblée.
               </p>
             </div>
-            <div className="absolute -bottom-6 -right-6 w-full h-full border border-idluxe-gold -z-0"></div>
+            {/* Élément décoratif aligné */}
+            <div className="absolute -bottom-6 -right-6 w-full h-full border border-idluxe-gold -z-0 hidden md:block"></div>
           </div>
+
         </div>
       </section>
+
       {/* 3. SECTION DAPAM (Cards) */}
       <section className="py-2 bg-zinc-50 px-10 overflow-hidden">
         <div className="max-w-7xl mx-auto">
@@ -89,6 +106,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+
       {/* 4. SECTION MÉTHODOLOGIE CIRCULAIRE */}
       <section className="py-20 bg-white px-6 overflow-hidden">
         <div className="max-w-5xl mx-auto text-center mb-20">
