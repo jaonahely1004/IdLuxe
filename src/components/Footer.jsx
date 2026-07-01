@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, Globe, MapPin, ArrowUpRight } from 'lucide-react';
+import logo from "../assets/logoOFF_Wht consulte.png";
+
+import { FaFacebook, FaLinkedin } from 'react-icons/fa';
 
 function Footer() {
   const expertises = [
@@ -11,7 +14,7 @@ function Footer() {
   ];
 
   return (
-    <footer className="bg-zinc-950 border-t border-zinc-900 text-zinc-400  font-sans antialiased w-full relative">
+    <footer className="bg-zinc-950 border-t border-zinc-900 text-zinc-400 mt-0 font-sans antialiased w-full relative">
       
       {/* EFFET LUMINEUX DISCRET EN ARRIÈRE-PLAN */}
       <div className="absolute top-0 right-1/4 w-72 h-72 bg-amber-500/[0.03] rounded-full blur-[100px] pointer-events-none" />
@@ -25,13 +28,17 @@ function Footer() {
             {/* LOGO SANS LIGNE : Le pt-[3px] maintient l'alignement horizontal parfait avec les h3 */}
             <div className="pt-[3px] mb-4">
               <div className="flex flex-col gap-0.5">
-                <div className="flex items-end gap-[2px] select-none leading-none">
-                  <span className="text-white font-serif tracking-[0.25em] text-xl font-light">ID</span>
-                  <span className="text-amber-500 font-serif tracking-[0.25em] text-xl font-normal">LUXE</span>
+              <div className="flex flex-col gap-1 justify-start">
+              <div className="flex flex-col gap-1 justify-start">
+                <div className="flex items-end pt-[2px]">
+                  <img 
+                    src={logo} 
+                    alt="IDLUXE Marketing Logo"
+                    className="h-8 sm:h-9 md:h-20 w-auto object-contain select-none"
+                  />
                 </div>
-                <p className="text-[9px] tracking-[0.5em] text-amber-500/60 uppercase font-semibold leading-none">
-                  Marketing
-                </p>
+              </div>
+              </div>
               </div>
             </div>
 
@@ -62,47 +69,56 @@ function Footer() {
 
             {/* EMAIL */}
             <a 
-              href="mailto:idluxemg@idluxe.mg"
+              href="mailto:brandnewmada@gmail.com"
               className="flex items-center gap-2.5 hover:text-white transition-colors group py-0.5 w-max"
             >
               <Mail className="w-3.5 h-3.5 text-amber-500/60 group-hover:text-amber-500 transition-colors stroke-[1.5]" />
-              <span className="text-zinc-300 group-hover:text-white transition-colors border-b border-transparent group-hover:border-white/10 pb-0.5">idluxemg@idluxe.mg</span>
+              <span className="text-zinc-300 group-hover:text-white transition-colors border-b border-transparent group-hover:border-white/10 pb-0.5">brandnewmada@gmail.com</span>
             </a>
 
             {/* NUMÉROS DE TÉLÉPHONE */}
             <div className="flex flex-col gap-2 pt-0.5">
-              <a href="tel:+261341406585" className="flex items-center gap-2.5 hover:text-white transition-colors group w-max">
+              <a href="tel:+261 37 26 949 10" className="flex items-center gap-2.5 hover:text-white transition-colors group w-max">
                 <Phone className="w-3.5 h-3.5 text-amber-500/60 group-hover:text-amber-500 transition-colors stroke-[1.5]" />
-                <span className="text-zinc-300 group-hover:text-white transition-colors">+261 34 14 065 85</span>
-              </a>
-              <a href="tel:+261378406584" className="flex items-center gap-2.5 hover:text-white transition-colors pl-6 group w-max">
-                <span className="text-zinc-300 group-hover:text-white transition-colors">+261 37 84 065 84</span>
+                <span className="text-zinc-300 group-hover:text-white transition-colors">+261 37 26 949 10
+                </span>
               </a>
             </div>
 
             {/* FACEBOOK */}
-            <a 
-              href="https://web.facebook.com/idluxe.marketing" 
-              target="_blank" 
+            <a
+              href="https://web.facebook.com/idluxe.marketing"
+              target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2.5 hover:text-white transition-colors group py-0.5 pt-1 w-max"
             >
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="14" 
-                height="14" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="1.5" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
-                className="text-amber-500/60 group-hover:text-amber-500 transition-colors"
-              >
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-              </svg>
-              <span className="text-zinc-300 group-hover:text-white transition-colors border-b border-transparent group-hover:border-white/10 pb-0.5">idluxe.marketing</span>
-              <ArrowUpRight className="w-2.5 h-2.5 text-zinc-600 opacity-0 group-hover:opacity-100 transition-all" />
+              <FaFacebook 
+                className="w-3.5 h-3.5 text-amber-500/60 group-hover:text-amber-500 transition-colors" 
+              />
+              <span className="text-zinc-300 group-hover:text-white transition-colors border-b border-transparent group-hover:border-white/10 pb-0.5">
+                idluxe.marketing
+              </span>
+              <ArrowUpRight 
+                className="w-2.5 h-2.5 text-zinc-600 opacity-0 group-hover:opacity-100 transition-all" 
+              />
+            </a>
+
+            {/* LINKEDIN */}
+            <a
+              href="https://www.linkedin.com/company/idluxe"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2.5 hover:text-white transition-colors group py-0.5 pt-1 w-max"
+            >
+              <FaLinkedin 
+                className="w-3.5 h-3.5 text-amber-500/60 group-hover:text-amber-500 transition-colors" 
+              />
+              <span className="text-zinc-300 group-hover:text-white transition-colors border-b border-transparent group-hover:border-white/10 pb-0.5">
+                LinkedIn
+              </span>
+              <ArrowUpRight 
+                className="w-2.5 h-2.5 text-zinc-600 opacity-0 group-hover:opacity-100 transition-all" 
+              />
             </a>
           </div>
         </div>

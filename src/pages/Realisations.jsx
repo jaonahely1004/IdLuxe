@@ -1,125 +1,366 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Sparkles, HeartHandshake, Megaphone, ArrowRight, Play, Clock } from 'lucide-react';
+
+import partenerlogo_1 from '../assets/logo_Blossome.png';
+import partenerlogo_2 from '../assets/logo_Helen keller.png';
+import partenerlogo_3 from '../assets/logo_Primature ONN.png';
+
+const GOLD = '#D4AF37';
+const INK = '#111111';
+const CREAM = '#FAF8F3';
 
 const Realisation = () => {
+  const prefersReducedMotion = useReducedMotion();
+  const fadeUp = prefersReducedMotion
+    ? {}
+    : { initial: { opacity: 0, y: 24 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true } };
+
+  // ─── DONNÉES DES SECTEURS ─────────────────────────────────────────────
+  const sectors = [
+    {
+      icon: Sparkles,
+      category: 'Grandes marques & Secteur du luxe',
+      items: [
+        'Multinational / conglomérat',
+        'Tourisme, hôtellerie, restauration',
+        'Assurance, banque et finance',
+        'Automobile',
+        'Lunetterie',
+        'Mode et bien-être',
+        'Artisanat',
+        'Bijouterie, joaillerie',
+        'Parfumerie',
+      ],
+    },
+    {
+      icon: HeartHandshake,
+      category: 'Institutions publiques, projets & ONG',
+      subheader: 'Communication pour le Développement (C4D) dans le :',
+      subitems: ['Social', 'Santé', 'Environnement et protection de la biodiversité'],
+      extra: 'Campagne IEC : Information – Éducation – Communication',
+    },
+    {
+      icon: Megaphone,
+      category: 'Agence de communication & événementiel',
+      items: [
+        'Prestation de consultance en marketing, communication, événementiel',
+        'Étude de marché',
+        'Mise à disposition de mannequins, modèles photo, hôtesses, figurants publicitaires, ambassadeurs de marque',
+      ],
+    },
+  ];
+
+  // ─── DONNÉES DES PARTENAIRES ──────────────────────────────────────────
+  const partners = [
+    { name: 'Blossome Luxury Nails & Beauty', logo: partenerlogo_1 },
+    { name: 'Helen Keller Intl', logo: partenerlogo_2 },
+    { name: 'Primature ONN', logo: partenerlogo_3 },
+  ];
+
+  // ─── DONNÉES DES PROJETS ─────────────────────────────────────────────
   const projects = [
     {
-      category: "Grandes marques & Secteur du luxe",
-      title: "Sublimation de marques",
-      desc: "Tourisme, Hôtellerie & Restauration (THR), Assurance, Banque & Finance, Automobile, Lunetterie, Mode & Bien-être, Artisanat, Bijouterie, Joaillerie et Parfumerie.",
-      stats: "Excellence & Prestige",
-      image:
-        "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=80",
+      category: 'Branding',
+      title: 'Branding & Rebranding',
+      tag: 'Identité de marque',
+      status: 'coming',
     },
     {
-      category: "Institutions publiques, projets & ONG",
-      title: "Communication au service du développement",
-      desc: "Communication pour le développement dans les domaines du social, de la santé et de l'environnement. Conception de campagnes IEC : Information, Éducation et Communication.",
-      stats: "Impact Social & Développement",
-      image:
-        "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1600&q=80",
+      category: 'Conseil',
+      title: 'Conseil & Stratégie Marketing',
+      tag: 'Stratégie',
+      status: 'coming',
     },
     {
-      category: "Communication & Événementiel",
-      title: "Stratégie d'image sur le terrain",
-      desc: "Consultance en marketing, communication et événementiel. Études de marché, mise à disposition de mannequins, hôtesses, modèles photo et figurants publicitaires.",
-      stats: "Visibilité & Expertise",
-      image:
-        "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1600&q=80",
+      category: 'C4D',
+      title: 'Communication pour le développement',
+      tag: 'Campagne Notovonantsoa',
+      status: 'image',
+      media: '/images/notovonantsoa.jpg',
+    },
+    {
+      category: 'Événementiel',
+      title: 'Organisation d’événements',
+      tag: 'Événementiel',
+      status: 'coming',
+    },
+    {
+      category: 'C360',
+      title: 'Communication 360',
+      tag: 'Office National de Nutrition',
+      status: 'video',
+      media: 'https://drive.google.com/file/d/1HBReuukteD96zLCAM6_VTIIS1XHf12ST/preview',
+    },
+    {
+      category: 'Digital',
+      title: 'Marketing Digital',
+      tag: 'Blossome Luxury Nails & Beauty',
+      status: 'video',
+      media: 'https://drive.google.com/file/d/15zbatxzeGuj9sueB5ae3YqN9AF2ZYEjb/preview',
     },
   ];
 
   return (
-    <main className="pt-32 bg-[#FAF8F3] min-h-screen">
-      {/* HERO */}
-      <section className="px-6 max-w-5xl mx-auto text-center mb-32">
+    <main className="pt-24 md:pt-32 min-h-screen" style={{ backgroundColor: CREAM }}>
+      {/* ─── HERO ─────────────────────────────────────────────────────── */}
+      <section className="px-6 max-w-5xl mx-auto text-center mb-24">
         <p className="font-sans uppercase tracking-[0.5em] text-[#D4AF37] text-xs font-semibold mb-6">
           Nos Réalisations
         </p>
-        <h1 className="font-serif text-6xl md:text-8xl text-[#111111] leading-none mb-8">
-          Les preuves par
-          <span className="block italic text-[#D4AF37]">
-            l'action
-          </span>
-        </h1>
-        <p className="font-sans max-w-3xl mx-auto text-gray-600 text-lg leading-relaxed">
-          Chaque projet est pensé comme une signature. Une alliance entre
-          stratégie, créativité et excellence pour construire des marques,
-          des institutions et des événements à forte valeur ajoutée.
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mx-auto max-w-3xl font-sans text-lg leading-relaxed text-ink/75"
+        >
+          Rejoignez un univers où <em className="text-ink">stratégie</em>,{' '}
+          <em className="text-ink">créativité</em> et{' '}
+          <em className="text-ink">impact</em> se rencontrent pour donner vie à votre vision.
+        </motion.p>
+        <p className="mx-auto mt-4 max-w-2xl font-sans leading-relaxed text-ink/55 text-gray-500">
+          Nos services s'adressent aux marques, entreprises, institutions et projets ambitieux souhaitant créer une histoire mémorable.
         </p>
       </section>
 
-      {/* PROJETS */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-10 space-y-36 pb-32">
-        {projects.map((proj, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 80 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9 }}
-            viewport={{ once: true }}
-            className={`grid lg:grid-cols-2 gap-16 items-center ${
-              i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
-            }`}
-          >
-            {/* IMAGE */}
-            <div className="relative group">
-              <div className="absolute -top-10 -left-2 z-10">
-                <span className="font-serif text-[120px] leading-none text-[#D4AF37]/15 font-bold">
-                  0{i + 1}
-                </span>
-              </div>
-              <div className="overflow-hidden rounded-sm shadow-2xl">
-                <img
-                  src={proj.image}
-                  alt={proj.title}
-                  className="w-full h-[520px] object-cover transition-all duration-1000 group-hover:scale-110"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
-            </div>
+      {/* ─── SECTEURS ─────────────────────────────────────────────────── */}
+      <section
+        className="max-w-7xl mx-auto px-6 lg:px-10 pb-20 md:pb-28"
+        aria-labelledby="sectors-title"
+      >
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+          {sectors.map((sector, i) => {
+            const Icon = sector.icon;
+            return (
+              <motion.article
+                key={i}
+                {...fadeUp}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group relative bg-white border border-gray-200 hover:border-[color:var(--gold)] shadow-sm hover:shadow-2xl transition-all duration-500 p-7 md:p-8 rounded-xl flex flex-col"
+                style={{ '--gold': GOLD }}
+              >
+                <div className="flex items-center justify-between mb-6">
+                  <div
+                    className="w-12 h-12 rounded-lg flex items-center justify-center transition-colors"
+                    style={{ backgroundColor: `${GOLD}15` }}
+                  >
+                    <Icon className="w-6 h-6" style={{ color: GOLD }} aria-hidden="true" />
+                  </div>
+                  <span className="font-serif text-sm text-gray-300">0{i + 1}</span>
+                </div>
 
-            {/* TEXTE */}
-            <div className="space-y-8">
-              <span className="font-sans inline-flex items-center border border-[#D4AF37] px-4 py-2 text-[11px] uppercase tracking-[0.25em] text-[#D4AF37] font-semibold">
-                {proj.category}
-              </span>
-              <h2 className="font-serif text-4xl lg:text-5xl text-[#111111] leading-tight">
-                {proj.title}
-              </h2>
-              <div className="w-24 h-[2px] bg-[#D4AF37]" />
-              <p className="font-sans text-gray-600 text-lg leading-relaxed">
-                {proj.desc}
-              </p>
-              <div className="bg-white border-l-4 border-[#D4AF37] shadow-md p-6">
-                <span className="font-serif text-xl text-[#111111] font-semibold">
-                  {proj.stats}
-                </span>
-              </div>
-            </div>
-          </motion.div>
-        ))}
+                <h3
+                  className="font-serif text-lg md:text-xl font-bold leading-snug mb-5 min-h-[3.5rem]"
+                  style={{ color: INK }}
+                >
+                  {sector.category}
+                </h3>
+
+                <div className="w-10 h-[2px] mb-5" style={{ backgroundColor: GOLD }} />
+
+                {sector.items && (
+                  <ul className="space-y-2.5 font-sans text-gray-600 text-sm leading-relaxed">
+                    {sector.items.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-2.5">
+                        <span
+                          className="mt-2 w-1 h-1 rounded-full shrink-0"
+                          style={{ backgroundColor: GOLD }}
+                          aria-hidden="true"
+                        />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {sector.subheader && (
+                  <div className="font-sans text-gray-600 text-sm space-y-4">
+                    <p className="font-semibold" style={{ color: INK }}>
+                      {sector.subheader}
+                    </p>
+                    <ul className="space-y-2 pl-1">
+                      {sector.subitems?.map((s, idx) => (
+                        <li key={idx} className="flex items-center gap-2.5">
+                          <span
+                            className="w-4 h-[1px]"
+                            style={{ backgroundColor: GOLD }}
+                            aria-hidden="true"
+                          />
+                          {s}
+                        </li>
+                      ))}
+                    </ul>
+                    {sector.extra && (
+                      <p
+                        className="pt-4 mt-4 border-t border-gray-100 font-medium"
+                        style={{ color: INK }}
+                      >
+                        {sector.extra}
+                      </p>
+                    )}
+                  </div>
+                )}
+              </motion.article>
+            );
+          })}
+        </div>
       </section>
 
-      {/* CTA FINAL - Texte corrigé en noir pour lisibilité */}
-      <section className="bg-white py-28 px-6 text-center">
+      {/* ─── PARTENAIRES ──────────────────────────────────────────────── */}
+      <section
+      className="max-w-6xl mx-auto px-6 py-16 md:py-20 border-t border-gray-200/60"
+      aria-labelledby="partners-title"
+    >
+      <div className="text-center mb-12">
+        <p
+          className="font-sans uppercase tracking-[0.4em] text-xs mb-4"
+          style={{ color: GOLD }}
+        >
+          References
+        </p>
+        <h2
+          id="partners-title"
+          className="font-serif text-2xl md:text-3xl tracking-wide"
+          style={{ color: INK }}
+        >
+          Ils nous font confiance
+        </h2>
+        <div className="w-12 h-[2px] mx-auto mt-3" style={{ backgroundColor: GOLD }} />
+      </div>
+
+      {/* logo des partenaires */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 items-center justify-items-center">
+        {partners.map((partner, index) => (
+          <motion.div
+            key={index}
+            whileHover={prefersReducedMotion ? undefined : { y: -4 }}
+            className="group relative flex items-center justify-center transition-all duration-300"
+          >
+            <img
+              src={partner.logo}
+              alt={`Logo ${partner.name}`}
+              loading="lazy"
+              className="max-h-20 md:max-h-20 object-contain transition-transform duration-500"
+            />
+            <span className="sr-only">{partner.name}</span>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+
+      {/* ─── PORTFOLIO ────────────────────────────────────────────────── */}
+      <section
+        className="py-20 md:py-28 px-6 border-t border-gray-200/60"
+        style={{ backgroundColor: '#FDFBF7' }}
+        aria-labelledby="portfolio-title"
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center max-w-4xl mx-auto mb-12 md:mb-16">
+            <p
+              className="uppercase tracking-[0.4em] text-xs mb-4"
+              style={{ color: GOLD }}
+            >
+              Notre univers
+            </p>
+            <h2
+              id="portfolio-title"
+              className="font-serif text-3xl md:text-5xl leading-tight"
+              style={{ color: INK }}
+            >
+              Accédez à notre univers,
+              <br />
+              et bientôt au vôtre.
+            </h2>
+          </div>
+
+          {/* Grid modifiée pour boucler directement sur `projects` */}
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+            {projects.map((p, i) => (
+              <motion.article
+                key={i}
+                {...fadeUp}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="group bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500"
+              >
+                {/* Media */}
+                <div className="relative aspect-video bg-gray-100 overflow-hidden">
+                  {p.status === 'image' && (
+                    <img
+                      src={p.media}
+                      alt={p.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  )}
+                  {p.status === 'video' && (
+                    <>
+                      <iframe
+                        src={p.media}
+                        title={p.title}
+                        loading="lazy"
+                        className="w-full h-full"
+                        allow="autoplay"
+                      />
+                      <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-black/70 backdrop-blur-sm text-white text-[10px] uppercase tracking-widest px-2.5 py-1 rounded-full pointer-events-none">
+                        <Play className="w-3 h-3" aria-hidden="true" />
+                        Vidéo
+                      </div>
+                    </>
+                  )}
+                  {p.status === 'coming' && (
+                    <div
+                      className="w-full h-full flex flex-col items-center justify-center relative overflow-hidden"
+                      style={{ backgroundColor: CREAM }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/40 to-transparent animate-pulse" />
+                      <Clock className="w-8 h-8 mb-3 relative" style={{ color: GOLD }} aria-hidden="true" />
+                      <p className="text-gray-500 uppercase tracking-[0.25em] text-xs relative">
+                        Bientôt disponible
+                      </p>
+                    </div>
+                  )}
+                </div>
+
+                {/* Body */}
+                <div className="p-6 md:p-8">
+                  <div className="flex items-center justify-between mb-3">
+                    <span
+                      className="uppercase tracking-[0.2em] text-[10px] font-semibold px-2 py-1 rounded"
+                      style={{ color: GOLD, backgroundColor: `${GOLD}12` }}
+                    >
+                      {p.tag}
+                    </span>
+                    <span className="text-[10px] uppercase tracking-widest text-gray-400">
+                      {p.category}
+                    </span>
+                  </div>
+                  <h3
+                    className="font-serif text-xl md:text-2xl leading-snug"
+                    style={{ color: INK }}
+                  >
+                    {p.title}
+                  </h3>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CTA FINAL ────────────────────────────────────────────────── */}
+      <section className="bg-white py-24 px-6 text-center border-t border-gray-100">
         <p className="font-sans uppercase tracking-[0.4em] text-[#D4AF37] text-xs mb-6">
           Construisons ensemble
         </p>
-        <h2 className="font-serif text-5xl md:text-6xl text-[#111111] mb-8">
+        <h2 className="font-serif text-4xl md:text-5xl text-[#111111] mb-8">
           Donnons vie à votre vision
         </h2>
-        <p className="font-sans max-w-2xl mx-auto text-gray-600 mb-12 leading-relaxed">
-          Nous accompagnons les marques, institutions et organisations
-          ambitieuses dans la création d'expériences mémorables et d'une
-          image forte.
-        </p>
         <Link
           to="/contact"
-          className="font-sans bg-[#111111] text-white px-8 py-4 rounded-lg uppercase tracking-[0.2em] text-xs font-medium hover:bg-[#D4AF37] transition-all"
+          className="font-sans inline-block bg-[#111111] text-white px-8 py-4 rounded-md uppercase tracking-[0.2em] text-xs font-medium hover:bg-[#D4AF37] transition-all duration-300 shadow-md"
         >
-          Démarrer un projet
+          Contactez-nous
         </Link>
       </section>
     </main>
