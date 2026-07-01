@@ -22,6 +22,10 @@ db.connect((err) => {
     }
     console.log('Connecté à la base de données MySQL.');
 });
+/**
+ * =========================================================================
+ * GESTION DU CONTENU DU SITE (DASHBOARD & FRONTEND)
+ * =========================================================================
 // 1. Route pour récupérer TOUT le contenu (pour le menu du dashboard)
 app.get('/api/content', (req, res) => {
     const query = "SELECT * FROM site_content";
@@ -61,7 +65,7 @@ app.post('/api/content/update', (req, res) => {
         res.send("Succès");
     });
 });
-
+*/
 // pour le formulaire de contact
 const nodemailer = require('nodemailer');
 
@@ -128,7 +132,83 @@ app.post('/api/contact', async (req, res) => {
     res.status(500).json({ error: "Erreur lors de l'envoi." });
   }
 });
-// Lancement du serveur
+
+// Route pour le formulaire de DONATION
+app.post('/api/donation', async (req, res) => {
+  console.log("Données reçues dans le serveur :", req.body);
+  // Récupération des données envoyées par le formulaire React
+  const { name, email, profil, phone, expedition, paiement, contributions, message } = req.body;
+  // Validation côté serveur
+  if (!name || !email || contributions.length === 0) {
+    return res.status(400).json({ error: 'Veuillez remplir le nom, email et choisir au moins une contribution.' });
+  }
+  try {
+    // 1. Enregistrement dans la base de données
+    //convertir le tableau de contributions en une chaîne de caractères séparée par des virgules
+    const contributionsString = contributions.join(', ');
+    const query = 'INSERT INTO donations (nom_prenom, email, profil, telephone, expedition, paiement, contributions, message) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+    await db.promise().query(query, [
+      name,
+      email,
+      profil || 'Non renseigné',
+      phone || 'Non renseigné',
+      expedition || 'Non renseigné',
+      paiement || 'Non renseigné',
+      contributionsString,
+      message || ''
+    ]);
+    // Réponse immédiate au client (le chargement s'arrête)
+  res.status(200).json({ success: true });
+    // 2. Envoi de l'email à l'ASSOCIATION (pour information)
+    await transporter.sendMail({
+      from: `"IDLUXE Website" <${process.env.EMAIL_USER}>`,
+        to: process.env.EMAIL_USER, // Email de l'association
+      replyTo: email, // Permet de répondre directement au donateur
+      subject: `Nouvelle intention de don de : ${name}`,
+      text: `
+        Une nouvelle intention de don vient d'être enregistrée.
+        Informations du donateur :
+        - Nom : ${name}
+        - Email : ${email}
+        - Profil : ${profil || 'Non renseigné'}
+        - Téléphone : ${phone || 'Non renseigné'}
+
+        Détails du don :
+        - Mode d'expédition : ${expedition || 'Non renseigné'}
+        - Mode de paiement : ${paiement || 'Non renseigné'}
+        - Contributions : ${contributionsString}
+        - Message : ${message || 'Aucun message'}
+
+        L'équipe technique.
+      `
+    });
+
+    // 3. Envoi de l'email de CONFIRMATION au DONATEUR
+    await transporter.sendMail({
+      from: `"Brand New Madagascar" <${process.env.EMAIL_USER}>`,
+      to: email, // Email du donateur
+      subject: "Confirmation de votre intention de don",
+      text: `Bonjour ${name},
+
+        Un grand merci pour votre générosité. Nous avons bien reçu votre intention de don pour : ${contributionsString}.
+
+        Un membre de notre équipe prendra contact avec vous très prochainement pour organiser la récupération de vos dons ou finaliser le paiement.
+
+        Ensemble, construisons un avenir meilleur.
+
+      Cordialement,
+      L'équipe Brand New Madagascar`
+    });
+
+    res.status(200).json({ success: true, message: 'Don enregistré et emails envoyés avec succès.' });
+
+  } catch (err) {
+    console.error('Erreur lors du traitement du don :', err);
+    res.status(500).json({ error: "Une erreur est survenue lors de l'enregistrement de votre don." });
+  }
+});
+
+// Lancement du serveur (ceci était déjà dans votre code)
 app.listen(5000, () => {
     console.log("Serveur démarré sur le port 5000");
 });
