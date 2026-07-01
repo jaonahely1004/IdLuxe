@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import home from '../assets/home.jpg';
+import logo from "../assets/logoOFF_Wht id.png";
 
 const Home = () => {
   const steps = [
@@ -10,6 +11,16 @@ const Home = () => {
     { title: 'POSITIONNER', desc: 'Construction d’un positionnement clair et différenciant', icon: 'fa-bullseye' },
     { title: 'ACTIVER', desc: 'Déploiement et communication omnicanale', icon: 'fa-rocket' },
     { title: 'MESURER', desc: 'Analyse de performance, suivi et optimisation', icon: 'fa-chart-line' }
+  ];
+  const ecosystemItems = [
+    { title: "Analyse d'audience et psychologie", icon: "fa-project-diagram", side: "right" },
+    { title: "Veille et benchmarking", icon: "fa-search-plus", side: "right" },
+    { title: "Positionnement de marque", icon: "fa-bullseye", side: "right" },
+    { title: "KPI et mesures d'impact", icon: "fa-chart-line", side: "right" },
+    { title: "Activation marketing", icon: "fa-lightbulb", side: "left" },
+    { title: "Communication multicanale", icon: "fa-network-wired", side: "left" },
+    { title: "Engagement communautaire", icon: "fa-users", side: "left" },
+    { title: "Manifesto et storytelling", icon: "fa-book-open", side: "left" },
   ];
 
   return (
@@ -25,7 +36,7 @@ const Home = () => {
           <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
         </div>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="relative z-10 font-sans text-idluxe-gold text-[11px] uppercase tracking-[0.9em] mb-8">
-          IDLUXE Marketing
+          IDLUXE Consulting
         </motion.p>
         <motion.h1 initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8 }} className="relative z-10 font-serif text-5xl md:text-7xl text-white leading-[1.1] mb-12 select-none">
           LET'S GLOW OUT<br />
@@ -106,45 +117,96 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/* 4. SECTION MÉTHODOLOGIE CIRCULAIRE */}
-      <section className="py-20 bg-white px-6 overflow-hidden">
-        <div className="max-w-5xl mx-auto text-center mb-20">
-          <h2 className="font-serif text-5xl text-idluxe-black">Notre Écosystème <span className="italic text-idluxe-gold">d'Impact</span></h2>
+      <section className="py-20 md:py-24 bg-[#1A1A1A] px-4 md:px-6 overflow-hidden select-none">
+
+        {/* Titre Principal */}
+        <div className="max-w-5xl mx-auto text-center mb-16 md:mb-24">
+          <h2 className="font-serif text-4xl md:text-5xl text-white tracking-wide">
+            Notre Écosystème <span className="italic text-idluxe-gold font-light">d'Impact</span>
+          </h2>
         </div>
-        <div className="flex justify-center items-center">
-          <div className="relative w-[600px] h-[600px] flex items-center justify-center">
-            <motion.div initial={{ scale: 0.9, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} className="absolute w-40 h-40 rounded-full bg-white border border-idluxe-gold/30 shadow-2xl flex flex-col justify-center items-center z-20">
-              <h3 className="font-serif text-2xl text-idluxe-gold tracking-widest">IDLUXE</h3>
-              <span className="uppercase tracking-[0.3em] text-gray-400 text-[8px] mt-2">Marketing</span>
+        {/* ROUE CIRCULAIRE — RESPONSIVE (scale)   */}
+        <div
+          className="flex justify-center items-center my-10 [--eco-scale:0.34] sm:[--eco-scale:0.52] md:[--eco-scale:0.72] lg:[--eco-scale:1]"
+          style={{
+            height: "calc(450px * var(--eco-scale))",
+            width: "100%",
+          }}
+        >
+          <div
+            className="relative w-[1000px] h-[450px] flex items-center justify-center shrink-0"
+            style={{
+              transform: "scale(var(--eco-scale))",
+              transformOrigin: "center center",
+            }}
+          >
+            {/* Centre : Logo */}
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              className="absolute w-48 h-48 flex flex-col justify-center items-center z-20 bg-[#1A1A1A] rounded-full"
+            >
+              <img src={logo} alt="id LUXE logo" className="w-44 h-auto object-contain" />
             </motion.div>
-            {[
-              { title: "Analyse", icon: "fa-users" },
-              { title: "Psychologie consommateur", icon: "fa-brain" },
-              { title: "Veille", icon: "fa-shield-alt" },
-              { title: "Positionnement", icon: "fa-bullseye" },
-              { title: "Storytelling", icon: "fa-pen-fancy" },
-              { title: "KPIs", icon: "fa-chart-line" },
-              { title: "Communication", icon: "fa-comments" },
-              { title: "Activation", icon: "fa-bullhorn" },
-              { title: "Engagement", icon: "fa-heart" }
-            ].map((item, i) => {
-              const angle = (i * 360) / 9;
-              const radius = 230;
-              const x = Math.cos((angle * Math.PI) / 180) * radius;
-              const y = Math.sin((angle * Math.PI) / 180) * radius;
+            {/* Cercle doré de base */}
+            <div className="absolute w-[400px] h-[400px] border border-idluxe-gold/50 rounded-full z-0"></div>
+            {/* Nœuds circulaires */}
+            {ecosystemItems.map((item, i) => {
+              const total = ecosystemItems.length;
+              const angleStep = (2 * Math.PI) / total;
+              const startAngle = -Math.PI / 2 + Math.PI / total;
+              const angle = startAngle + i * angleStep;
+              const radius = 200;
+              const isRight = item.side === "right";
+              const xOffset = isRight ? 0 : -25;
+              const x = Math.cos(angle) * radius + xOffset;
+              const y = Math.sin(angle) * radius;
               return (
-                <motion.div key={i} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: i * 0.1 }} className="absolute z-10" style={{ left: `calc(50% + ${x}px)`, top: `calc(50% + ${y}px)` }}>
-                  <div className="flex flex-col items-center -translate-x-1/2 -translate-y-1/2 w-32">
-                    <div className="w-14 h-14 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center hover:border-idluxe-gold transition-all duration-300">
-                      <i className={`fas ${item.icon} text-gray-400 text-lg hover:text-idluxe-gold`} />
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: i * 0.06, duration: 0.5 }}
+                  className="absolute z-10 flex items-center justify-center"
+                  style={{
+                    left: `calc(48.5% + ${x}px)`,
+                    top: `calc(45.5% + ${y}px)`,
+                    transform: "translate(-50%, -50%)",
+                  }}
+                >
+                  <div className="relative flex items-center justify-center w-16 h-16 group cursor-pointer">
+
+                    {/* BULLE ICON */}
+                    <div className="w-16 h-16 rounded-full bg-neutral-900 border border-neutral-800 shadow-[0_4px_20px_rgba(0,0,0,0.5)] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:border-idluxe-gold group-hover:shadow-[0_0_25px_rgba(212,175,55,0.3)] z-20">
+                      <i className={`fas ${item.icon} text-neutral-400 text-xl transition-colors duration-300 group-hover:text-idluxe-gold`} />
                     </div>
-                    <h4 className="text-center mt-3 font-serif text-idluxe-black text-[10px] uppercase tracking-[0.2em]">{item.title}</h4>
+
+                    {/* LIGNE + TEXTE */}
+                    <div
+                      className={`absolute flex items-center z-10 h-0 top-1/2 -translate-y-1/2 ${
+                        isRight ? "left-full flex-row" : "right-full flex-row-reverse"
+                      }`}
+                    >
+                      <div className="w-8 h-[1px] bg-idluxe-gold/30 flex-shrink-0 transition-all duration-300 group-hover:bg-idluxe-gold" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-idluxe-gold flex-shrink-0 transition-all duration-300 group-hover:scale-125" />
+                      <div
+                        className={`absolute flex items-center h-0 top-1/2 -translate-y-1/2 ${
+                          isRight ? "left-12 justify-start" : "right-12 justify-end"
+                        }`}
+                      >
+                        <h4 className={`font-serif text-neutral-200 text-[13px] leading-tight font-medium max-w-[190px] transition-colors duration-300 group-hover:text-idluxe-gold ${
+                          isRight ? "text-left" : "text-right"
+                        }`}>
+                          {item.title}
+                        </h4>
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
               );
             })}
-            <div className="absolute w-[460px] h-[460px] border border-idluxe-gold/10 rounded-full z-0"></div>
           </div>
         </div>
       </section>
