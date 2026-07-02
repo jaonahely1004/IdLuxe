@@ -211,8 +211,16 @@ const Contact = () => {
                           <option>Tourisme, hôtellerie, Restauration (THR)</option>
                           <option>Assurance, banque, finance</option>
                           <option>Concessionnaire automobile</option>
+                          <option>Lunetterie</option>
                           <option>Mode et bien-être</option>
+                          <option>Artisanat</option>
+                          <option>Bijouterie, joaillerie, parfumerie</option>
                           <option>Immobilier</option>
+                          <option>Multinational / Conglomérat</option>
+                          <option>Agence de communication</option>
+                          <option>Projet de développement</option>
+                          <option>ONG</option>
+                          <option>Institution publique</option>
                           <option>Autre</option>
                         </select>
                         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-zinc-400">
@@ -243,8 +251,13 @@ const Contact = () => {
                         >
                           <option value="">Sélectionnez un sujet</option>
                           <option>Branding & Rebranding</option>
-                          <option>Stratégie & Conseil</option>
-                          <option>Communication Digitale</option>
+                          <option>Conseil & Stratégie marketing</option>
+                          <option>Communication pour le développement</option>
+                          <option>Événementiel haut de gamme</option>
+                          <option>Communication 360</option>
+                          <option>Marketing digital</option>
+                          <option>Externalisation marketing</option>
+                          <option>Externalisation RSE</option>
                           <option>Autres</option>
                         </select>
                         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-zinc-400">
