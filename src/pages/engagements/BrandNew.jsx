@@ -18,6 +18,33 @@ import jouetImg from '../../assets/jouet.jpg';
 import FormationImg from '../../assets/formation.jpg';
 import activitéImg from '../../assets/activité.jpg';
 import donImg from '../../assets/don.jpg';
+import action1 from '../../assets/1.jpeg';
+import action2 from '../../assets/2.jpeg';
+import action3 from '../../assets/3.jpeg';
+import action4 from '../../assets/4.jpeg';
+import action5 from '../../assets/5.jpeg';
+import action6 from '../../assets/6.jpeg';
+import action7 from '../../assets/7.jpeg';
+import action8 from '../../assets/8.jpeg';
+import action9 from '../../assets/9.jpeg';
+import action10 from '../../assets/10.jpeg';
+import action11 from '../../assets/11.jpeg';
+import action12 from '../../assets/12.jpeg';
+import action13 from '../../assets/13.jpeg';
+import action14 from '../../assets/14.jpeg';
+import action15 from '../../assets/15.jpeg';
+import action16 from '../../assets/16.jpeg';
+import action17 from '../../assets/17.jpeg';
+import action18 from '../../assets/18.jpeg';
+import action19 from '../../assets/19.jpeg';
+import action20 from '../../assets/20.jpeg';
+import action21 from '../../assets/21.jpeg';
+import action22 from '../../assets/22.jpeg';
+import action23 from '../../assets/23.jpeg';
+import action24 from '../../assets/24.jpeg';
+import action25 from '../../assets/25.jpeg';
+import action26 from '../../assets/26.jpeg';
+import action27 from '../../assets/27.jpeg';
 
 
 const BrandNew = () => {
@@ -27,15 +54,13 @@ const BrandNew = () => {
     if (!formData.name || !formData.email) {
       alert("Veuillez remplir votre nom et votre email.");
       return;
-    }
-  
+    } 
     try {
       const response = await fetch('http://localhost:5000/api/donation', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
-      });
-  
+      }); 
       const result = await response.json();
       if (result.success) {
         alert("Merci ! Votre don a été enregistré et un email vous a été envoyé.");
@@ -46,13 +71,11 @@ const BrandNew = () => {
       alert("Impossible de contacter le serveur.");
     }
   };
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
-
-  
+ 
   const oddImages = [
     { id: 1, src: odd1, alt: 'Pas de pauvreté' },
     { id: 2, src: odd2, alt: 'Faim zéro' },
@@ -61,18 +84,16 @@ const BrandNew = () => {
     { id: 5, src: odd5, alt: 'Égalité entre les sexes' },
     { id: 8, src: odd8, alt: 'Travail décent et croissance économique' },
   ];
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    profil: '',      // Correspond à name="profil"
+    profil: '',      //name="profil"
     phone: '',
     message: '',
-    expedition: '',  // Correspond à name="expedition"
-    paiement: '',    // Correspond à name="paiement"
+    expedition: '',  //name="expedition"
+    paiement: '',    //name="paiement"
     contributions: []
   });
-  
   const handleCheckboxChange = (id) => {
     setFormData(prev => ({
       ...prev,
@@ -81,7 +102,6 @@ const BrandNew = () => {
         : [...prev.contributions, id]
     }));
   };
-
   const contributionItems = [
     { id: 'PPN', src: ppnImg, label: 'PPN' },
     { id: 'Aliments fortifiés', src: alimentfortifieImg, label: 'Aliments fortifiés' },
@@ -92,7 +112,60 @@ const BrandNew = () => {
     { id: 'Activité pour enfant', src: activitéImg, label: 'Activité' },
     { id: 'Don en numéraire', src: donImg, label: 'Don' },
   ];
-
+  //image caroussel
+  const actionData = [
+    { src: action1, title : "Juin 2026 - Ouverture officielle centre ARENO" }, 
+    { src: action2, title : "Ouverture officielle centte ARENO" }, 
+    { src: action3, title : "Ouverture officielle centte ARENO" }, 
+    { src: action4, title : "Rentrée scolaire 2025 - financement scolarisation et donation de fournitures scolaires" }, 
+    { src: action5, title : "Financement scolarisation et donation de fournitures scolaires" }, 
+    { src: action6, title : "Financement scolarisation et donation de fournitures scolaires" }, 
+    { src: action7, title : "Financement scolarisation et donation de fournitures scolaires" }, 
+    { src: action8, title: "Decembre 2025 - Formation en communication non verbale" }, 
+    { src: action9, title: "Formation en communication non verbale" }, 
+    { src: action10, title: "Formation en communication non verbale" }, 
+    { src: action11, title: "Rentrée scolaire 2024 - financement scolarisation et donation de fournitures" }, 
+    { src: action12, title: "Financement scolarisation et donation de fournitures" },
+    { src: action13, title: "Financement scolarisation et donation de fournitures" },
+    { src: action14, title: "Financement scolarisation et donation de fournitures" },
+    { src: action15, title: "Financement scolarisation et donation de fournitures" },
+    { src: action16, title: "Octobre rose 2024 - campagne de dépistage"},
+    { src: action17, title: "Campagne de dépistage"},
+    { src: action18, title: "2021 - journée d’assistance aux personnes âgées, Ambatomaro"},
+    { src: action19, title: "Journée d’assistance aux personnes âgées, Ambatomaro"},
+    { src: action20, title: "Journée d’assistance aux personnes âgées, Ambatomaro"},
+    { src: action21, title: "2021 - Donation PPN à domicile à Ankadievo"},
+    { src: action22, title: "Donation PPN à domicile à Ankadievo"},
+    { src: action23, title: "2020 - Déjeuner collectif des sans abris et sensibilisation à la propreté"},
+    { src: action24, title: "Déjeuner collectif des sans abris et sensibilisation à la propreté"},
+    { src: action25, title: "2020 - Donation de sandales et goûter aux enfants à Ivandry"},
+    { src: action26, title: "Donation de sandales et goûter aux enfants à Ivandry"}
+  ];
+  const handleWheel = (e) => {
+    const container = e.currentTarget;   
+    //calcule si le scroll est possible dans la direction demandée
+    const canScrollLeft = container.scrollLeft > 0;
+    const canScrollRight = container.scrollLeft < (container.scrollWidth - container.clientWidth); 
+    //laisse la page scroller normalement. Sinon, on bloque le scroll page.
+    if ((e.deltaY < 0 && canScrollLeft) || (e.deltaY > 0 && canScrollRight)) {
+      e.preventDefault();
+      e.stopPropagation();
+      container.scrollLeft += e.deltaY;
+    }
+  };
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const carouselRef = React.useRef(null);
+  //Fonction pour faire défiler
+  const scrollCarousel = (direction) => {
+    if (carouselRef.current) {
+      const { current } = carouselRef;
+      const scrollAmount = 482; // Largeur de l'image (450px) + gap (32px)
+      current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
   return (
     <main className="min-h-screen bg-white pt-40 pb-32 px-6">
       <div className="max-w-5xl mx-auto">
@@ -201,12 +274,49 @@ const BrandNew = () => {
               className="max-w-full h-auto cursor-pointer" 
             />
           </motion.div>
-          <div className="text-center">
-            <h3 className="text-[#4CAF50] text-2xl font-bold mb-4">Nos actions en image</h3>
-            <p className="text-gray-600 italic">
-              (Photos des activités de l'association)
-            </p>
-          </div>
+          {/* SECTION CARROUSEL */}
+          <section className="mt-12 relative">
+            <div className="text-center mb-10">
+              <h3 className="text-[#4CAF50] text-2xl font-bold mb-4">Nos actions en image</h3>
+            </div>
+            {/* Conteneur des images */}
+            <div 
+  ref={carouselRef}
+  className="flex overflow-x-hidden gap-8 px-6 py-4 scroll-smooth"
+>
+  {actionData.map((item, index) => (
+    <div key={index} className="min-w-[450px] flex-col flex gap-3">
+      <div className="h-[300px] w-full">
+        <img 
+          src={item.src} 
+          alt={`Action ${index + 1}`} 
+          className="w-full h-full object-cover rounded-3xl shadow-2xl"
+        />
+      </div>
+      {/* Affichage du titre seulement s'il existe */}
+      {item.title && (
+        <p className="text-center font-bold text-[#4CAF50] px-4">
+          {item.title}
+        </p>
+      )}
+    </div>
+  ))}
+</div>
+          {/* Bouton Gauche */}
+          <button 
+              onClick={() => scrollCarousel('left')}
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 backdrop-blur-sm p-4 rounded-full shadow-lg hover:bg-white/60 transition-all z-10 text-gray-800"
+            >
+              ◀
+            </button>
+            {/* Bouton Droit */}
+            <button 
+              onClick={() => scrollCarousel('right')}
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 backdrop-blur-sm p-4 rounded-full shadow-lg hover:bg-white/60 transition-all z-10 text-gray-800"
+            >
+              ▶
+            </button>
+          </section>
         </section>
         <section className="mt-32 pt-16 border-t border-gray-100">
           <h2 className="text-[#4CAF50] text-3xl font-bold mb-8">Soutenez nos actions</h2>
