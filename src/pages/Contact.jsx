@@ -17,11 +17,9 @@ const GOLD = '#D4AF37';
 
 const Contact = () => {
   const [status, setStatus] = useState('idle'); // 'idle' | 'sending' | 'success' | 'error'
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
-
     const formData = {
       name: e.target.name.value,
       email: e.target.email.value,
@@ -32,14 +30,12 @@ const Contact = () => {
       subject: e.target.subject.value,
       message: e.target.message.value,
     };
-
     try {
       const response = await fetch('http://localhost:5000/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-
       if (response.ok) {
         setStatus('success');
       } else {
@@ -50,11 +46,9 @@ const Contact = () => {
       setStatus('error');
     }
   };
-
   return (
     <main className="pt-28 md:pt-36 pb-24 min-h-screen bg-[#FAF8F3] antialiased transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">       
         {/* ─── EN-TÊTE DE SECTION (HERO) ─── */}
         <div className="flex flex-col items-center text-center mb-16 md:mb-24">
           <span className="text-[11px] font-sans uppercase tracking-[0.4em] font-bold mb-4 inline-block" style={{ color: GOLD }}>
@@ -65,10 +59,8 @@ const Contact = () => {
           </h1>
           <div className="w-12 h-[2px] mt-8 rounded-full" style={{ backgroundColor: GOLD }}></div>
         </div>
-
         {/* ─── CONTENU PRINCIPAL ─── */}
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">         
           {/* PANNEAU LATÉRAL : INFORMATIONS */}
           <div className="lg:col-span-4 space-y-8">
             <div className="bg-white/60 backdrop-blur-md border border-zinc-200/60 p-8 rounded-2xl shadow-sm space-y-8">
@@ -86,7 +78,6 @@ const Contact = () => {
                     </div>
                     <span className="font-medium">idluxemg@idluxe.mg</span>
                   </a>
-
                   <a 
                     href="tel:+261372694910" 
                     className="flex items-center gap-4 text-zinc-600 hover:text-zinc-950 transition-colors group py-1.5"
@@ -96,7 +87,6 @@ const Contact = () => {
                     </div>
                     <span className="font-medium">+261 37 26 949 10</span>
                   </a>
-
                   <div className="flex items-center gap-4 text-zinc-600 py-1.5">
                     <div className="w-8 h-8 rounded-lg bg-zinc-100 flex items-center justify-center">
                       <MapPin className="w-4 h-4" style={{ color: GOLD }} />
@@ -105,7 +95,6 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-
               {/* RÉSEAUX SOCIAUX HARMONISÉS */}
               <div className="pt-6 border-t border-zinc-200/80">
                 <h3 className="text-xs uppercase tracking-[0.2em] font-bold text-zinc-900 mb-4">
@@ -124,7 +113,6 @@ const Contact = () => {
                     </span>
                     <ArrowUpRight className="w-3 h-3 text-zinc-400 opacity-0 group-hover:opacity-100 transition-all transform translate-y-0.5 -translate-x-0.5 group-hover:translate-y-0 group-hover:translate-x-0" />
                   </a>
-
                   <a
                     href="https://www.linkedin.com/company/idluxe"
                     target="_blank"
@@ -141,7 +129,6 @@ const Contact = () => {
               </div>
             </div>
           </div>
-
           {/* BLOC FORMULAIRE / ÉCRAN DE SUCCÈS CONTEXTUEL */}
           <div className="lg:col-span-8 bg-white border border-zinc-200/80 p-6 sm:p-10 md:p-12 rounded-2xl shadow-sm transition-all duration-500">
             {status === 'success' ? (
@@ -192,7 +179,6 @@ const Contact = () => {
                     </div>
                   </div>
                 </div>
-
                 {/* Section 2 : Entreprise */}
                 <div className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -236,7 +222,6 @@ const Contact = () => {
                     </div>
                   </div>
                 </div>
-
                 {/* Section 3 : Projet */}
                 <div className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -279,7 +264,6 @@ const Contact = () => {
                     </div>
                   </div>
                 </div>
-
                 {/* BOUTON D'ACTION PRINCIPAL */}
                 <div className="pt-4">
                   <button
@@ -300,7 +284,6 @@ const Contact = () => {
                     )}
                   </button>
                 </div>
-
                 {/* MESSAGE D'ERREUR FLUIDE */}
                 {status === 'error' && (
                   <div className="flex items-center gap-2.5 text-rose-600 bg-rose-50 border border-rose-100 p-4 rounded-xl animate-fadeIn">
@@ -311,7 +294,6 @@ const Contact = () => {
               </form>
             )}
           </div>
-
         </div>
       </div>
     </main>

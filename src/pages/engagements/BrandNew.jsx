@@ -44,8 +44,6 @@ import action23 from '../../assets/23.jpeg';
 import action24 from '../../assets/24.jpeg';
 import action25 from '../../assets/25.jpeg';
 import action26 from '../../assets/26.jpeg';
-import action27 from '../../assets/27.jpeg';
-
 
 const BrandNew = () => {
   //pour BD et mail
@@ -74,8 +72,7 @@ const BrandNew = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-  };
- 
+  }; 
   const oddImages = [
     { id: 1, src: odd1, alt: 'Pas de pauvreté' },
     { id: 2, src: odd2, alt: 'Faim zéro' },
@@ -221,8 +218,7 @@ const BrandNew = () => {
         </section>
         {/* SECTION TIMELINE */}
         <section className="mt-32 pt-16">
-          <div className="grid md:grid-cols-12 gap-12 items-start">
-            
+          <div className="grid md:grid-cols-12 gap-12 items-start">        
             {/* Colonne Gauche : Logo et Intro */}
             <div className="md:col-span-4 md:sticky md:top-32 mb-12 md:mb-0">
               <img src={ARENO_LOGO} alt="Logo ARENO" className="w-48 mb-8" />
@@ -281,41 +277,41 @@ const BrandNew = () => {
             </div>
             {/* Conteneur des images */}
             <div 
-  ref={carouselRef}
-  className="flex overflow-x-hidden gap-8 px-6 py-4 scroll-smooth"
->
-  {actionData.map((item, index) => (
-    <div key={index} className="min-w-[450px] flex-col flex gap-3">
-      <div className="h-[300px] w-full">
-        <img 
-          src={item.src} 
-          alt={`Action ${index + 1}`} 
-          className="w-full h-full object-cover rounded-3xl shadow-2xl"
-        />
-      </div>
-      {/* Affichage du titre seulement s'il existe */}
-      {item.title && (
-        <p className="text-center font-bold text-[#4CAF50] px-4">
-          {item.title}
-        </p>
-      )}
-    </div>
-  ))}
-</div>
-          {/* Bouton Gauche */}
-          <button 
-              onClick={() => scrollCarousel('left')}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 backdrop-blur-sm p-4 rounded-full shadow-lg hover:bg-white/60 transition-all z-10 text-gray-800"
+              ref={carouselRef}
+              className="flex overflow-x-hidden gap-8 px-6 py-4 scroll-smooth"
             >
-              ◀
-            </button>
-            {/* Bouton Droit */}
-            <button 
-              onClick={() => scrollCarousel('right')}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 backdrop-blur-sm p-4 rounded-full shadow-lg hover:bg-white/60 transition-all z-10 text-gray-800"
-            >
-              ▶
-            </button>
+              {actionData.map((item, index) => (
+                <div key={index} className="min-w-[450px] flex-col flex gap-3">
+                  <div className="h-[300px] w-full">
+                    <img 
+                      src={item.src} 
+                      alt={`Action ${index + 1}`} 
+                      className="w-full h-full object-cover rounded-3xl shadow-2xl"
+                    />
+                  </div>
+                  {/* Affichage du titre seulement s'il existe */}
+                  {item.title && (
+                    <p className="text-center font-bold text-[#4CAF50] px-4">
+                      {item.title}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+              {/* Bouton Gauche */}
+              <button 
+                onClick={() => scrollCarousel('left')}
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 backdrop-blur-sm p-4 rounded-full shadow-lg hover:bg-white/60 transition-all z-10 text-gray-800"
+              >
+                ◀
+              </button>
+              {/* Bouton Droit */}
+              <button 
+                onClick={() => scrollCarousel('right')}
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 backdrop-blur-sm p-4 rounded-full shadow-lg hover:bg-white/60 transition-all z-10 text-gray-800"
+              >
+                ▶
+              </button>
           </section>
         </section>
         <section className="mt-32 pt-16 border-t border-gray-100">

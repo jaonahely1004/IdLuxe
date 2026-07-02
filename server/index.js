@@ -182,7 +182,6 @@ app.post('/api/donation', async (req, res) => {
         L'équipe technique.
       `
     });
-
     // 3. Envoi de l'email de CONFIRMATION au DONATEUR
     await transporter.sendMail({
       from: `"Brand New Madagascar" <${process.env.EMAIL_USER}>`,
@@ -207,7 +206,6 @@ app.post('/api/donation', async (req, res) => {
     res.status(500).json({ error: "Une erreur est survenue lors de l'enregistrement de votre don." });
   }
 });
-
 // Lancement du serveur (ceci était déjà dans votre code)
 app.listen(5000, () => {
     console.log("Serveur démarré sur le port 5000");
