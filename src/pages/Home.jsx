@@ -1,7 +1,9 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react'; // Import ajouté
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from 'react-router-dom';
 import home from '../assets/home.jpg';
+import home1 from '../assets/home1.jpg';
+import home2 from '../assets/home2.jpg';;
 import logo from "../assets/logoOFF_Wht id.png";
 
 const Home = () => {
@@ -22,39 +24,156 @@ const Home = () => {
     { title: "Engagement communautaire", icon: "fa-users", side: "left" },
     { title: "Manifesto et storytelling", icon: "fa-book-open", side: "left" },
   ];
+  const slides = [
+    {
+      image: home,
+      title: (
+        <>
+          Transformez votre
+          <br />
+          <span className="italic text-idluxe-gold">valeur en impact</span>
+        </>
+      ),
+    },
+    {
+      image: home1,
+      title: (
+        <>
+          Donnons vie à
+          <br />
+          <span className="italic text-idluxe-gold">votre vision</span>
+        </>
+      ),
+    },
+    {
+      image: home2,
+      title: (
+        <>
+          <span className="text-idluxe-gold">
+            EXCELLENCE – PERFORMANCE – IMPACT
+          </span>
+        </>
+      ),
+    },
+  ];
+  const images = slides.map((slide) => slide.image);
+  const [index, setIndex] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  // Préchargement des images
+  useEffect(() => {
+    const loadImage = (src) =>
+      new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = resolve;
+        img.onerror = reject;
+      });
+    const preloadAllImages = async () => {
+      try {
+       await Promise.all(images.map(loadImage));
+      } catch (error) {
+        console.error("Erreur lors du préchargement :", error);
+      } finally {
+        setImagesLoaded(true);
+      }
+    };
+    preloadAllImages();
+  }, []);
+  // Slider automatique
+  useEffect(() => {
+    if (!imagesLoaded) return;
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    },  4000);
+    return () => clearInterval(interval);
+  }, [imagesLoaded]);
 
   return (
     <main className="bg-white pt-18">
-      <section className="h-[70vh] flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={home} 
-            alt="Parfum" 
-            className="w-full h-full object-cover" 
-            style={{ objectPosition: "center 8%" }} 
-          />
-          <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
+      <section className="relative h-[70vh] overflow-hidden">
+        {/* Images */}
+        <div className="absolute inset-0 overflow-hidden">
+          <AnimatePresence mode="sync">
+            <motion.img
+              key={index}
+              src={slides[index].image}
+              alt={`Hero ${index + 1}`}
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ objectPosition: "center 8%" }}
+              initial={{
+                x: "100%",
+                opacity: 1,
+                scale: 1.05,
+              }}
+              animate={{
+                x: "0%",
+                opacity: 1,
+                scale: 1.08,
+              }}
+              exit={{
+                x: "-100%",
+                opacity: 1,
+                scale: 1.08,
+              }}
+              transition={{
+                duration: 1.2,
+                ease: [0.65, 0, 0.35, 1],
+              }}
+            />
+          </AnimatePresence>
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/35 backdrop-blur-[2px]" />
+          </div>
+          {/* Contenu */}
+          <div className="relative z-20 flex h-full flex-col items-center justify-center px-6 text-center">
+            <motion.p
+              className="mb-8 font-sans text-[11px] uppercase tracking-[0.9em] text-idluxe-gold"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+          >
+              IDLUXE Consulting
+            </motion.p>
+            <AnimatePresence mode="wait">
+            <motion.div
+              key={index}
+              initial={{
+                x: "-80px",
+                opacity: 0,
+              }}
+              animate={{
+                x: 0,
+                opacity: 1,
+              }}
+              exit={{
+                x: "80px",
+                opacity: 0,
+              }}
+              transition={{
+                duration: 1.2,
+                ease: [0.65, 0, 0.35, 1],
+              }}
+            >
+              <h1 className="mb-12 select-none font-serif text-5xl leading-[1.1] text-white md:text-7xl">
+                {slides[index].title}
+              </h1>
+            </motion.div>
+          </AnimatePresence>
+          <Link
+            to="/services"
+            className="group relative inline-flex overflow-hidden border border-white px-12 py-5 font-sans text-[11px] uppercase tracking-[0.3em] text-white transition-all duration-500 hover:border-idluxe-gold hover:text-black"
+          >
+            <span className="relative z-20">
+              Découvrir notre expertise
+            </span>
+
+            <span className="absolute inset-0 z-10 translate-y-full bg-idluxe-gold transition-transform duration-500 group-hover:translate-y-0"></span>
+          </Link>
         </div>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="relative z-10 font-sans text-idluxe-gold text-[11px] uppercase tracking-[0.9em] mb-8">
-          IDLUXE Consulting
-        </motion.p>
-        <motion.h1 initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8 }} className="relative z-10 font-serif text-5xl md:text-7xl text-white leading-[1.1] mb-12 select-none">
-          LET'S GLOW OUT<br />
-          <span className="italic text-idluxe-gold">YOUR BUSINESS</span>
-        </motion.h1>
-        <Link 
-          to="/services" 
-          className="group relative z-10 font-sans text-[11px] uppercase tracking-[0.3em] border border-white px-12 py-5 text-white overflow-hidden transition-all duration-500 hover:border-idluxe-gold hover:text-black inline-block"
-        >
-          <span className="relative z-10">Découvrir notre expertise</span>
-          <div className="absolute inset-0 bg-idluxe-gold translate-y-full transition-transform duration-500 group-hover:translate-y-0"></div>
-        </Link>
-      </section>    
-      
+      </section>        
       {/* 2. SECTION VISION - Grille uniforme */}
       <section className="py-20 px-6 md:px-10 max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-12 gap-12 lg:gap-20 items-start">
-          
+        <div className="grid md:grid-cols-12 gap-12 lg:gap-20 items-start">          
           {/* Colonne Texte (6/12) */}
           <div className="md:col-span-6 space-y-8">
             <p className="font-sans text-gray-700 leading-relaxed text-lg text-justify">
@@ -70,7 +189,6 @@ const Home = () => {
               Nous construisons avec vous une stratégie qui valorise votre image tout en renforçant votre contribution positive à la société.
             </p>
           </div>
-
           {/* Colonne Bloc Impact (6/12) */}
           <div className="md:col-span-6 relative">
             <div className="bg-idluxe-black p-10 md:p-16 text-white relative z-10">
@@ -87,7 +205,6 @@ const Home = () => {
 
         </div>
       </section>
-
       {/* 3. SECTION DAPAM (Cards) */}
       <section className="py-2 bg-zinc-50 px-10 overflow-hidden">
         <div className="max-w-7xl mx-auto">
@@ -119,7 +236,6 @@ const Home = () => {
       </section>
       {/* 4. SECTION MÉTHODOLOGIE CIRCULAIRE */}
       <section className="py-20 md:py-24 bg-[#1A1A1A] px-4 md:px-6 overflow-hidden select-none">
-
         {/* Titre Principal */}
         <div className="max-w-5xl mx-auto text-center mb-16 md:mb-24">
           <h2 className="font-serif text-4xl md:text-5xl text-white tracking-wide">

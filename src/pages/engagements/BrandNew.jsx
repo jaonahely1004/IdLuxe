@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useRef } from "react";
 import logoBNM from '../../assets/logo-bnm.png';
 import ARENO_LOGO from '../../assets/ARENO_LOGO.jpg';
 import approcheImg from '../../assets/approche.png';
@@ -45,52 +45,29 @@ import action24 from '../../assets/24.jpeg';
 import action25 from '../../assets/25.jpeg';
 import action26 from '../../assets/26.jpeg';
 
+import { CheckCircle2 } from 'lucide-react';
+
 const BrandNew = () => {
-  //pour BD et mail
-  const handleDonationSubmit = async () => {
-    // Vérification basique
-    if (!formData.name || !formData.email) {
-      alert("Veuillez remplir votre nom et votre email.");
-      return;
-    } 
-    try {
-      const response = await fetch('http://localhost:5000/api/donation', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      }); 
-      const result = await response.json();
-      if (result.success) {
-        alert("Merci ! Votre don a été enregistré et un email vous a été envoyé.");
-      } else {
-        alert("Erreur : " + result.error);
-      }
-    } catch (error) {
-      alert("Impossible de contacter le serveur.");
-    }
-  };
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  }; 
-  const oddImages = [
-    { id: 1, src: odd1, alt: 'Pas de pauvreté' },
-    { id: 2, src: odd2, alt: 'Faim zéro' },
-    { id: 3, src: odd3, alt: 'Bonne santé et bien-être' },
-    { id: 4, src: odd4, alt: 'Éducation de qualité' },
-    { id: 5, src: odd5, alt: 'Égalité entre les sexes' },
-    { id: 8, src: odd8, alt: 'Travail décent et croissance économique' },
-  ];
+
+  // ✅ STATUS (AJOUT)
+  const [status, setStatus] = useState('idle'); // idle | sending | success | error
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    profil: '',      //name="profil"
+    profil: '',
     phone: '',
     message: '',
-    expedition: '',  //name="expedition"
-    paiement: '',    //name="paiement"
+    expedition: '',
+    paiement: '',
     contributions: []
   });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
   const handleCheckboxChange = (id) => {
     setFormData(prev => ({
       ...prev,
@@ -99,6 +76,44 @@ const BrandNew = () => {
         : [...prev.contributions, id]
     }));
   };
+
+  // ✅ SUBMIT MODIFIÉ AVEC STATUS
+  const handleDonationSubmit = async () => {
+    if (!formData.name || !formData.email) {
+      setStatus('error');
+      return;
+    }
+
+    setStatus('sending');
+
+    try {
+      const response = await fetch('http://localhost:5000/api/donation', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus('success');
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      setStatus('error');
+    }
+  };
+
+  const oddImages = [
+    { id: 1, src: odd1, alt: 'Pas de pauvreté' },
+    { id: 2, src: odd2, alt: 'Faim zéro' },
+    { id: 3, src: odd3, alt: 'Bonne santé et bien-être' },
+    { id: 4, src: odd4, alt: 'Éducation de qualité' },
+    { id: 5, src: odd5, alt: 'Égalité entre les sexes' },
+    { id: 8, src: odd8, alt: 'Travail décent et croissance économique' },
+  ];
+
   const contributionItems = [
     { id: 'PPN', src: ppnImg, label: 'PPN' },
     { id: 'Aliments fortifiés', src: alimentfortifieImg, label: 'Aliments fortifiés' },
@@ -109,6 +124,7 @@ const BrandNew = () => {
     { id: 'Activité pour enfant', src: activitéImg, label: 'Activité' },
     { id: 'Don en numéraire', src: donImg, label: 'Don' },
   ];
+
   //image caroussel
   const actionData = [
     { src: action1, title : "Juin 2026 - Ouverture officielle centre ARENO" }, 
@@ -151,7 +167,7 @@ const BrandNew = () => {
     }
   };
   const [scrollPosition, setScrollPosition] = useState(0);
-  const carouselRef = React.useRef(null);
+  const carouselRef = useRef(null);
   //Fonction pour faire défiler
   const scrollCarousel = (direction) => {
     if (carouselRef.current) {
@@ -163,6 +179,7 @@ const BrandNew = () => {
       });
     }
   };
+
   return (
     <main className="min-h-screen bg-white pt-40 pb-32 px-6">
       <div className="max-w-5xl mx-auto">
@@ -218,7 +235,8 @@ const BrandNew = () => {
         </section>
         {/* SECTION TIMELINE */}
         <section className="mt-32 pt-16">
-          <div className="grid md:grid-cols-12 gap-12 items-start">        
+          <div className="grid md:grid-cols-12 gap-12 items-start">
+            
             {/* Colonne Gauche : Logo et Intro */}
             <div className="md:col-span-4 md:sticky md:top-32 mb-12 md:mb-0">
               <img src={ARENO_LOGO} alt="Logo ARENO" className="w-48 mb-8" />
@@ -251,6 +269,7 @@ const BrandNew = () => {
             </div>    
           </div>
         </section>
+        {/* SECTION APPROCHE */}
         {/* SECTION APPROCHE */}
         <section className="mt-10 pt-16">
           <header className="mb-16">
@@ -314,86 +333,129 @@ const BrandNew = () => {
               </button>
           </section>
         </section>
+        {/* ====== TOUT TON CONTENU AU-DESSUS RESTE INCHANGÉ ====== */}
+
+        {/* SECTION DON (MODIFIÉE UNIQUEMENT ICI) */}
         <section className="mt-32 pt-16 border-t border-gray-100">
           <h2 className="text-[#4CAF50] text-3xl font-bold mb-8">Soutenez nos actions</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Colonne Gauche : Sélection avec Fond Vert */}
-            <div className="bg-[#8BC34A]/70 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
-              <h4 className="font-bold text-xl text-white mb-6 border-b border-white/30 pb-2">Sélectionnez votre contribution</h4>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {contributionItems.map((item) => {
-                  const isSelected = formData.contributions.includes(item.id);
-                  return (
-                    <button
-                      key={item.id}
-                      type="button"
-                      onClick={() => handleCheckboxChange(item.id)}
-                      className={`relative p-2 rounded-xl transition-all duration-300 border-4 ${
-                        isSelected ? 'border-white bg-white/20' : 'border-transparent hover:border-white/50'
-                      }`}
-                    >
-                      <img 
-                      src={item.src} 
-                        alt={item.label} 
-                        className="w-full h-24 object-cover rounded-lg" 
-                      />  
-                        <p className="text-white text-xs font-bold mt-2 text-center">{item.label}</p>
-                        {/* Indicateur visuel de sélection */}
-                        {isSelected && (
-                          <div className="absolute top-2 right-2 bg-white text-[#8BC34A] rounded-full p-1">
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
-                          </div>
-                        )}
-                    </button>
-                  );
-                })}
+
+          {status === 'success' ? (
+            <div className="flex flex-col items-center justify-center text-center py-20 bg-white rounded-2xl border border-gray-100">
+              <div className="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center mb-6">
+                <CheckCircle2 className="w-8 h-8 text-green-600" />
               </div>
+
+              <h3 className="text-2xl font-bold text-[#111111] mb-3">
+                Merci pour votre don !
+              </h3>
+
+              <p className="text-gray-600 max-w-md mb-8">
+                Votre contribution a bien été enregistrée. L’équipe Brand New Madagascar vous remercie pour votre engagement.
+              </p>
+
+              <button
+                onClick={() => setStatus('idle')}
+                className="bg-[#111111] text-white px-8 py-3 rounded-full font-bold hover:bg-[#4CAF50] transition-all"
+              >
+                Faire un autre don
+              </button>
             </div>
-            {/* Colonne Droite : Formulaire épuré incluant les modes de paiement/expédition */}
-            <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 shadow-sm">
-              <h4 className="font-bold text-xl text-[#111111] mb-6">Vos informations</h4>
-              <div className="space-y-4">
-                {/* Nom */}
-                <input name="name" onChange={handleChange} value={formData.name} type="text" placeholder="Nom et prénom" className="w-full p-4 rounded-xl border border-gray-200" /> 
-                {/* Email */}
-                <input name="email" onChange={handleChange} value={formData.email} type="email" placeholder="Adresse e-mail" className="w-full p-4 rounded-xl border border-gray-200" /> 
-                {/* Profil */}
-                <select name="profil" onChange={handleChange} value={formData.profil} className="w-full p-4 rounded-xl border border-gray-200 bg-white">
-                  <option value="">Profil : Particulier / Professionnel</option>
-                  <option value="Particulier">Particulier</option>
-                  <option value="Professionnel">Professionnel</option>
-                </select> 
-                {/* Téléphone */}
-                <input name="phone" onChange={handleChange} value={formData.phone} type="tel" placeholder="Téléphone" className="w-full p-4 rounded-xl border border-gray-200" />  
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {/* Expédition */}
-                  <select name="expedition" onChange={handleChange} value={formData.expedition} className="w-full p-4 rounded-xl border border-gray-200 bg-white text-sm">
-                    <option value="">Mode d'expédition</option>
-                    <option value="Siege">Dépôt au siège Ivato</option>
-                    <option value="Recuperation">À récupérer par l'association</option>
-                  </select>    
-                  {/* Paiement */}
-                  <select name="paiement" onChange={handleChange} value={formData.paiement} className="w-full p-4 rounded-xl border border-gray-200 bg-white text-sm">
-                    <option value="">Mode de paiement</option>
-                    <option value="Siege">Dépôt au siège Ivato</option>
-                    <option value="Orange">Orange Money</option>
-                    <option value="RDV">RDV avec le Président</option>
-                  </select>
+          ) : (
+            <>
+              <div className="grid md:grid-cols-2 gap-8">
+
+                {/* Colonne Gauche : Sélection avec Fond Vert */}
+                <div className="bg-[#8BC34A]/70 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
+                    <h4 className="font-bold text-xl text-white mb-6 border-b border-white/30 pb-2">Sélectionnez votre contribution</h4>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        {contributionItems.map((item) => {
+                        const isSelected = formData.contributions.includes(item.id);
+                        return (
+                            <button
+                            key={item.id}
+                            type="button"
+                            onClick={() => handleCheckboxChange(item.id)}
+                            className={`relative p-2 rounded-xl transition-all duration-300 border-4 ${
+                                isSelected ? 'border-white bg-white/20' : 'border-transparent hover:border-white/50'
+                            }`}
+                            >
+                            <img 
+                            src={item.src} 
+                                alt={item.label} 
+                                className="w-full h-24 object-cover rounded-lg" 
+                            />  
+                                <p className="text-white text-xs font-bold mt-2 text-center">{item.label}</p>
+                                {/* Indicateur visuel de sélection */}
+                                {isSelected && (
+                                <div className="absolute top-2 right-2 bg-white text-[#8BC34A] rounded-full p-1">
+                                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                                </div>
+                                )}
+                            </button>
+                        );
+                        })}
+                    </div>
                 </div>
-                {/* Message */}
-                <textarea name="message" onChange={handleChange} value={formData.message} placeholder="Votre message" className="w-full p-4 rounded-xl border border-gray-200 h-32"></textarea>
+
+                {/* Colonne Droite : Formulaire épuré incluant les modes de paiement/expédition */}
+                <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 shadow-sm">
+                    <h4 className="font-bold text-xl text-[#111111] mb-6">Vos informations</h4>
+                    <div className="space-y-4">
+                        {/* Nom */}
+                        <input name="name" onChange={handleChange} value={formData.name} type="text" placeholder="Nom et prénom" className="w-full p-4 rounded-xl border border-gray-200" /> 
+                        {/* Email */}
+                        <input name="email" onChange={handleChange} value={formData.email} type="email" placeholder="Adresse e-mail" className="w-full p-4 rounded-xl border border-gray-200" /> 
+                        {/* Profil */}
+                        <select name="profil" onChange={handleChange} value={formData.profil} className="w-full p-4 rounded-xl border border-gray-200 bg-white">
+                        <option value="">Profil : Particulier / Professionnel</option>
+                        <option value="Particulier">Particulier</option>
+                        <option value="Professionnel">Professionnel</option>
+                        </select> 
+                        {/* Téléphone */}
+                        <input name="phone" onChange={handleChange} value={formData.phone} type="tel" placeholder="Téléphone" className="w-full p-4 rounded-xl border border-gray-200" />  
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {/* Expédition */}
+                        <select name="expedition" onChange={handleChange} value={formData.expedition} className="w-full p-4 rounded-xl border border-gray-200 bg-white text-sm">
+                            <option value="">Mode d'expédition</option>
+                            <option value="Siege">Dépôt au siège Ivato</option>
+                            <option value="Recuperation">À récupérer par l'association</option>
+                        </select>    
+                        {/* Paiement */}
+                        <select name="paiement" onChange={handleChange} value={formData.paiement} className="w-full p-4 rounded-xl border border-gray-200 bg-white text-sm">
+                            <option value="">Mode de paiement</option>
+                            <option value="Siege">Dépôt au siège Ivato</option>
+                            <option value="Orange">Orange Money</option>
+                            <option value="RDV">RDV avec le Président</option>
+                        </select>
+                        </div>
+                        {/* Message */}
+                        <textarea name="message" value={formData.message} onChange={handleChange}
+                            className="w-full p-4 border rounded-xl h-32"
+                            placeholder="Message" />
+                    </div>
+                </div>
+
               </div>
-            </div>
-          </div>
-          {/* Bouton d'envoi */}
-          <div className="mt-12 flex justify-center">
-            <button 
-              onClick={handleDonationSubmit}
-              className="bg-[#111111] text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-[#4CAF50] transition-all"
-            >
-              FAIRE UN DON
-            </button>
-          </div>
+
+              {/* Bouton */}
+              <div className="mt-12 flex justify-center">
+                <button
+                  onClick={handleDonationSubmit}
+                  disabled={status === 'sending'}
+                  className="bg-[#111111] text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-[#4CAF50] transition-all disabled:opacity-50"
+                >
+                  {status === 'sending' ? 'Envoi...' : 'FAIRE UN DON'}
+                </button>
+              </div>
+
+              {/* ERREUR */}
+              {status === 'error' && (
+                <p className="text-red-500 text-center mt-6">
+                  Une erreur est survenue. Veuillez réessayer.
+                </p>
+              )}
+            </>
+          )}
         </section>
       </div>
     </main>
