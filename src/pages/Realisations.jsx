@@ -106,9 +106,6 @@ const Realisation = () => {
     <main className="pt-28 md:pt-36 pb-24 min-h-screen antialiased transition-colors duration-300 font-creato" style={{ backgroundColor: CREAM }}>
       {/* ─── HERO ─────────────────────────────────────────────────────── */}
       <section className="px-6 max-w-5xl mx-auto text-center mb-20 md:mb-24">
-        <span className="text-[11px] font-creato uppercase tracking-[0.4em] font-bold mb-4 inline-block" style={{ color: GOLD }}>
-          Nos Réalisations
-        </span>
         <h1 className="font-[CelsiusFlower] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight text-zinc-900 max-w-4xl mx-auto leading-[1.15] mb-6">
           Rejoignez un univers d'impact
         </h1>
