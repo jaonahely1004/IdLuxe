@@ -47,28 +47,28 @@ const Contact = () => {
     }
   };
   return (
-    <main className="pt-28 md:pt-36 pb-24 min-h-screen bg-[#FAF8F3] antialiased transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">       
+    <main className="pt-28 md:pt-36 pb-24 min-h-screen bg-[#FAF8F3] antialiased transition-colors duration-300 font-creato">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">      
         {/* ─── EN-TÊTE DE SECTION (HERO) ─── */}
         <div className="flex flex-col items-center text-center mb-16 md:mb-24">
-          <span className="text-[11px] font-sans uppercase tracking-[0.4em] font-bold mb-4 inline-block" style={{ color: GOLD }}>
+          <span className="text-[11px] font-creato uppercase tracking-[0.4em] font-bold mb-4 inline-block" style={{ color: GOLD }}>
             Contact & Collaboration
           </span>
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight text-zinc-900 max-w-4xl leading-[1.15] mb-6">
+          <h1 className="font-creato text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight text-zinc-900 max-w-4xl leading-[1.15] mb-6">
             Donnons vie à votre vision
           </h1>
           <div className="w-12 h-[2px] mt-8 rounded-full" style={{ backgroundColor: GOLD }}></div>
         </div>
         {/* ─── CONTENU PRINCIPAL ─── */}
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">         
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">        
           {/* PANNEAU LATÉRAL : INFORMATIONS */}
           <div className="lg:col-span-4 space-y-8">
             <div className="bg-white/60 backdrop-blur-md border border-zinc-200/60 p-8 rounded-2xl shadow-sm space-y-8">
               <div>
-                <h3 className="text-xs uppercase tracking-[0.2em] font-bold text-zinc-900 mb-6">
+                <h3 className="text-xs uppercase tracking-[0.2em] font-bold text-zinc-900 mb-6 font-creato">
                   Coordonnées
                 </h3>
-                <div className="space-y-4 font-sans text-sm">
+                <div className="space-y-4 font-creato text-sm">
                   <a 
                     href="mailto:idluxemg@idluxe.mg" 
                     className="flex items-center gap-4 text-zinc-600 hover:text-zinc-950 transition-colors group py-1.5"
@@ -97,10 +97,10 @@ const Contact = () => {
               </div>
               {/* RÉSEAUX SOCIAUX HARMONISÉS */}
               <div className="pt-6 border-t border-zinc-200/80">
-                <h3 className="text-xs uppercase tracking-[0.2em] font-bold text-zinc-900 mb-4">
+                <h3 className="text-xs uppercase tracking-[0.2em] font-bold text-zinc-900 mb-4 font-creato">
                   Suivez notre écosystème
                 </h3>
-                <div className="space-y-3 font-sans text-sm">
+                <div className="space-y-3 font-creato text-sm">
                   <a
                     href="https://web.facebook.com/idluxe.marketing"
                     target="_blank"
@@ -136,44 +136,44 @@ const Contact = () => {
                 <div className="w-16 h-16 rounded-full bg-emerald-50 flex items-center justify-center border border-emerald-100 shadow-inner">
                   <CheckCircle2 className="w-8 h-8 text-emerald-600" />
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-serif text-zinc-900">Message bien reçu !</h2>
-                <p className="text-zinc-500 text-sm leading-relaxed font-sans">
+                <h2 className="text-2xl sm:text-3xl font-creato text-zinc-900">Message bien reçu !</h2>
+                <p className="text-zinc-500 text-sm leading-relaxed font-creato">
                   Merci pour votre confiance. Nous avons bien enregistré votre demande et notre équipe étudie déjà votre univers de marque.
                 </p>
                 <button
                   onClick={() => setStatus('idle')}
-                  className="mt-4 px-6 py-2.5 text-xs font-sans font-bold uppercase tracking-widest text-zinc-700 bg-zinc-100 hover:bg-zinc-200 rounded-lg transition-colors"
+                  className="mt-4 px-6 py-2.5 text-xs font-creato font-bold uppercase tracking-widest text-zinc-700 bg-zinc-100 hover:bg-zinc-200 rounded-lg transition-colors"
                 >
                   Envoyer un autre message
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-8 font-sans">
+              <form onSubmit={handleSubmit} className="space-y-8 font-creato">
                 
                 {/* Section 1 : Identité */}
                 <div className="space-y-4">
                   <div className="flex items-center gap-2 pb-2 border-b border-zinc-100">
                     <MessageSquare className="w-4 h-4 text-zinc-400" />
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-400">Votre Profil</h4>
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-400 font-creato">Votre Profil</h4>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500">Nom complet *</label>
+                      <label className="text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500 font-creato">Nom complet *</label>
                       <input
                         name="name"
                         type="text"
                         required
-                        className="w-full bg-zinc-50 border border-zinc-200 focus:border-amber-500 focus:bg-white rounded-xl px-4 py-3 text-sm outline-none transition-all focus:shadow-sm"
+                        className="w-full bg-zinc-50 border border-zinc-200 focus:border-amber-500 focus:bg-white rounded-xl px-4 py-3 text-sm outline-none transition-all focus:shadow-sm font-creato"
                         placeholder="Nom & Prénom"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500">Adresse Email *</label>
+                      <label className="text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500 font-creato">Adresse Email *</label>
                       <input
                         name="email"
                         type="email"
                         required
-                        className="w-full bg-zinc-50 border border-zinc-200 focus:border-amber-500 focus:bg-white rounded-xl px-4 py-3 text-sm outline-none transition-all focus:shadow-sm"
+                        className="w-full bg-zinc-50 border border-zinc-200 focus:border-amber-500 focus:bg-white rounded-xl px-4 py-3 text-sm outline-none transition-all focus:shadow-sm font-creato"
                         placeholder="jean@exemple.com"
                       />
                     </div>
@@ -183,29 +183,29 @@ const Contact = () => {
                 <div className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500">Société</label>
+                      <label className="text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500 font-creato">Société</label>
                       <input
                         name="company"
                         type="text"
-                        className="w-full bg-zinc-50 border border-zinc-200 focus:border-amber-500 focus:bg-white rounded-xl px-4 py-3 text-sm outline-none transition-all focus:shadow-sm"
+                        className="w-full bg-zinc-50 border border-zinc-200 focus:border-amber-500 focus:bg-white rounded-xl px-4 py-3 text-sm outline-none transition-all focus:shadow-sm font-creato"
                         placeholder="Ex: ID Luxe"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500">Fonction</label>
+                      <label className="text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500 font-creato">Fonction</label>
                       <input
                         name="position"
                         type="text"
-                        className="w-full bg-zinc-50 border border-zinc-200 focus:border-amber-500 focus:bg-white rounded-xl px-4 py-3 text-sm outline-none transition-all focus:shadow-sm"
+                        className="w-full bg-zinc-50 border border-zinc-200 focus:border-amber-500 focus:bg-white rounded-xl px-4 py-3 text-sm outline-none transition-all focus:shadow-sm font-creato"
                         placeholder="Ex: Directeur Marketing"
                       />
                     </div>
                     <div className="md:col-span-2 space-y-2">
-                      <label className="text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500">Secteur d'activité</label>
+                      <label className="text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500 font-creato">Secteur d'activité</label>
                       <div className="relative">
                         <select
                           name="sector"
-                          className="w-full bg-zinc-50 border border-zinc-200 focus:border-amber-500 focus:bg-white rounded-xl px-4 py-3 text-sm outline-none transition-all cursor-pointer appearance-none"
+                          className="w-full bg-zinc-50 border border-zinc-200 focus:border-amber-500 focus:bg-white rounded-xl px-4 py-3 text-sm outline-none transition-all cursor-pointer appearance-none font-creato"
                         >
                           <option value="">Sélectionnez un secteur</option>
                           <option>Tourisme, hôtellerie, Restauration (THR)</option>
@@ -234,20 +234,20 @@ const Contact = () => {
                 <div className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="md:col-span-2 space-y-2">
-                      <label className="text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500">Numéro WhatsApp</label>
+                      <label className="text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500 font-creato">Numéro WhatsApp</label>
                       <input
                         name="phone"
                         type="tel"
-                        className="w-full bg-zinc-50 border border-zinc-200 focus:border-amber-500 focus:bg-white rounded-xl px-4 py-3 text-sm outline-none transition-all focus:shadow-sm"
+                        className="w-full bg-zinc-50 border border-zinc-200 focus:border-amber-500 focus:bg-white rounded-xl px-4 py-3 text-sm outline-none transition-all focus:shadow-sm font-creato"
                         placeholder="+261 34 00 000 00"
                       />
                     </div>
                     <div className="md:col-span-2 space-y-2">
-                      <label className="text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500">Sujet du projet</label>
+                      <label className="text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500 font-creato">Sujet du projet</label>
                       <div className="relative">
                         <select
                           name="subject"
-                          className="w-full bg-zinc-50 border border-zinc-200 focus:border-amber-500 focus:bg-white rounded-xl px-4 py-3 text-sm outline-none transition-all cursor-pointer appearance-none"
+                          className="w-full bg-zinc-50 border border-zinc-200 focus:border-amber-500 focus:bg-white rounded-xl px-4 py-3 text-sm outline-none transition-all cursor-pointer appearance-none font-creato"
                         >
                           <option value="">Sélectionnez un sujet</option>
                           <option>Branding & Rebranding</option>
@@ -266,12 +266,12 @@ const Contact = () => {
                       </div>
                     </div>
                     <div className="md:col-span-2 space-y-2">
-                      <label className="text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500">Votre Message *</label>
+                      <label className="text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500 font-creato">Votre Message *</label>
                       <textarea
                         name="message"
                         required
                         rows="4"
-                        className="w-full bg-zinc-50 border border-zinc-200 focus:border-amber-500 focus:bg-white rounded-xl px-4 py-3 text-sm outline-none transition-all focus:shadow-sm resize-none"
+                        className="w-full bg-zinc-50 border border-zinc-200 focus:border-amber-500 focus:bg-white rounded-xl px-4 py-3 text-sm outline-none transition-all focus:shadow-sm resize-none font-creato"
                         placeholder="Décrivez l'ambition de votre marque et vos objectifs de croissance..."
                       ></textarea>
                     </div>
@@ -282,7 +282,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={status === 'sending'}
-                    className="w-full bg-[#111111] sm:w-auto px-10 py-4 text-white text-xs uppercase tracking-[0.2em] font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-3 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none shadow-md shadow-zinc-950/10 hover:shadow-xl hover:shadow-zinc-950/20 hover:scale-[1.02] hover:-translate-y-[1px] active:scale-[0.97]"
+                    className="w-full bg-[#111111] sm:w-auto px-10 py-4 text-white text-xs uppercase tracking-[0.2em] font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-3 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none shadow-md shadow-zinc-950/10 hover:shadow-xl hover:shadow-zinc-950/20 hover:scale-[1.02] hover:-translate-y-[1px] active:scale-[0.97] font-creato"
                   >
                     {status === 'sending' ? (
                       <>
@@ -299,7 +299,7 @@ const Contact = () => {
                 </div>
                 {/* MESSAGE D'ERREUR FLUIDE */}
                 {status === 'error' && (
-                  <div className="flex items-center gap-2.5 text-rose-600 bg-rose-50 border border-rose-100 p-4 rounded-xl animate-fadeIn">
+                  <div className="flex items-center gap-2.5 text-rose-600 bg-rose-50 border border-rose-100 p-4 rounded-xl animate-fadeIn font-creato">
                     <AlertCircle className="w-4 h-4 shrink-0" />
                     <p className="text-xs font-medium">Une erreur est survenue lors de l'envoi. Veuillez vérifier vos informations ou réessayer ultérieurement.</p>
                   </div>

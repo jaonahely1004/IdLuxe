@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from 'react-router-dom';
 import home from '../assets/home.jpg';
 import home1 from '../assets/home1.jpg';
-import home2 from '../assets/home2.jpg';;
+import home2 from '../assets/home2.jpg';
 import logo from "../assets/logoOFF_Wht id.png";
 
 const Home = () => {
@@ -59,6 +59,7 @@ const Home = () => {
   const images = slides.map((slide) => slide.image);
   const [index, setIndex] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState(false);
+
   // Préchargement des images
   useEffect(() => {
     const loadImage = (src) =>
@@ -79,17 +80,18 @@ const Home = () => {
     };
     preloadAllImages();
   }, []);
+
   // Slider automatique
   useEffect(() => {
     if (!imagesLoaded) return;
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
-    },  4000);
+    }, 4000);
     return () => clearInterval(interval);
   }, [imagesLoaded]);
 
   return (
-    <main className="bg-white pt-18">
+    <main className="bg-white pt-18 font-creato">
       <section className="relative h-[70vh] overflow-hidden">
         {/* Images */}
         <div className="absolute inset-0 overflow-hidden">
@@ -123,18 +125,19 @@ const Home = () => {
           </AnimatePresence>
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/35 backdrop-blur-[2px]" />
-          </div>
-          {/* Contenu */}
-          <div className="relative z-20 flex h-full flex-col items-center justify-center px-6 text-center">
-            <motion.p
-              className="mb-8 font-sans text-[11px] uppercase tracking-[0.9em] text-idluxe-gold"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
+        </div>
+          
+        {/* Contenu */}
+        <div className="relative z-20 flex h-full flex-col items-center justify-center px-6 text-center">
+          <motion.p
+            className="mb-8 font-creato font-light text-[11px] uppercase tracking-[0.9em] text-idluxe-gold"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
           >
-              IDLUXE Consulting
-            </motion.p>
-            <AnimatePresence mode="wait">
+            IDLUXE Consulting
+          </motion.p>
+          <AnimatePresence mode="wait">
             <motion.div
               key={index}
               initial={{
@@ -154,61 +157,61 @@ const Home = () => {
                 ease: [0.65, 0, 0.35, 1],
               }}
             >
-              <h1 className="mb-12 select-none font-serif text-5xl leading-[1.1] text-white md:text-7xl">
+              <h1 className="mb-12 select-none font-creato font-normal text-5xl leading-[1.1] text-white md:text-7xl">
                 {slides[index].title}
               </h1>
             </motion.div>
           </AnimatePresence>
           <Link
             to="/services"
-            className="group relative inline-flex overflow-hidden border border-white px-12 py-5 font-sans text-[11px] uppercase tracking-[0.3em] text-white transition-all duration-500 hover:border-idluxe-gold hover:text-black"
+            className="group relative inline-flex overflow-hidden border border-white px-12 py-5 font-creato font-medium text-[11px] uppercase tracking-[0.3em] text-white transition-all duration-500 hover:border-idluxe-gold hover:text-black"
           >
             <span className="relative z-20">
               Découvrir notre expertise
             </span>
-
             <span className="absolute inset-0 z-10 translate-y-full bg-idluxe-gold transition-transform duration-500 group-hover:translate-y-0"></span>
           </Link>
         </div>
       </section>        
+         
       {/* 2. SECTION VISION - Grille uniforme */}
       <section className="py-20 px-6 md:px-10 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-12 gap-12 lg:gap-20 items-start">          
           {/* Colonne Texte (6/12) */}
           <div className="md:col-span-6 space-y-8">
-            <p className="font-sans text-gray-700 leading-relaxed text-lg text-justify">
+            <p className="font-creato text-gray-700 leading-relaxed text-lg text-justify">
               Aujourd'hui à Madagascar, les entreprises ont besoin de plus qu'une simple visibilité : elles ont besoin d'une marque forte et impactante.
             </p>
-            <p className="font-sans text-gray-700 leading-relaxed text-lg text-justify">
+            <p className="font-creato text-gray-700 leading-relaxed text-lg text-justify">
               <span className="font-bold text-idluxe-black">IDLuxe Consulting</span> est le premier cabinet marketing responsable spécialisé dans le Luxe et le Développement durable à Madagascar qui aide les acteurs du haut de gamme à devenir et rester une référence incontournable.
             </p>
-            <p className="font-sans text-gray-700 leading-relaxed text-lg text-justify">
+            <p className="font-creato text-gray-700 leading-relaxed text-lg text-justify">
               Parce qu'une marque forte doit aussi avoir une responsabilité envers la société et l'environnement, nous défendons une vision du luxe plus éthique, plus humaine et plus solidaire.
             </p>
-            <p className="font-sans text-gray-700 leading-relaxed text-lg text-justify">
+            <p className="font-creato text-gray-700 leading-relaxed text-lg text-justify">
               Nous construisons avec vous une stratégie qui valorise votre image tout en renforçant votre contribution positive à la société.
             </p>
           </div>
           {/* Colonne Bloc Impact (6/12) */}
           <div className="md:col-span-6 relative">
             <div className="bg-idluxe-black p-10 md:p-16 text-white relative z-10">
-              <h3 className="text-idluxe-gold font-serif text-3xl mb-8 leading-tight">
+              <h3 className="text-idluxe-gold font-creato font-semibold text-3xl mb-8 leading-tight">
                 Brand impact grâce à notre approche immersive
               </h3>
-              <p className="text-base font-light leading-relaxed opacity-90 italic">
+              <p className="text-base font-creato font-light leading-relaxed opacity-95 italic">
                 Notre méthodologie combine études anthropologiques, analyses stratégiques approfondies, et activation ciblée.
               </p>
             </div>
             {/* Élément décoratif aligné */}
             <div className="absolute -bottom-6 -right-6 w-full h-full border border-idluxe-gold -z-0 hidden md:block"></div>
           </div>
-
         </div>
       </section>
+
       {/* 3. SECTION DAPAM (Cards) */}
       <section className="py-2 bg-zinc-50 px-10 overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <h2 className="font-serif text-5xl md:text-6xl text-idluxe-black mb-24 text-center">
+          <h2 className="font-creato font-semibold text-5xl md:text-6xl text-idluxe-black mb-24 text-center">
             Méthodologie <span className="italic">DAPAM</span>
           </h2>
           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
@@ -224,9 +227,9 @@ const Home = () => {
                 <div className="w-12 h-12 mb-6 flex items-center justify-center border border-[#C6A66C]/30 rounded-full group-hover:border-[#C6A66C] transition-colors">
                   <i className={`fas ${step.icon} text-[#C6A66C] text-lg`}></i>
                 </div>
-                <h3 className="text-xl font-light text-white mb-3">{step.title}</h3>
+                <h3 className="text-xl font-creato font-light text-white mb-3">{step.title}</h3>
                 <div className="w-10 h-[2px] bg-[#C6A66C] mb-4" />
-                <p className="text-sm text-gray-300 leading-relaxed flex-grow">
+                <p className="text-sm font-creato text-gray-300 leading-relaxed flex-grow">
                   {step.desc}
                 </p>
               </motion.div>
@@ -234,11 +237,12 @@ const Home = () => {
           </div>
         </div>
       </section>
+
       {/* 4. SECTION MÉTHODOLOGIE CIRCULAIRE */}
       <section className="py-20 md:py-24 bg-[#1A1A1A] px-4 md:px-6 overflow-hidden select-none">
         {/* Titre Principal */}
         <div className="max-w-5xl mx-auto text-center mb-16 md:mb-24">
-          <h2 className="font-serif text-4xl md:text-5xl text-white tracking-wide">
+          <h2 className="font-creato font-normal text-4xl md:text-5xl text-white tracking-wide">
             Notre Écosystème <span className="italic text-idluxe-gold font-light">d'Impact</span>
           </h2>
         </div>
@@ -293,7 +297,6 @@ const Home = () => {
                   }}
                 >
                   <div className="relative flex items-center justify-center w-16 h-16 group cursor-pointer">
-
                     {/* BULLE ICON */}
                     <div className="w-16 h-16 rounded-full bg-neutral-900 border border-neutral-800 shadow-[0_4px_20px_rgba(0,0,0,0.5)] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:border-idluxe-gold group-hover:shadow-[0_0_25px_rgba(212,175,55,0.3)] z-20">
                       <i className={`fas ${item.icon} text-neutral-400 text-xl transition-colors duration-300 group-hover:text-idluxe-gold`} />
@@ -312,7 +315,7 @@ const Home = () => {
                           isRight ? "left-12 justify-start" : "right-12 justify-end"
                         }`}
                       >
-                        <h4 className={`font-serif text-neutral-200 text-[13px] leading-tight font-medium max-w-[190px] transition-colors duration-300 group-hover:text-idluxe-gold ${
+                        <h4 className={`font-creato text-neutral-200 text-[13px] leading-tight font-medium max-w-[190px] transition-colors duration-300 group-hover:text-idluxe-gold ${
                           isRight ? "text-left" : "text-right"
                         }`}>
                           {item.title}

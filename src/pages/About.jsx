@@ -42,16 +42,16 @@ const About = () => {
   const displayAdvantages = content.advantages.length > 0 ? content.advantages : defaultAdvantages;
 
   return (
-    <main className="pt-32 bg-white min-h-screen">
+    <main className="pt-32 bg-white min-h-screen font-creato">
       {/* SECTION 1 : INTRODUCTION */}
       <section className="px-10 max-w-7xl mx-auto mb-32">
         <div className="grid md:grid-cols-2 gap-16 items-start">
           <div className="space-y-8">
-            <p className="font-sans text-[#D4AF37] text-xs uppercase tracking-[0.5em]">À PROPOS</p>
-            <h1 className="font-serif text-4xl md:text-6xl text-[#111111] leading-tight">
+            <p className="font-creato font-light text-[#D4AF37] text-xs uppercase tracking-[0.5em]">À PROPOS</p>
+            <h1 className="font-creato font-normal text-4xl md:text-6xl text-[#111111] leading-tight">
               Le premier cabinet de consulting responsable spécialisé en <span className="italic text-[#D4AF37]">marketing de luxe</span> à Madagascar
             </h1>
-            <p className="font-sans text-gray-600 font-light text-lg leading-relaxed text-justify">
+            <p className="font-creato text-gray-600 font-light text-lg leading-relaxed text-justify">
               IDLuxe est un cabinet de consultance social et solidaire spécialisé dans cinq domaines :
             </p>
             
@@ -69,15 +69,15 @@ const About = () => {
                   className="flex items-center space-x-4 border-l-2 border-[#D4AF37] pl-4 py-2 cursor-pointer hover:bg-gray-50 hover:pl-6 transition-all duration-300"
                 >
                   <i className={`fas ${item.icon} text-[#D4AF37] w-6 text-center`}></i>
-                  <span className="font-sans text-gray-700 text-md font-light group-hover:text-[#111111]">{item.title}</span>
+                  <span className="font-creato text-gray-700 text-md font-light group-hover:text-[#111111]">{item.title}</span>
                 </div>
               ))}
             </div>
 
-            <p className="font-sans text-gray-600 font-light text-lg leading-relaxed text-justify mt-8">
+            <p className="font-creato text-gray-600 font-light text-lg leading-relaxed text-justify mt-8">
               Notre raison d'être est d'accompagner les marques premium, le secteur touristique, les institutions et projets, tout en contribuant à l'amélioration du niveau de vie de la population vulnérable et à la protection de la biodiversité de Madagascar.
             </p>
-            <p className="font-sans text-gray-600 font-light text-lg leading-relaxed text-justify mt-8">
+            <p className="font-creato text-gray-600 font-light text-lg leading-relaxed text-justify mt-8">
               Notre particularité réside dans notre capacité à intégrer les standards du luxe et du premium à chaque projet, afin de transformer une marque en une expérience unique et mémorable.
             </p>
           </div>
@@ -95,7 +95,7 @@ const About = () => {
       {/* SECTION 2 : NOS VALEURS */}
       <section className="py-24 bg-zinc-50 px-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="font-serif text-5xl text-center mb-20 text-[#111111]">Nos <span className="italic">Valeurs</span></h2>
+          <h2 className="font-creato font-semibold text-5xl text-center mb-20 text-[#111111]">Nos <span className="italic">Valeurs</span></h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {displayValues.map((v, i) => (
               <div 
@@ -105,9 +105,9 @@ const About = () => {
                 <div className="w-16 h-16 mb-8 flex items-center justify-center border border-[#D4AF37]/30 rounded-full group-hover:bg-[#D4AF37]/10 transition-colors duration-500">
                   <i className={`fas ${v.icon} text-[#D4AF37] text-2xl`}></i>
                 </div>
-                <h3 className="text-2xl font-light text-white mb-4 tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">{v.title}</h3>
+                <h3 className="text-2xl font-creato font-light text-white mb-4 tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">{v.title}</h3>
                 <div className="w-16 h-[2px] bg-[#D4AF37] mb-6 group-hover:w-24 transition-all duration-500" />
-                <p className="text-sm text-gray-300 leading-relaxed font-light flex-grow">{v.desc}</p>
+                <p className="text-sm font-creato text-gray-300 leading-relaxed font-light flex-grow">{v.desc}</p>
               </div>
             ))}
           </div>
@@ -115,68 +115,68 @@ const About = () => {
       </section>
 
       {/* SECTION 3 : POURQUOI NOUS ? */}
-<section className="py-24 bg-white px-10">
-  <div className="max-w-7xl mx-auto">
-    <div className="text-center mb-20">
-      <h2 className="font-serif text-5xl text-[#111111] mb-6">Pourquoi travailler avec <span className="italic">nous ?</span></h2>
-      <p className="text-md text-gray-600 font-medium mb-4">
-        IDLuxe s'engage à <span className="text-[#D4AF37] font-bold">110%</span> sur votre projet :
-      </p>
-      <p className="text-sm text-gray-500 italic mb-2"> 100% des solutions adaptées parfaitement à vos besoins</p>
-      <p className="text-sm text-gray-500 italic"> 10% des solutions agiles pour plus d'impact : pré-test, accompagnement, relai de communication, ajustement</p>
-      <div className="h-px w-24 bg-[#D4AF37] mx-auto mt-8"></div>
-    </div>
+      <section className="py-24 bg-white px-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="font-creato font-semibold text-5xl text-[#111111] mb-6">Pourquoi travailler avec <span className="italic">nous ?</span></h2>
+            <p className="font-creato text-md text-gray-600 font-medium mb-4">
+              IDLuxe s'engage à <span className="text-[#D4AF37] font-bold">110%</span> sur votre projet :
+            </p>
+            <p className="font-creato text-sm text-gray-500 italic mb-2"> 100% des solutions adaptées parfaitement à vos besoins</p>
+            <p className="font-creato text-sm text-gray-500 italic"> 10% des solutions agiles pour plus d'impact : pré-test, accompagnement, relai de communication, ajustement</p>
+            <div className="h-px w-24 bg-[#D4AF37] mx-auto mt-8"></div>
+          </div>
 
-    {/* Grille des cartes */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-      {/* Carte 1 */}
-      <div className="group relative bg-[#111111]/90 backdrop-blur-sm p-10 rounded-2xl border border-[#D4AF37]/30 hover:border-[#D4AF37]/60 hover:-translate-y-3 transition-all duration-500 flex flex-col shadow-xl hover:shadow-2xl">
-        <h3 className="text-2xl font-light text-white mb-4 tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">
-          10 ans d'expériences sur le marché local
-        </h3>
-        <div className="w-16 h-[2px] bg-[#D4AF37] mb-6 group-hover:w-24 transition-all duration-500" />
-        <p className="text-sm text-gray-300 leading-relaxed font-light flex-grow">
-          Expertise en marketing et communication multisecteur. Stratégie orientée client et impact. 
-          Spécialisation en C4D et gestion de projet social et environnemental.
-        </p>
-      </div>
+          {/* Grille des cartes */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {/* Carte 1 */}
+            <div className="group relative bg-[#111111]/90 backdrop-blur-sm p-10 rounded-2xl border border-[#D4AF37]/30 hover:border-[#D4AF37]/60 hover:-translate-y-3 transition-all duration-500 flex flex-col shadow-xl hover:shadow-2xl">
+              <h3 className="text-2xl font-creato font-light text-white mb-4 tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">
+                10 ans d'expériences sur le marché local
+              </h3>
+              <div className="w-16 h-[2px] bg-[#D4AF37] mb-6 group-hover:w-24 transition-all duration-500" />
+              <p className="text-sm font-creato text-gray-300 leading-relaxed font-light flex-grow">
+                Expertise en marketing et communication multisecteur. Stratégie orientée client et impact. 
+                Spécialisation en C4D et gestion de projet social et environnemental.
+              </p>
+            </div>
 
-      {/* Carte 2 */}
-      <div className="group relative bg-[#111111]/90 backdrop-blur-sm p-10 rounded-2xl border border-[#D4AF37]/30 hover:border-[#D4AF37]/60 hover:-translate-y-3 transition-all duration-500 flex flex-col shadow-xl hover:shadow-2xl">
-        <h3 className="text-2xl font-light text-white mb-4 tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">
-          Collaboration avec des experts du secteur
-        </h3>
-        <div className="w-16 h-[2px] bg-[#D4AF37] mb-6 group-hover:w-24 transition-all duration-500" />
-        <p className="text-sm text-gray-300 leading-relaxed font-light flex-grow">
-          Prestataires de services experts pour garantir la qualité. 
-          Opportunité d'affaire grâce à notre système de <em>plateforme collaborative et annuaires des partenaires</em>.
-        </p>
-      </div>
+            {/* Carte 2 */}
+            <div className="group relative bg-[#111111]/90 backdrop-blur-sm p-10 rounded-2xl border border-[#D4AF37]/30 hover:border-[#D4AF37]/60 hover:-translate-y-3 transition-all duration-500 flex flex-col shadow-xl hover:shadow-2xl">
+              <h3 className="text-2xl font-creato font-light text-white mb-4 tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">
+                Collaboration avec des experts du secteur
+              </h3>
+              <div className="w-16 h-[2px] bg-[#D4AF37] mb-6 group-hover:w-24 transition-all duration-500" />
+              <p className="text-sm font-creato text-gray-300 leading-relaxed font-light flex-grow">
+                Prestataires de services experts pour garantir la qualité. 
+                Opportunité d'affaire grâce à notre système de <em>plateforme collaborative et annuaires des partenaires</em>.
+              </p>
+            </div>
 
-      {/* Carte 3 */}
-      <div className="group relative bg-[#111111]/90 backdrop-blur-sm p-10 rounded-2xl border border-[#D4AF37]/30 hover:border-[#D4AF37]/60 hover:-translate-y-3 transition-all duration-500 flex flex-col shadow-xl hover:shadow-2xl">
-        <h3 className="text-2xl font-light text-white mb-4 tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">
-          Accompagnement et suivi
-        </h3>
-        <div className="w-16 h-[2px] bg-[#D4AF37] mb-6 group-hover:w-24 transition-all duration-500" />
-        <p className="text-sm text-gray-300 leading-relaxed font-light flex-grow">
-          Des formations pratiques ou ateliers de travail pour offrir un service client irréprochable. 
-          Etude post-campagne, rapports gratuits et mesure de performance avec analyse de vos KPIs.
-        </p>
-      </div>
-    </div>
+            {/* Carte 3 */}
+            <div className="group relative bg-[#111111]/90 backdrop-blur-sm p-10 rounded-2xl border border-[#D4AF37]/30 hover:border-[#D4AF37]/60 hover:-translate-y-3 transition-all duration-500 flex flex-col shadow-xl hover:shadow-2xl">
+              <h3 className="text-2xl font-creato font-light text-white mb-4 tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">
+                Accompagnement et suivi
+              </h3>
+              <div className="w-16 h-[2px] bg-[#D4AF37] mb-6 group-hover:w-24 transition-all duration-500" />
+              <p className="text-sm font-creato text-gray-300 leading-relaxed font-light flex-grow">
+                Des formations pratiques ou ateliers de travail pour offrir un service client irréprochable. 
+                Etude post-campagne, rapports gratuits et mesure de performance avec analyse de vos KPIs.
+              </p>
+            </div>
+          </div>
 
-    {/* Bouton avec bordure arrondie */}
-    <div className="text-center">
-      <Link
-        to="/services"
-        className="font-sans bg-[#111111] text-white px-8 py-4 rounded-lg uppercase tracking-[0.2em] text-xs font-medium hover:bg-[#D4AF37] transition-all"
-      >
-        Découvrir nos solutions
-      </Link>
-    </div>
-  </div>
-</section>
+          {/* Bouton avec bordure arrondie */}
+          <div className="text-center">
+            <Link
+              to="/services"
+              className="font-creato bg-[#111111] text-white px-8 py-4 rounded-lg uppercase tracking-[0.2em] text-xs font-medium hover:bg-[#D4AF37] transition-all"
+            >
+              Découvrir nos solutions
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
   );
 };

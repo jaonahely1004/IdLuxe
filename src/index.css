@@ -1,10 +1,71 @@
 @import "tailwindcss";
 
+/* 1. Déclaration des différents poids de la police Creato Display */
+@font-face {
+  font-family: 'Creato Display';
+  src: url('./assets/fonts/creato/CreatoDisplay-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Creato Display';
+  src: url('./assets/fonts/creato/CreatoDisplay-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Creato Display';
+  src: url('./assets/fonts/creato/CreatoDisplay-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Creato Display';
+  src: url('./assets/fonts/creato/CreatoDisplay-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Creato Display';
+  src: url('./assets/fonts/creato/CreatoDisplay-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Creato Display';
+  src: url('./assets/fonts/creato/CreatoDisplay-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Creato Display';
+  src: url('./assets/fonts/creato/CreatoDisplay-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 2. Ajout de la police dans le thème Tailwind v4 */
 @theme {
   --color-idluxe-gold: #D4AF37;
   --color-idluxe-black: #111111;
   --font-serif: "Playfair Display", Georgia, serif;
   --font-sans: "Montserrat", sans-serif;
+  
+  /* Ajout de Creato Display (disponible via font-creato) */
+  --font-creato: "Creato Display", sans-serif;
 }
 
 @layer base {
@@ -17,13 +78,11 @@
   0% {
     box-shadow: 0 0 10px rgba(198,166,108,.3);
   }
-
   50% {
-    box-shadow:
+    box-shadow: 
       0 0 25px rgba(198,166,108,.8),
       0 0 50px rgba(198,166,108,.5);
   }
-
   100% {
     box-shadow: 0 0 10px rgba(198,166,108,.3);
   }

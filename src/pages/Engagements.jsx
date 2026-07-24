@@ -6,6 +6,8 @@ import BrandNew from '../assets/brandnewpdc.jpeg';
 import image2 from '../assets/accompagnementPME.jpeg';
 import image3 from '../assets/accompagnementPME.jpeg';
 
+const GOLD = '#D4AF37';
+
 const Engagements = () => {
   const navCards = [
     {
@@ -35,25 +37,27 @@ const Engagements = () => {
   ];
 
   return (
-    <section className="relative py-24 px-6 bg-gradient-to-b from-white via-[#faf8f3] to-white min-h-screen flex items-center overflow-hidden">
+    <section className="relative py-24 px-6 bg-gradient-to-b from-white via-[#faf8f3] to-white min-h-screen flex items-center overflow-hidden font-creato">
       {/* Décor de fond subtil */}
-      <div className="pointer-events-none absolute inset-0 opacity-[0.04]"
-           style={{
-             backgroundImage:
-               'radial-gradient(circle at 20% 20%, #c9a24a 0, transparent 40%), radial-gradient(circle at 80% 80%, #c9a24a 0, transparent 40%)',
-           }}
+      <div 
+        className="pointer-events-none absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            'radial-gradient(circle at 20% 20%, #D4AF37 0, transparent 40%), radial-gradient(circle at 80% 80%, #D4AF37 0, transparent 40%)',
+        }}
       />
       <div className="relative max-w-6xl mx-auto w-full">
         {/* En-tête */}
         <div className="text-center mb-20">
-          <p className="font-sans text-idluxe-gold uppercase tracking-[0.5em] text-xs mb-4">
+          <p className="text-[11px] font-creato uppercase tracking-[0.4em] font-bold mb-4 inline-block" style={{ color: GOLD }}>
             Notre Vision
           </p>
-          <h2 className="font-serif text-5xl text-idluxe-black">
+          <h2 className="font-creato text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-zinc-900">
             Nos Engagements
           </h2>
+          <div className="w-12 h-[2px] mx-auto mt-6 rounded-full" style={{ backgroundColor: GOLD }}></div>
         </div>
-        {/* Grille de Cartes Plus Petites */}
+        {/* Grille de Cartes */}
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {navCards.map((card, index) => (
             <motion.div
@@ -92,11 +96,12 @@ const Engagements = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10 transition-opacity duration-500 group-hover:from-black/95" />
 
                   {/* Halo doré au hover */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                       style={{
-                         background:
-                           'radial-gradient(circle at 50% 100%, rgba(201,162,74,0.3), transparent 60%)',
-                       }}
+                  <div 
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                    style={{
+                      background:
+                        'radial-gradient(circle at 50% 100%, rgba(212,175,55,0.3), transparent 60%)',
+                    }}
                   />
                   {/* Flèche réduite en haut à droite */}
                   <div
@@ -105,9 +110,17 @@ const Engagements = () => {
                       bg-white/10 backdrop-blur-md border border-white/20
                       flex items-center justify-center
                       transition-all duration-500
-                      group-hover:bg-idluxe-gold group-hover:border-idluxe-gold
                       group-hover:rotate-45
                     "
+                    style={{ '--hover-bg': GOLD }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = GOLD;
+                      e.currentTarget.style.borderColor = GOLD;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = '';
+                      e.currentTarget.style.borderColor = '';
+                    }}
                   >
                     <ArrowUpRight className="text-white" size={15} />
                   </div>
@@ -120,19 +133,26 @@ const Engagements = () => {
                         flex items-center justify-center mb-4
                         border border-white/20
                         transition-all duration-500
-                        group-hover:bg-idluxe-gold/90 group-hover:border-idluxe-gold
                         group-hover:-translate-y-1
                       "
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = GOLD;
+                        e.currentTarget.style.borderColor = GOLD;
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = '';
+                        e.currentTarget.style.borderColor = '';
+                      }}
                     >
                       <card.icon className="text-white" size={22} />
                     </div>
                     {/* Ligne dorée animée */}
-                  <div className="h-px w-8 bg-idluxe-gold mb-3 transition-all duration-500 group-hover:w-16" />
-                    <h3 className="font-serif text-2xl text-white mb-2 leading-tight">
+                    <div className="h-px w-8 mb-3 transition-all duration-500 group-hover:w-16" style={{ backgroundColor: GOLD }} />
+                    <h3 className="font-creato text-2xl text-white mb-2 leading-tight font-normal">
                       {card.title}
                     </h3>
 
-                    <p className="font-sans text-xs text-white/80 leading-relaxed mb-0 max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 group-hover:mb-3 transition-all duration-500 overflow-hidden">
+                    <p className="font-creato text-xs text-white/80 leading-relaxed mb-0 max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 group-hover:mb-3 transition-all duration-500 overflow-hidden">
                       {card.description}
                     </p>
                   </div>
