@@ -57,6 +57,13 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'CelsiusFlower';
+  src: url('./assets/celsius-flower.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* 2. Ajout de la police dans le thème Tailwind v4 */
 @theme {
   --color-idluxe-gold: #D4AF37;

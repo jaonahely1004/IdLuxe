@@ -8,7 +8,7 @@ const PlateformePro = () => {
         {/* Entête minimaliste sans ligne */}
         <header className="mb-32">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 pb-12">
-            <h1 className="font-normal text-6xl md:text-7xl text-[#111111] tracking-tight">
+            <h1 className="font-[CelsiusFlower] text-6xl md:text-7xl text-[#111111] tracking-tight">
               Plateforme <br /><span className="italic text-[#D4AF37]">des Professionnels</span>
             </h1>
           </div>
@@ -19,11 +19,11 @@ const PlateformePro = () => {
           
           {/* Colonne gauche : Le manifeste */}
           <div className="md:col-span-7 space-y-10 flex flex-col justify-center">
-            <h2 className="text-3xl text-[#111111] leading-tight font-normal tracking-tight">
+            <h2 className="text-3xl text-[#111111] leading-tight font-[CelsiusFlower] tracking-tight">
               Un cabinet à impact positif avec une dimension responsable et collaborative
             </h2>         
            
-            <div className="space-y-6 text-lg text-zinc-600 leading-relaxed font-sans">
+            <div className="space-y-6 text-lg text-zinc-600 leading-relaxed font-creato">
               <p>
                 IDLuxe Consulting réinvente le luxe à Madagascar en réunissant les meilleurs talents locaux au sein d'une plateforme collaborative exclusive.
               </p>
@@ -36,7 +36,7 @@ const PlateformePro = () => {
           {/* Colonne droite : Mise en exergue */}
           <div className="md:col-span-5">
             <div className="bg-[#111111] p-12 h-full rounded-3xl flex flex-col justify-center shadow-lg border border-zinc-900">
-              <p className="text-white text-xl leading-relaxed italic font-light font-sans">
+              <p className="text-white text-xl leading-relaxed italic font-light font-creato">
                 "Rejoignez un réseau inédit à Madagascar où votre compétence sert à la fois l'exigence des marques et le développement des communautés."
               </p>
               <div className="mt-12 w-16 h-[2px] bg-[#D4AF37]"></div>
@@ -47,7 +47,7 @@ const PlateformePro = () => {
 
         {/* Section Action */}
         <section className="mt-32 p-16 text-center bg-zinc-50/50 rounded-3xl border border-zinc-200/80 shadow-sm">
-          <h3 className="text-3xl md:text-4xl text-[#111111] mb-6 font-normal tracking-tight">Rejoignez notre réseau d'exception</h3>
+          <h3 className="text-3xl md:text-4xl text-[#111111] mb-6 font-[CelsiusFlower] tracking-tight">Rejoignez notre réseau d'exception</h3>
           <p className="text-zinc-500 mb-10 max-w-lg mx-auto text-base italic font-sans">
             Remplissez le formulaire pour candidater et recevoir nos offres de missions ou de collaboration.
           </p>         

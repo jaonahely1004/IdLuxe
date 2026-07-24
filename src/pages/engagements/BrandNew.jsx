@@ -170,10 +170,7 @@ const BrandNew = () => {
       <div className="max-w-5xl mx-auto">
         {/* En-tête */}
         <header className="mb-20 text-center">
-          <span className="font-creato text-[#4CAF50] text-xs uppercase tracking-[0.5em] mb-4 block font-bold">
-            NOS ENGAGEMENTS
-          </span>
-          <h1 className="font-creato text-5xl md:text-6xl text-[#111111] mb-8 font-normal tracking-tight">
+          <h1 className="font-[CelsiusFlower] text-5xl md:text-6xl text-[#111111] mb-8 font-normal tracking-tight">
             BRAND NEW <span className="italic text-[#4CAF50]">MADAGASCAR</span>
           </h1>
           <div className="h-[2px] w-24 bg-[#4CAF50] mx-auto"></div>
@@ -181,8 +178,8 @@ const BrandNew = () => {
 
         {/* Section Marketing */}
         <section className="mb-24">
-          <h2 className="text-[#4CAF50] text-2xl font-bold mb-8 tracking-wide">Un marketing du luxe Éthique, responsable et solidaire</h2>
-          <div className="space-y-6 text-zinc-700 leading-relaxed text-lg text-justify font-sans">
+          <h2 className="text-[#4CAF50] text-2xl font-[CelsiusFlower] mb-8 tracking-wide">Un marketing du luxe Éthique, responsable et solidaire</h2>
+          <div className="space-y-6 text-zinc-700 leading-relaxed text-lg text-justify font-creato">
             <p>Travailler avec IDLuxe Consulting, c’est aussi contribuer à des actions à impact positif dans le pays.</p>
             <p>Une partie de nos bénéfices est reversée à Brand New Madagascar, une association engagée dans l’amélioration des conditions de vie des populations vulnérables.</p>
           </div>
@@ -194,11 +191,11 @@ const BrandNew = () => {
             <img src={logoBNM} alt="Logo Brand New Madagascar" className="max-w-[200px] h-auto object-contain" />
           </div>
           <div className="space-y-6 text-justify">
-            <h3 className="text-[#4CAF50] text-xl font-bold text-left tracking-wide">Engagé pour soutenir la population vulnérable, aider sans rien attendre en retour, aider par amour</h3>
-            <p className="text-zinc-700 leading-relaxed font-sans">
+            <h3 className="text-[#4CAF50] text-xl font-[CelsiusFlower] text-left tracking-wide">Engagé pour soutenir la population vulnérable, aider sans rien attendre en retour, aider par amour</h3>
+            <p className="text-zinc-700 leading-relaxed font-creato">
               Brand New Madagascar est une association à but non lucratif créée en 2020 par la fondatrice du cabinet.
             </p>
-            <p className="text-zinc-700 leading-relaxed font-sans">
+            <p className="text-zinc-700 leading-relaxed font-creato">
               Elle rassemble des jeunes bénévoles ayant pour mission de changer le mode de vie de la population défavorisée et de leur offrir un nouveau départ afin d'avoir un avenir meilleur et stable.
             </p>
           </div>
@@ -206,7 +203,7 @@ const BrandNew = () => {
 
         {/* Section ODD */}
         <section className="mb-24">
-          <p className="text-zinc-700 mb-10 text-lg text-justify font-sans">
+          <p className="text-zinc-700 mb-10 text-lg text-justify font-creato">
             Avec l'appui d'IDLuxe et d'autres partenaires, le but de l'association est de contribuer à six objectifs du développement durable (ODD)
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
@@ -231,7 +228,7 @@ const BrandNew = () => {
               <div className="bg-zinc-50/50 p-6 rounded-2xl border border-zinc-100 shadow-sm mb-6 inline-block">
                 <img src={ARENO_LOGO} alt="Logo ARENO" className="w-40 object-contain" />
               </div>
-              <p className="text-zinc-700 leading-relaxed text-justify font-sans">
+              <p className="text-zinc-700 leading-relaxed text-justify font-creato">
                 À travers le programme d'Appui pour le RENOuveau de Madagascar (ARENO), Brand new Madagascar agit sur 4 commissions principales :
               </p>
             </div>
@@ -240,23 +237,23 @@ const BrandNew = () => {
             <div className="md:col-span-8 space-y-16">
               <div className="relative pl-10 border-l-2 border-[#4CAF50]">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[#4CAF50] ring-4 ring-white"></div>
-                <h4 className="font-creato font-bold text-2xl text-[#111111] mb-3 tracking-wide">ASAKO : pour les pères de famille en difficulté</h4>
-                <p className="text-zinc-600 leading-relaxed text-justify font-sans">Créer une source de revenu stable et améliorer le niveau de vie des foyers grâce aux formations et créations d'activités génératrices de revenus.</p>
+                <h4 className="font-[CelsiusFlower] text-2xl text-[#111111] mb-3 tracking-wide">ASAKO : pour les pères de famille en difficulté</h4>
+                <p className="text-zinc-600 leading-relaxed text-justify font-creato">Créer une source de revenu stable et améliorer le niveau de vie des foyers grâce aux formations et créations d'activités génératrices de revenus.</p>
               </div>
               <div className="relative pl-10 border-l-2 border-[#4CAF50]">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[#4CAF50] ring-4 ring-white"></div>
-                <h4 className="font-creato font-bold text-2xl text-[#111111] mb-3 tracking-wide">LOVATSARA : pour les enfants</h4>
-                <p className="text-zinc-600 leading-relaxed text-justify font-sans">Soutenir les parents dans l'éducation des enfants grâce à la prise en charge des frais de scolarité et des fournitures scolaires. Diverses activités extrascolaires contribuant à la réussite des enfants sont également organisées.</p>
+                <h4 className="font-[CelsiusFlower] text-2xl text-[#111111] mb-3 tracking-wide">LOVATSARA : pour les enfants</h4>
+                <p className="text-zinc-600 leading-relaxed text-justify font-creato">Soutenir les parents dans l'éducation des enfants grâce à la prise en charge des frais de scolarité et des fournitures scolaires. Diverses activités extrascolaires contribuant à la réussite des enfants sont également organisées.</p>
               </div>
               <div className="relative pl-10 border-l-2 border-[#4CAF50]">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[#4CAF50] ring-4 ring-white"></div>
-                <h4 className="font-creato font-bold text-2xl text-[#111111] mb-3 tracking-wide">TOMBOHERY : pour les femmes</h4>
-                <p className="text-zinc-600 leading-relaxed text-justify font-sans">Formation et création d'activités génératrices de revenus visant à l'autonomisation des femmes. Ce projet est surtout destiné aux jeunes filles en situation de précarité, aux mères célibataires, aux mères de famille victime de violence conjugale.</p>
+                <h4 className="font-[CelsiusFlower] text-2xl text-[#111111] mb-3 tracking-wide">TOMBOHERY : pour les femmes</h4>
+                <p className="text-zinc-600 leading-relaxed text-justify font-creato">Formation et création d'activités génératrices de revenus visant à l'autonomisation des femmes. Ce projet est surtout destiné aux jeunes filles en situation de précarité, aux mères célibataires, aux mères de famille victime de violence conjugale.</p>
               </div>
               <div className="relative pl-10 border-l-2 border-[#4CAF50]">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[#4CAF50] ring-4 ring-white"></div>
-                <h4 className="font-creato font-bold text-2xl text-[#111111] mb-3 tracking-wide">SALAMA : pour les personnes âgées</h4>
-                <p className="text-zinc-600 leading-relaxed text-justify font-sans">Assurer une vie sereine grâce à des prises en charge alimentaire et médicale. Ce projet se fait à travers la distribution de produits de première nécessité et des médicaments aux bénéficiaires.</p>
+                <h4 className="font-[CelsiusFlower] text-2xl text-[#111111] mb-3 tracking-wide">SALAMA : pour les personnes âgées</h4>
+                <p className="text-zinc-600 leading-relaxed text-justify font-creato">Assurer une vie sereine grâce à des prises en charge alimentaire et médicale. Ce projet se fait à travers la distribution de produits de première nécessité et des médicaments aux bénéficiaires.</p>
               </div>
             </div>    
 
@@ -266,7 +263,7 @@ const BrandNew = () => {
         {/* SECTION APPROCHE */}
         <section className="mt-32 pt-16 border-t border-zinc-100">
           <header className="mb-16">
-            <h2 className="text-[#4CAF50] text-3xl font-bold mb-4 tracking-wide">Une approche précise et approfondie</h2>
+            <h2 className="text-[#4CAF50] text-3xl font-[CelsiusFlower] mb-4 tracking-wide">Une approche précise et approfondie</h2>
           </header>
           
           <motion.div 
@@ -286,7 +283,7 @@ const BrandNew = () => {
           {/* SECTION CARROUSEL */}
           <section className="mt-12 relative">
             <div className="text-center mb-10">
-              <h3 className="text-[#4CAF50] text-2xl font-bold mb-4 tracking-wide">Nos actions en image</h3>
+              <h3 className="text-[#4CAF50] text-2xl font-[CelsiusFlower] mb-4 tracking-wide">Nos actions en image</h3>
             </div>
             
             {/* Conteneur des images */}
@@ -333,7 +330,7 @@ const BrandNew = () => {
 
         {/* SECTION DON */}
         <section className="mt-32 pt-16 border-t border-zinc-100">
-          <h2 className="text-[#4CAF50] text-3xl font-bold mb-8 tracking-wide">Soutenez nos actions</h2>
+          <h2 className="text-[#4CAF50] text-3xl font-[CelsiusFlower] mb-8 tracking-wide">Soutenez nos actions</h2>
 
           {status === 'success' ? (
             <div className="flex flex-col items-center justify-center text-center py-20 bg-zinc-50/50 rounded-3xl border border-zinc-200/80">
@@ -341,17 +338,17 @@ const BrandNew = () => {
                 <CheckCircle2 className="w-8 h-8 text-green-600" />
               </div>
 
-              <h3 className="text-2xl font-bold text-[#111111] mb-3 tracking-wide">
+              <h3 className="text-2xl font-[CelsiusFlower] text-[#111111] mb-3 tracking-wide">
                 Merci pour votre don !
               </h3>
 
-              <p className="text-zinc-600 max-w-md mb-8 font-sans">
+              <p className="text-zinc-600 max-w-md mb-8 font-creato">
                 Votre contribution a bien été enregistrée. L’équipe Brand New Madagascar vous remercie pour votre engagement.
               </p>
 
               <button
                 onClick={() => setStatus('idle')}
-                className="bg-[#111111] text-white px-8 py-3 rounded-xl uppercase tracking-[0.15em] text-[10px] font-bold hover:bg-[#4CAF50] transition-all shadow-md"
+                className="bg-[#111111] text-white px-8 py-3 rounded-xl uppercase tracking-[0.15em] text-[10px] font-creato hover:bg-[#4CAF50] transition-all shadow-md"
               >
                 Faire un autre don
               </button>
@@ -362,7 +359,7 @@ const BrandNew = () => {
 
                 {/* Colonne Gauche : Sélection avec Fond Vert */}
                 <div className="bg-[#8BC34A]/80 backdrop-blur-md p-8 rounded-3xl shadow-lg border border-[#8BC34A]">
-                  <h4 className="font-bold text-xl text-white mb-6 border-b border-white/20 pb-3 tracking-wide">Sélectionnez votre contribution</h4>
+                  <h4 className="font-[CelsiusFlower] text-xl text-white mb-6 border-b border-white/20 pb-3 tracking-wide">Sélectionnez votre contribution</h4>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {contributionItems.map((item) => {
                       const isSelected = formData.contributions.includes(item.id);
@@ -396,7 +393,7 @@ const BrandNew = () => {
 
                 {/* Colonne Droite : Formulaire épuré */}
                 <div className="bg-zinc-50/50 p-8 rounded-3xl border border-zinc-200/80 shadow-sm">
-                  <h4 className="font-bold text-xl text-[#111111] mb-6 tracking-wide">Vos informations</h4>
+                  <h4 className="font-[CelsiusFlower] text-xl text-[#111111] mb-6 tracking-wide">Vos informations</h4>
                   <div className="space-y-4">
                     <input 
                       name="name" 
@@ -404,7 +401,7 @@ const BrandNew = () => {
                       value={formData.name} 
                       type="text" 
                       placeholder="Nom et prénom" 
-                      className="w-full p-4 rounded-xl border border-zinc-200/80 bg-white text-sm outline-none focus:border-[#4CAF50] focus:ring-1 focus:ring-[#4CAF50] transition-all font-sans" 
+                      className="w-full p-4 rounded-xl border border-zinc-200/80 bg-white text-sm outline-none focus:border-[#4CAF50] focus:ring-1 focus:ring-[#4CAF50] transition-all font-creato" 
                     /> 
                     <input 
                       name="email" 
@@ -412,13 +409,13 @@ const BrandNew = () => {
                       value={formData.email} 
                       type="email" 
                       placeholder="Adresse e-mail" 
-                      className="w-full p-4 rounded-xl border border-zinc-200/80 bg-white text-sm outline-none focus:border-[#4CAF50] focus:ring-1 focus:ring-[#4CAF50] transition-all font-sans" 
+                      className="w-full p-4 rounded-xl border border-zinc-200/80 bg-white text-sm outline-none focus:border-[#4CAF50] focus:ring-1 focus:ring-[#4CAF50] transition-all font-creato" 
                     /> 
                     <select 
                       name="profil" 
                       onChange={handleChange} 
                       value={formData.profil} 
-                      className="w-full p-4 rounded-xl border border-zinc-200/80 bg-white text-sm outline-none focus:border-[#4CAF50] focus:ring-1 focus:ring-[#4CAF50] transition-all font-sans cursor-pointer"
+                      className="w-full p-4 rounded-xl border border-zinc-200/80 bg-white text-sm outline-none focus:border-[#4CAF50] focus:ring-1 focus:ring-[#4CAF50] transition-all font-creato cursor-pointer"
                     >
                       <option value="">Profil : Particulier / Professionnel</option>
                       <option value="Particulier">Particulier</option>
@@ -430,14 +427,14 @@ const BrandNew = () => {
                       value={formData.phone} 
                       type="tel" 
                       placeholder="Téléphone" 
-                      className="w-full p-4 rounded-xl border border-zinc-200/80 bg-white text-sm outline-none focus:border-[#4CAF50] focus:ring-1 focus:ring-[#4CAF50] transition-all font-sans" 
+                      className="w-full p-4 rounded-xl border border-zinc-200/80 bg-white text-sm outline-none focus:border-[#4CAF50] focus:ring-1 focus:ring-[#4CAF50] transition-all font-creato" 
                     />  
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <select 
                         name="expedition" 
                         onChange={handleChange} 
                         value={formData.expedition} 
-                        className="w-full p-4 rounded-xl border border-zinc-200/80 bg-white text-sm outline-none focus:border-[#4CAF50] focus:ring-1 focus:ring-[#4CAF50] transition-all font-sans cursor-pointer"
+                        className="w-full p-4 rounded-xl border border-zinc-200/80 bg-white text-sm outline-none focus:border-[#4CAF50] focus:ring-1 focus:ring-[#4CAF50] transition-all font-creato cursor-pointer"
                       >
                         <option value="">Mode d'expédition</option>
                         <option value="Siege">Dépôt au siège Ivato</option>
@@ -447,7 +444,7 @@ const BrandNew = () => {
                         name="paiement" 
                         onChange={handleChange} 
                         value={formData.paiement} 
-                        className="w-full p-4 rounded-xl border border-zinc-200/80 bg-white text-sm outline-none focus:border-[#4CAF50] focus:ring-1 focus:ring-[#4CAF50] transition-all font-sans cursor-pointer"
+                        className="w-full p-4 rounded-xl border border-zinc-200/80 bg-white text-sm outline-none focus:border-[#4CAF50] focus:ring-1 focus:ring-[#4CAF50] transition-all font-creato cursor-pointer"
                       >
                         <option value="">Mode de paiement</option>
                         <option value="Siege">Dépôt au siège Ivato</option>
@@ -459,7 +456,7 @@ const BrandNew = () => {
                       name="message" 
                       value={formData.message} 
                       onChange={handleChange}
-                      className="w-full p-4 border border-zinc-200/80 rounded-xl h-32 bg-white text-sm outline-none focus:border-[#4CAF50] focus:ring-1 focus:ring-[#4CAF50] transition-all font-sans resize-none"
+                      className="w-full p-4 border border-zinc-200/80 rounded-xl h-32 bg-white text-sm outline-none focus:border-[#4CAF50] focus:ring-1 focus:ring-[#4CAF50] transition-all font-creato resize-none"
                       placeholder="Message" 
                     />
                   </div>
@@ -472,7 +469,7 @@ const BrandNew = () => {
                 <button
                   onClick={handleDonationSubmit}
                   disabled={status === 'sending'}
-                  className="bg-[#111111] text-white px-12 py-5 rounded-xl uppercase tracking-[0.2em] text-xs font-bold hover:bg-[#4CAF50] transition-all duration-300 disabled:opacity-50 shadow-md active:scale-[0.98]"
+                  className="bg-[#111111] text-white px-12 py-5 rounded-xl uppercase tracking-[0.2em] text-xs font-creato hover:bg-[#4CAF50] transition-all duration-300 disabled:opacity-50 shadow-md active:scale-[0.98]"
                 >
                   {status === 'sending' ? 'Envoi...' : 'FAIRE UN DON'}
                 </button>
@@ -480,7 +477,7 @@ const BrandNew = () => {
 
               {/* ERREUR */}
               {status === 'error' && (
-                <p className="text-red-500 text-center mt-6 text-sm font-sans">
+                <p className="text-red-500 text-center mt-6 text-sm font-creato">
                   Une erreur est survenue. Veuillez réessayer.
                 </p>
               )}

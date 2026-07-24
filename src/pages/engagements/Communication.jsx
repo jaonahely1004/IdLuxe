@@ -8,7 +8,7 @@ const Communication = () => {
         {/* Entête */}
         <header className="mb-32">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 pb-12">
-            <h1 className="font-normal text-6xl md:text-7xl text-[#111111] tracking-tight">
+            <h1 className="font-[CelsiusFlower] text-6xl md:text-7xl text-[#111111] tracking-tight">
               Communication <br /><span className="italic text-[#D4AF37]">Responsable</span>
             </h1>
           </div>
@@ -17,11 +17,11 @@ const Communication = () => {
         {/* Corps principal */}
         <section className="grid md:grid-cols-12 gap-16 items-stretch">
           <div className="md:col-span-7 space-y-10 flex flex-col justify-center">
-            <h2 className="text-3xl text-[#111111] leading-tight font-normal tracking-tight">
+            <h2 className="text-3xl text-[#111111] leading-tight font-[CelsiusFlower] tracking-tight">
               Sensibiliser pour mieux impacter
             </h2>
             
-            <div className="space-y-6 text-lg text-zinc-600 leading-relaxed font-sans">
+            <div className="space-y-6 text-lg text-zinc-600 leading-relaxed font-creato">
               <p>
                 La responsabilité se fait aussi à travers l'éducation et la sensibilisation.
               </p>
@@ -33,12 +33,12 @@ const Communication = () => {
 
           <div className="md:col-span-5 space-y-8 flex flex-col justify-center">
             <div className="bg-zinc-50/80 p-8 rounded-2xl border-l-2 border-[#D4AF37] border-y border-r border-zinc-200/80 shadow-sm">
-              <h3 className="text-xl mb-3 font-normal text-[#111111]">Education : environnemental, civisme, connaissance générale</h3>
+              <h3 className="text-xl mb-3 font-[CelsiusFlower] text-[#111111]">Education : environnemental, civisme, connaissance générale</h3>
               <a href="http://www.youtube.com/@IDLuxe-b4o" target="_blank" rel="noreferrer" className="text-[#D4AF37] italic text-sm hover:underline font-sans">Extraits video EC</a>
             </div>
             
             <div className="bg-zinc-50/80 p-8 rounded-2xl border-l-2 border-[#D4AF37] border-y border-r border-zinc-200/80 shadow-sm">
-              <h3 className="text-xl mb-3 font-normal text-[#111111]">J'apprends le marcom : Culture marketing et culture du luxe</h3>
+              <h3 className="text-xl mb-3 font-[CelsiusFlower] text-[#111111]">J'apprends le marcom : Culture marketing et culture du luxe</h3>
               <a href="http://www.youtube.com/@IDLuxe-b4o" target="_blank" rel="noreferrer" className="text-[#D4AF37] italic text-sm hover:underline font-sans">Extraits video J'apprends le marcom</a>
             </div>
           </div>

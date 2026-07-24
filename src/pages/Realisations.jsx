@@ -109,7 +109,7 @@ const Realisation = () => {
         <span className="text-[11px] font-creato uppercase tracking-[0.4em] font-bold mb-4 inline-block" style={{ color: GOLD }}>
           Nos Réalisations
         </span>
-        <h1 className="font-creato text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight text-zinc-900 max-w-4xl mx-auto leading-[1.15] mb-6">
+        <h1 className="font-[CelsiusFlower] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight text-zinc-900 max-w-4xl mx-auto leading-[1.15] mb-6">
           Rejoignez un univers d'impact
         </h1>
         <div className="w-12 h-[2px] mx-auto mt-6 rounded-full" style={{ backgroundColor: GOLD }}></div>
@@ -154,7 +154,7 @@ const Realisation = () => {
                 </div>
 
                 <h3
-                  className="font-creato text-xl font-normal leading-snug mb-4 min-h-[3.5rem] text-zinc-900"
+                  className="font-[CelsiusFlower] text-xl font-normal leading-snug mb-4 min-h-[3.5rem] text-zinc-900"
                 >
                   {sector.category}
                 </h3>
@@ -222,7 +222,7 @@ const Realisation = () => {
           </span>
           <h2
             id="partners-title"
-            className="font-creato text-3xl md:text-4xl font-normal text-zinc-900 tracking-tight"
+            className="font-[CelsiusFlower] text-3xl md:text-4xl font-normal text-zinc-900 tracking-tight"
           >
             Ils nous font confiance
           </h2>
@@ -249,7 +249,7 @@ const Realisation = () => {
         </div>
       </section>
 
-      {/* ─── PORTFOLIO ────────────────────────────────────────────────── */}
+      {/* ─── PORTFOLIO ─── */}
       <section
         className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 border-t border-zinc-200/60 font-creato"
         style={{ backgroundColor: '#FDFBF7' }}
@@ -265,7 +265,7 @@ const Realisation = () => {
             </span>
             <h2
               id="portfolio-title"
-              className="font-creato text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-zinc-900 leading-[1.2]"
+              className="font-[CelsiusFlower] text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-zinc-900 leading-[1.2]"
             >
               Accédez à notre univers,
               <br />
@@ -336,7 +336,7 @@ const Realisation = () => {
                       </span>
                     </div>
                     <h3
-                      className="font-creato text-xl font-normal leading-snug text-zinc-900 mt-2"
+                      className="font-[CelsiusFlower] text-xl font-normal leading-snug text-zinc-900 mt-2"
                     >
                       {p.title}
                     </h3>
@@ -348,12 +348,12 @@ const Realisation = () => {
         </div>
       </section>
 
-      {/* ─── CTA FINAL ────────────────────────────────────────────────── */}
+      {/* ─── CTA FINAL ── */}
       <section className="bg-white py-24 px-6 text-center border-t border-zinc-200/60 font-creato">
         <span className="text-[11px] font-creato uppercase tracking-[0.4em] font-bold mb-4 inline-block" style={{ color: GOLD }}>
           Construisons ensemble
         </span>
-        <h2 className="font-creato text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-zinc-900 mb-8">
+        <h2 className="font-[CelsiusFlower] text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-zinc-900 mb-8">
           Donnons vie à votre vision
         </h2>
         <Link

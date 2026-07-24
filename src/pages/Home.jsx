@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'; // Import ajouté
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from 'react-router-dom';
 import home from '../assets/home.jpg';
@@ -157,7 +157,7 @@ const Home = () => {
                 ease: [0.65, 0, 0.35, 1],
               }}
             >
-              <h1 className="mb-12 select-none font-creato font-normal text-5xl leading-[1.1] text-white md:text-7xl">
+              <h1 className="mb-12 select-none font-[CelsiusFlower] font-normal text-5xl leading-[1.1] text-white md:text-7xl">
                 {slides[index].title}
               </h1>
             </motion.div>
@@ -195,7 +195,7 @@ const Home = () => {
           {/* Colonne Bloc Impact (6/12) */}
           <div className="md:col-span-6 relative">
             <div className="bg-idluxe-black p-10 md:p-16 text-white relative z-10">
-              <h3 className="text-idluxe-gold font-creato font-semibold text-3xl mb-8 leading-tight">
+              <h3 className="text-idluxe-gold font-[CelsiusFlower] font-semibold text-3xl mb-8 leading-tight">
                 Brand impact grâce à notre approche immersive
               </h3>
               <p className="text-base font-creato font-light leading-relaxed opacity-95 italic">
@@ -211,7 +211,7 @@ const Home = () => {
       {/* 3. SECTION DAPAM (Cards) */}
       <section className="py-2 bg-zinc-50 px-10 overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <h2 className="font-creato font-semibold text-5xl md:text-6xl text-idluxe-black mb-24 text-center">
+          <h2 className="font-[CelsiusFlower] font-normal text-5xl md:text-6xl text-idluxe-black mb-24 text-center">
             Méthodologie <span className="italic">DAPAM</span>
           </h2>
           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
@@ -242,7 +242,7 @@ const Home = () => {
       <section className="py-20 md:py-24 bg-[#1A1A1A] px-4 md:px-6 overflow-hidden select-none">
         {/* Titre Principal */}
         <div className="max-w-5xl mx-auto text-center mb-16 md:mb-24">
-          <h2 className="font-creato font-normal text-4xl md:text-5xl text-white tracking-wide">
+          <h2 className="font-[CelsiusFlower] font-normal text-4xl md:text-5xl text-white tracking-wide">
             Notre Écosystème <span className="italic text-idluxe-gold font-light">d'Impact</span>
           </h2>
         </div>

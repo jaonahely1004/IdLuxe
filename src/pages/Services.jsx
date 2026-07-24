@@ -81,7 +81,7 @@ const Services = () => {
         <span className="text-[11px] font-creato uppercase tracking-[0.4em] font-bold mb-4 inline-block text-[#D4AF37]">
           Notre Expertise
         </span>
-        <h1 className="font-creato text-4xl sm:text-5xl md:text-6xl font-normal text-zinc-900 tracking-tight leading-[1.15]">
+        <h1 className="font-[CelsiusFlower] text-4xl sm:text-5xl md:text-6xl font-normal text-zinc-900 tracking-tight leading-[1.15]">
           Nos Services
         </h1>
         <div className="w-12 h-[2px] mx-auto mt-6 rounded-full bg-[#D4AF37]" />
@@ -109,7 +109,7 @@ const Services = () => {
             </div>
 
             <div className="p-6 md:p-7 flex flex-col flex-grow">
-              <h2 className="font-creato text-xl font-normal text-zinc-900 mb-2 leading-snug">{cat.title}</h2>
+              <h2 className="font-[CelsiusFlower] text-xl font-normal text-zinc-900 mb-2 leading-snug">{cat.title}</h2>
               <div className="w-10 h-[2px] bg-[#D4AF37] mb-4 rounded-full" />
               <p className="font-creato text-xs text-zinc-600 leading-relaxed mb-6">{cat.description}</p>
               

@@ -51,10 +51,7 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">      
         {/* ─── EN-TÊTE DE SECTION (HERO) ─── */}
         <div className="flex flex-col items-center text-center mb-16 md:mb-24">
-          <span className="text-[11px] font-creato uppercase tracking-[0.4em] font-bold mb-4 inline-block" style={{ color: GOLD }}>
-            Contact & Collaboration
-          </span>
-          <h1 className="font-creato text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight text-zinc-900 max-w-4xl leading-[1.15] mb-6">
+          <h1 className="font-[CelsiusFlower] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight text-zinc-900 max-w-4xl leading-[1.15] mb-6">
             Donnons vie à votre vision
           </h1>
           <div className="w-12 h-[2px] mt-8 rounded-full" style={{ backgroundColor: GOLD }}></div>
@@ -65,7 +62,7 @@ const Contact = () => {
           <div className="lg:col-span-4 space-y-8">
             <div className="bg-white/60 backdrop-blur-md border border-zinc-200/60 p-8 rounded-2xl shadow-sm space-y-8">
               <div>
-                <h3 className="text-xs uppercase tracking-[0.2em] font-bold text-zinc-900 mb-6 font-creato">
+                <h3 className="text-xs uppercase tracking-[0.2em] font-bold text-zinc-900 mb-6 font-[CelsiusFlower]">
                   Coordonnées
                 </h3>
                 <div className="space-y-4 font-creato text-sm">
@@ -97,7 +94,7 @@ const Contact = () => {
               </div>
               {/* RÉSEAUX SOCIAUX HARMONISÉS */}
               <div className="pt-6 border-t border-zinc-200/80">
-                <h3 className="text-xs uppercase tracking-[0.2em] font-bold text-zinc-900 mb-4 font-creato">
+                <h3 className="text-xs uppercase tracking-[0.2em] font-bold text-zinc-900 mb-4 font-[CelsiusFlower]">
                   Suivez notre écosystème
                 </h3>
                 <div className="space-y-3 font-creato text-sm">

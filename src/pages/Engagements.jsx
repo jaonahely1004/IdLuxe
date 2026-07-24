@@ -52,7 +52,7 @@ const Engagements = () => {
           <p className="text-[11px] font-creato uppercase tracking-[0.4em] font-bold mb-4 inline-block" style={{ color: GOLD }}>
             Notre Vision
           </p>
-          <h2 className="font-creato text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-zinc-900">
+          <h2 className="font-[CelsiusFlower] text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-zinc-900">
             Nos Engagements
           </h2>
           <div className="w-12 h-[2px] mx-auto mt-6 rounded-full" style={{ backgroundColor: GOLD }}></div>
@@ -148,7 +148,7 @@ const Engagements = () => {
                     </div>
                     {/* Ligne dorée animée */}
                     <div className="h-px w-8 mb-3 transition-all duration-500 group-hover:w-16" style={{ backgroundColor: GOLD }} />
-                    <h3 className="font-creato text-2xl text-white mb-2 leading-tight font-normal">
+                    <h3 className="font-[CelsiusFlower] text-2xl text-white mb-2 leading-tight font-normal">
                       {card.title}
                     </h3>
 

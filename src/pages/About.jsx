@@ -47,8 +47,7 @@ const About = () => {
       <section className="px-10 max-w-7xl mx-auto mb-32">
         <div className="grid md:grid-cols-2 gap-16 items-start">
           <div className="space-y-8">
-            <p className="font-creato font-light text-[#D4AF37] text-xs uppercase tracking-[0.5em]">À PROPOS</p>
-            <h1 className="font-creato font-normal text-4xl md:text-6xl text-[#111111] leading-tight">
+            <h1 className="font-[CelsiusFlower] font-normal text-4xl md:text-6xl text-[#111111] leading-tight">
               Le premier cabinet de consulting responsable spécialisé en <span className="italic text-[#D4AF37]">marketing de luxe</span> à Madagascar
             </h1>
             <p className="font-creato text-gray-600 font-light text-lg leading-relaxed text-justify">
@@ -95,7 +94,7 @@ const About = () => {
       {/* SECTION 2 : NOS VALEURS */}
       <section className="py-24 bg-zinc-50 px-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="font-creato font-semibold text-5xl text-center mb-20 text-[#111111]">Nos <span className="italic">Valeurs</span></h2>
+          <h2 className="font-[CelsiusFlower] font-semibold text-5xl text-center mb-20 text-[#111111]">Nos <span className="italic">Valeurs</span></h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {displayValues.map((v, i) => (
               <div 
@@ -105,7 +104,7 @@ const About = () => {
                 <div className="w-16 h-16 mb-8 flex items-center justify-center border border-[#D4AF37]/30 rounded-full group-hover:bg-[#D4AF37]/10 transition-colors duration-500">
                   <i className={`fas ${v.icon} text-[#D4AF37] text-2xl`}></i>
                 </div>
-                <h3 className="text-2xl font-creato font-light text-white mb-4 tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">{v.title}</h3>
+                <h3 className="text-2xl font-[CelsiusFlower] font-light text-white mb-4 tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">{v.title}</h3>
                 <div className="w-16 h-[2px] bg-[#D4AF37] mb-6 group-hover:w-24 transition-all duration-500" />
                 <p className="text-sm font-creato text-gray-300 leading-relaxed font-light flex-grow">{v.desc}</p>
               </div>
@@ -118,7 +117,7 @@ const About = () => {
       <section className="py-24 bg-white px-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="font-creato font-semibold text-5xl text-[#111111] mb-6">Pourquoi travailler avec <span className="italic">nous ?</span></h2>
+            <h2 className="font-[CelsiusFlower] font-semibold text-5xl text-[#111111] mb-6">Pourquoi travailler avec <span className="italic">nous ?</span></h2>
             <p className="font-creato text-md text-gray-600 font-medium mb-4">
               IDLuxe s'engage à <span className="text-[#D4AF37] font-bold">110%</span> sur votre projet :
             </p>
@@ -131,7 +130,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {/* Carte 1 */}
             <div className="group relative bg-[#111111]/90 backdrop-blur-sm p-10 rounded-2xl border border-[#D4AF37]/30 hover:border-[#D4AF37]/60 hover:-translate-y-3 transition-all duration-500 flex flex-col shadow-xl hover:shadow-2xl">
-              <h3 className="text-2xl font-creato font-light text-white mb-4 tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">
+              <h3 className="text-2xl font-[CelsiusFlower] font-light text-white mb-4 tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">
                 10 ans d'expériences sur le marché local
               </h3>
               <div className="w-16 h-[2px] bg-[#D4AF37] mb-6 group-hover:w-24 transition-all duration-500" />
@@ -143,7 +142,7 @@ const About = () => {
 
             {/* Carte 2 */}
             <div className="group relative bg-[#111111]/90 backdrop-blur-sm p-10 rounded-2xl border border-[#D4AF37]/30 hover:border-[#D4AF37]/60 hover:-translate-y-3 transition-all duration-500 flex flex-col shadow-xl hover:shadow-2xl">
-              <h3 className="text-2xl font-creato font-light text-white mb-4 tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">
+              <h3 className="text-2xl font-[CelsiusFlower] font-light text-white mb-4 tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">
                 Collaboration avec des experts du secteur
               </h3>
               <div className="w-16 h-[2px] bg-[#D4AF37] mb-6 group-hover:w-24 transition-all duration-500" />
@@ -155,7 +154,7 @@ const About = () => {
 
             {/* Carte 3 */}
             <div className="group relative bg-[#111111]/90 backdrop-blur-sm p-10 rounded-2xl border border-[#D4AF37]/30 hover:border-[#D4AF37]/60 hover:-translate-y-3 transition-all duration-500 flex flex-col shadow-xl hover:shadow-2xl">
-              <h3 className="text-2xl font-creato font-light text-white mb-4 tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">
+              <h3 className="text-2xl font-[CelsiusFlower] font-light text-white mb-4 tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">
                 Accompagnement et suivi
               </h3>
               <div className="w-16 h-[2px] bg-[#D4AF37] mb-6 group-hover:w-24 transition-all duration-500" />
