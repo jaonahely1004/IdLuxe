@@ -42,7 +42,7 @@ const Navbar = () => {
             <img src={logo} alt="logo" className={`w-auto transition-all duration-500 ${scrolled ? 'h-8 md:h-10' : 'h-10 md:h-14'}`} />
           </Link>
           {/* DESKTOP MENU */}
-          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 gap-10 text-[11px] uppercase tracking-[0.2em] z-40">
+          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 gap-10 text-[9.5px] uppercase tracking-[0.2em] z-40">
             {menuItems.map((item, i) => (
               <div key={i} className="relative group">
                 {item.subItems ? (

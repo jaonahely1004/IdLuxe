@@ -73,20 +73,20 @@ function Footer() {
               className="flex items-center gap-2.5 hover:text-white transition-colors group py-0.5 w-max"
             >
               <Mail className="w-3.5 h-3.5 text-[#D4AF37]/70 group-hover:text-[#D4AF37] transition-colors stroke-[1.5]" />
-              <span className="text-zinc-300 group-hover:text-white transition-colors border-b border-transparent group-hover:border-white/10 pb-0.5">brandnewmada@gmail.com</span>
+              <span className="text-zinc-300 group-hover:text-white transition-colors border-b border-transparent group-hover:border-white/10 pb-0.5">contact@idluxe.mg</span>
             </a>
 
             {/* NUMÉROS DE TÉLÉPHONE */}
             <div className="flex flex-col gap-2 pt-0.5">
               <a href="tel:+261372694910" className="flex items-center gap-2.5 hover:text-white transition-colors group w-max">
                 <Phone className="w-3.5 h-3.5 text-[#D4AF37]/70 group-hover:text-[#D4AF37] transition-colors stroke-[1.5]" />
-                <span className="text-zinc-300 group-hover:text-white transition-colors">+261 37 26 949 10</span>
+                <span className="text-zinc-300 group-hover:text-white transition-colors">+261 34 14 065 84 / +261 37 84 065 84</span>
               </a>
             </div>
 
             {/* FACEBOOK */}
             <a
-              href="https://web.facebook.com/idluxe.marketing"
+              href="https://web.facebook.com/profile.php?id=61592859847157"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2.5 hover:text-white transition-colors group py-0.5 pt-1 w-max"
@@ -95,7 +95,7 @@ function Footer() {
                 className="w-3.5 h-3.5 text-[#D4AF37]/70 group-hover:text-[#D4AF37] transition-colors" 
               />
               <span className="text-zinc-300 group-hover:text-white transition-colors border-b border-transparent group-hover:border-white/10 pb-0.5">
-                idluxe.marketing
+                iDLuxe consulting
               </span>
               <ArrowUpRight 
                 className="w-2.5 h-2.5 text-zinc-600 opacity-0 group-hover:opacity-100 transition-all" 
@@ -113,7 +113,7 @@ function Footer() {
                 className="w-3.5 h-3.5 text-[#D4AF37]/70 group-hover:text-[#D4AF37] transition-colors" 
               />
               <span className="text-zinc-300 group-hover:text-white transition-colors border-b border-transparent group-hover:border-white/10 pb-0.5">
-                LinkedIn
+                iDLuxe consulting
               </span>
               <ArrowUpRight 
                 className="w-2.5 h-2.5 text-zinc-600 opacity-0 group-hover:opacity-100 transition-all" 
