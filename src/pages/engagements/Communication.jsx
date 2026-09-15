@@ -39,7 +39,7 @@ const Communication = () => {
             
             <div className="bg-zinc-50/80 p-8 rounded-2xl border-l-2 border-[#D4AF37] border-y border-r border-zinc-200/80 shadow-sm">
               <h3 className="text-xl mb-3 font-[CelsiusFlower] text-[#111111]">J'apprends le marcom : Culture marketing et culture du luxe</h3>
-              <a href="http://www.youtube.com/@IDLuxe-b4o" target="_blank" rel="noreferrer" className="text-[#D4AF37] italic text-sm hover:underline font-sans">Extraits video J'apprends le marcom</a>
+              <a href="https://www.youtube.com/watch?v=k3q6uJOtc-g" target="_blank" rel="noreferrer" className="text-[#D4AF37] italic text-sm hover:underline font-sans">Extraits video J'apprends le marcom</a>
             </div>
           </div>
         </section>

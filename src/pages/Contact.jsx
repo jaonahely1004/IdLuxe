@@ -111,7 +111,7 @@ const Contact = () => {
                     <ArrowUpRight className="w-3 h-3 text-zinc-400 opacity-0 group-hover:opacity-100 transition-all transform translate-y-0.5 -translate-x-0.5 group-hover:translate-y-0 group-hover:translate-x-0" />
                   </a>
                   <a
-                    href="https://www.linkedin.com/company/idluxe"
+                    href="https://www.linkedin.com/company/idluxe-marketing/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2.5 text-zinc-600 hover:text-zinc-950 transition-colors group py-1 w-max"

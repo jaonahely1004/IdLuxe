@@ -104,7 +104,7 @@ function Footer() {
 
             {/* LINKEDIN */}
             <a
-              href="https://www.linkedin.com/company/idluxe"
+              href="https://www.linkedin.com/company/idluxe-marketing/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2.5 hover:text-white transition-colors group py-0.5 pt-1 w-max"
