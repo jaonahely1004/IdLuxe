@@ -1,14 +1,13 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Sparkles, HeartHandshake, Megaphone, Play, Clock } from 'lucide-react';
+import { Sparkles, HeartHandshake, Megaphone, Clock, ExternalLink } from 'lucide-react';
 
 import partenerlogo_1 from '../assets/logo_Blossome.png';
 import partenerlogo_2 from '../assets/logo_Helen keller.png';
 import partenerlogo_3 from '../assets/logo_Primature ONN.png';
 
 const GOLD = '#D4AF37';
-const INK = '#111111';
 const CREAM = '#FAF8F3';
 
 const Realisation = () => {
@@ -17,7 +16,7 @@ const Realisation = () => {
     ? {}
     : { initial: { opacity: 0, y: 24 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true } };
 
-  // ─── DONNÉES DES SECTEURS ─────────────────────────────────────────────
+  // DONNÉES DES SECTEURS
   const sectors = [
     {
       icon: Sparkles,
@@ -52,14 +51,14 @@ const Realisation = () => {
     },
   ];
 
-  // ─── DONNÉES DES PARTENAIRES ──────────────────────────────────────────
+  // DONNÉES DES PARTENAIRES
   const partners = [
     { name: 'Blossome Luxury Nails & Beauty', logo: partenerlogo_1 },
     { name: 'Helen Keller Intl', logo: partenerlogo_2 },
     { name: 'Primature ONN', logo: partenerlogo_3 },
   ];
 
-  // ─── DONNÉES DES PROJETS ─────────────────────────────────────────────
+  // DONNÉES DES PROJETS (Avec lien direct propre pour vue externe si besoin)
   const projects = [
     {
       category: 'Branding',
@@ -88,23 +87,25 @@ const Realisation = () => {
     },
     {
       category: 'C360',
-      title: 'Communication 360',
-      tag: 'Office National de Nutrition',
+      title: 'Communication 360 — Office National de Nutrition',
+      tag: 'Immersion Vidéo',
       status: 'video',
       media: 'https://drive.google.com/file/d/1HBReuukteD96zLCAM6_VTIIS1XHf12ST/preview',
+      viewExternal: 'https://drive.google.com/file/d/1HBReuukteD96zLCAM6_VTIIS1XHf12ST/view',
     },
     {
       category: 'Digital',
-      title: 'Marketing Digital',
-      tag: 'Blossome Luxury Nails & Beauty',
+      title: 'Marketing Digital — Blossome Luxury Nails & Beauty',
+      tag: 'Immersion Vidéo',
       status: 'video',
       media: 'https://drive.google.com/file/d/15zbatxzeGuj9sueB5ae3YqN9AF2ZYEjb/preview',
+      viewExternal: 'https://drive.google.com/file/d/15zbatxzeGuj9sueB5ae3YqN9AF2ZYEjb/view',
     },
   ];
 
   return (
     <main className="pt-28 md:pt-36 pb-24 min-h-screen antialiased transition-colors duration-300 font-creato" style={{ backgroundColor: CREAM }}>
-      {/* ─── HERO ─────────────────────────────────────────────────────── */}
+      {/* HERO */}
       <section className="px-6 max-w-5xl mx-auto text-center mb-20 md:mb-24">
         <h1 className="font-[CelsiusFlower] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight text-zinc-900 max-w-4xl mx-auto leading-[1.15] mb-6">
           Rejoignez un univers d'impact
@@ -125,7 +126,7 @@ const Realisation = () => {
         </p>
       </section>
 
-      {/* ─── SECTEURS ─────────────────────────────────────────────────── */}
+      {/* SECTEURS */}
       <section
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 md:pb-28"
         aria-labelledby="sectors-title"
@@ -150,9 +151,7 @@ const Realisation = () => {
                   <span className="font-creato text-xs font-bold tracking-widest text-zinc-300">0{i + 1}</span>
                 </div>
 
-                <h3
-                  className="font-[CelsiusFlower] text-xl font-normal leading-snug mb-4 min-h-[3.5rem] text-zinc-900"
-                >
+                <h3 className="font-[CelsiusFlower] text-xl font-normal leading-snug mb-4 min-h-[3.5rem] text-zinc-900">
                   {sector.category}
                 </h3>
 
@@ -175,25 +174,17 @@ const Realisation = () => {
 
                 {sector.subheader && (
                   <div className="font-creato text-zinc-600 text-sm space-y-4">
-                    <p className="font-semibold text-zinc-900">
-                      {sector.subheader}
-                    </p>
+                    <p className="font-semibold text-zinc-900">{sector.subheader}</p>
                     <ul className="space-y-2.5 pl-1">
                       {sector.subitems?.map((s, idx) => (
                         <li key={idx} className="flex items-center gap-3">
-                          <span
-                            className="w-4 h-[1px]"
-                            style={{ backgroundColor: GOLD }}
-                            aria-hidden="true"
-                          />
+                          <span className="w-4 h-[1px]" style={{ backgroundColor: GOLD }} aria-hidden="true" />
                           <span>{s}</span>
                         </li>
                       ))}
                     </ul>
                     {sector.extra && (
-                      <p
-                        className="pt-4 mt-4 border-t border-zinc-100 font-medium text-zinc-900"
-                      >
+                      <p className="pt-4 mt-4 border-t border-zinc-100 font-medium text-zinc-900">
                         {sector.extra}
                       </p>
                     )}
@@ -205,7 +196,7 @@ const Realisation = () => {
         </div>
       </section>
 
-      {/* ─── PARTENAIRES ──────────────────────────────────────────────── */}
+      {/* PARTENAIRES */}
       <section
         className="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-20 border-t border-zinc-200/60 font-creato"
         aria-labelledby="partners-title"
@@ -226,7 +217,6 @@ const Realisation = () => {
           <div className="w-12 h-[2px] mx-auto mt-4 rounded-full" style={{ backgroundColor: GOLD }} />
         </div>
 
-        {/* logo des partenaires */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 items-center justify-items-center">
           {partners.map((partner, index) => (
             <motion.div
@@ -246,14 +236,14 @@ const Realisation = () => {
         </div>
       </section>
 
-      {/* ─── PORTFOLIO ─── */}
+      {/* PORTFOLIO (Grille 2 colonnes avec boutons de fenêtre externe propres) */}
       <section
         className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 border-t border-zinc-200/60 font-creato"
         style={{ backgroundColor: '#FDFBF7' }}
         aria-labelledby="portfolio-title"
       >
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-4xl mx-auto mb-16 md:mb-20">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
             <span
               className="text-[11px] font-creato uppercase tracking-[0.4em] font-bold mb-4 inline-block"
               style={{ color: GOLD }}
@@ -271,16 +261,16 @@ const Realisation = () => {
             <div className="w-12 h-[2px] mx-auto mt-6 rounded-full" style={{ backgroundColor: GOLD }} />
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-10">
             {projects.map((p, i) => (
               <motion.article
                 key={i}
                 {...fadeUp}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="group bg-white border border-zinc-200/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex flex-col font-creato"
+                className="group bg-transparent border border-idluxe-gold/40 rounded-2xl overflow-hidden shadow-sm hover:shadow-[0_10px_30px_rgba(212,175,55,0.15)] hover:border-idluxe-gold hover:-translate-y-1 transition-all duration-500 flex flex-col font-creato"
               >
-                {/* Media */}
-                <div className="relative aspect-video bg-zinc-100 overflow-hidden">
+                {/* Media Container */}
+                <div className="relative aspect-video bg-black/90 overflow-hidden">
                   {p.status === 'image' && (
                     <img
                       src={p.media}
@@ -295,13 +285,22 @@ const Realisation = () => {
                         src={p.media}
                         title={p.title}
                         loading="lazy"
-                        className="w-full h-full border-0"
+                        className="w-full h-full border-0 absolute inset-0 object-cover"
                         allow="autoplay"
                       />
-                      <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-black/70 backdrop-blur-md text-white text-[10px] uppercase tracking-widest px-2.5 py-1 rounded-full pointer-events-none font-bold">
-                        <Play className="w-3 h-3" aria-hidden="true" />
-                        Vidéo
-                      </div>
+                      {/* Bouton propre et élégant pour ouvrir dans une fenêtre externe */}
+                      {p.viewExternal && (
+                        <a
+                          href={p.viewExternal}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="absolute top-3 right-3 z-10 bg-black/70 hover:bg-black text-white p-2 rounded-lg backdrop-blur-md border border-white/20 transition-all duration-300 flex items-center gap-1.5 text-[11px] uppercase tracking-wider font-semibold opacity-90 hover:opacity-100 hover:scale-105 shadow-md"
+                          title="Ouvrir dans une fenêtre externe"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5" style={{ color: GOLD }} />
+                          <span className="hidden sm:inline">Plein écran</span>
+                        </a>
+                      )}
                     </>
                   )}
                   {p.status === 'coming' && (
@@ -319,7 +318,7 @@ const Realisation = () => {
                 </div>
 
                 {/* Body */}
-                <div className="p-6 md:p-8 flex flex-col flex-grow justify-between">
+                <div className="p-7 md:p-8 flex flex-col flex-grow justify-between bg-transparent">
                   <div>
                     <div className="flex items-center justify-between mb-3">
                       <span
@@ -332,9 +331,7 @@ const Realisation = () => {
                         {p.category}
                       </span>
                     </div>
-                    <h3
-                      className="font-[CelsiusFlower] text-xl font-normal leading-snug text-zinc-900 mt-2"
-                    >
+                    <h3 className="font-[CelsiusFlower] text-xl md:text-2xl font-normal leading-snug text-zinc-900 mt-2">
                       {p.title}
                     </h3>
                   </div>
@@ -345,7 +342,7 @@ const Realisation = () => {
         </div>
       </section>
 
-      {/* ─── CTA FINAL ── */}
+      {/* CTA FINAL */}
       <section className="bg-white py-24 px-6 text-center border-t border-zinc-200/60 font-creato">
         <span className="text-[11px] font-creato uppercase tracking-[0.4em] font-bold mb-4 inline-block" style={{ color: GOLD }}>
           Construisons ensemble
