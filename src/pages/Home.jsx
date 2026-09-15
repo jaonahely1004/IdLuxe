@@ -246,9 +246,9 @@ const Home = () => {
             Notre Écosystème <span className="italic text-idluxe-gold font-light">d'Impact</span>
           </h2>
         </div>
-        {/* ROUE CIRCULAIRE — RESPONSIVE (scale augmenté sur mobile) */}
+        {/* ROUE CIRCULAIRE — RESPONSIVE (légèrement plus grand) */}
         <div
-          className="flex justify-center items-center my-6 [--eco-scale:0.62] sm:[--eco-scale:0.75] md:[--eco-scale:0.88] lg:[--eco-scale:1]"
+          className="flex justify-center items-center my-6 [--eco-scale:0.52] sm:[--eco-scale:0.66] md:[--eco-scale:0.82] lg:[--eco-scale:1]"
           style={{
             height: "calc(450px * var(--eco-scale))",
             width: "100%",
@@ -303,31 +303,31 @@ const Home = () => {
                     </div>
 
                     {/* LIGNE + TEXTE */}
-                  <div
-                    className={`absolute flex items-center z-10 h-0 top-1/2 -translate-y-1/2 ${
-                      isRight ? "left-full flex-row" : "right-full flex-row-reverse"
-                    }`}
-                  >
-                    <div className="w-8 h-[1px] bg-idluxe-gold/30 flex-shrink-0 transition-all duration-300 group-hover:bg-idluxe-gold" />
-                    <div className="w-1.5 h-1.5 rounded-full bg-idluxe-gold flex-shrink-0 transition-all duration-300 group-hover:scale-125" />
                     <div
-                      className={`absolute flex items-center h-0 top-1/2 -translate-y-1/2 ${
-                        isRight ? "left-12 justify-start" : "right-12 justify-end"
+                      className={`absolute flex items-center z-10 h-0 top-1/2 -translate-y-1/2 ${
+                        isRight ? "left-full flex-row" : "right-full flex-row-reverse"
                       }`}
                     >
-                      <h4 className={`font-creato text-neutral-200 text-[13px] leading-tight font-medium max-w-[190px] transition-colors duration-300 group-hover:text-idluxe-gold ${
-                        isRight ? "text-left" : "text-right"
-                      }`}>
-                        {item.title}
-                      </h4>
+                      <div className="w-8 h-[1px] bg-idluxe-gold/30 flex-shrink-0 transition-all duration-300 group-hover:bg-idluxe-gold" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-idluxe-gold flex-shrink-0 transition-all duration-300 group-hover:scale-125" />
+                      <div
+                        className={`absolute flex items-center h-0 top-1/2 -translate-y-1/2 ${
+                          isRight ? "left-12 justify-start" : "right-12 justify-end"
+                        }`}
+                      >
+                        <h4 className={`font-creato text-neutral-200 text-[13px] leading-tight font-medium max-w-[190px] transition-colors duration-300 group-hover:text-idluxe-gold ${
+                          isRight ? "text-left" : "text-right"
+                        }`}>
+                          {item.title}
+                        </h4>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            );
-          })}
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
-      </div>
       </section>
     </main>
   );
