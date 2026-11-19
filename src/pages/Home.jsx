@@ -27,6 +27,7 @@ const Home = () => {
   const slides = [
     {
       image: home,
+      singleLine: false,
       title: (
         <>
           Transformez votre
@@ -37,6 +38,7 @@ const Home = () => {
     },
     {
       image: home1,
+      singleLine: false,
       title: (
         <>
           Donnons vie à
@@ -47,10 +49,11 @@ const Home = () => {
     },
     {
       image: home2,
+      singleLine: true,
       title: (
         <>
           <span className="text-idluxe-gold">
-            EXCELLENCE – PERFORMANCE – IMPACT
+            EXCELLENCE - PERFORMANCE - IMPACT
           </span>
         </>
       ),
@@ -140,6 +143,7 @@ const Home = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
+              className="w-full max-w-full flex justify-center"
               initial={{
                 x: "-80px",
                 opacity: 0,
@@ -157,7 +161,13 @@ const Home = () => {
                 ease: [0.65, 0, 0.35, 1],
               }}
             >
-              <h1 className="mb-12 select-none font-[CelsiusFlower] font-normal text-5xl leading-[1.1] text-white md:text-7xl">
+              <h1
+                className={`mb-12 select-none font-[CelsiusFlower] font-normal leading-[1.1] text-white ${
+                  slides[index].singleLine
+                    ? "whitespace-nowrap text-sm sm:text-2xl md:text-4xl lg:text-5xl tracking-[0.08em]"
+                    : "text-4xl sm:text-5xl md:text-7xl"
+                }`}
+              >
                 {slides[index].title}
               </h1>
             </motion.div>
