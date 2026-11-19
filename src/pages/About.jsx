@@ -45,18 +45,19 @@ const About = () => {
   return (
     <main className="pt-32 bg-white min-h-screen font-creato">
       {/* SECTION 1 : INTRODUCTION */}
-      <section className="px-10 max-w-7xl mx-auto mb-32">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
-            <h1 className="font-[CelsiusFlower] font-normal text-4xl md:text-6xl text-[#111111] leading-tight">
+      <section className="px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto mb-20 md:mb-32">
+        <div className="grid grid-cols-2 gap-4 sm:gap-8 lg:gap-16 items-start">
+          {/* COLONNE GAUCHE : TEXTE */}
+          <div className="space-y-4 sm:space-y-6 md:space-y-8 min-w-0">
+            <h1 className="font-[CelsiusFlower] font-normal text-xl sm:text-3xl md:text-5xl lg:text-6xl text-[#111111] leading-tight break-words">
               Le premier cabinet de consulting responsable spécialisé en <span className="italic text-[#D4AF37]">marketing de luxe</span> à Madagascar
             </h1>
-            <p className="font-creato text-gray-600 font-light text-lg leading-relaxed text-justify">
+            <p className="font-creato text-gray-600 font-light text-xs sm:text-base md:text-lg leading-relaxed text-justify">
               IDLuxe est un cabinet de consultance social et solidaire spécialisé dans cinq domaines :
             </p>
             
             {/* LISTE DES 5 DOMAINES AVEC HOVER ET CURSEUR */}
-            <div className="space-y-4 mt-6">
+            <div className="space-y-2 sm:space-y-4 mt-4 sm:mt-6">
               {[
                 { title: "Le marketing du luxe", icon: "fa-gem" },
                 { title: "La communication pour le développement (C4D)", icon: "fa-bullhorn" },
@@ -66,23 +67,26 @@ const About = () => {
               ].map((item, idx) => (
                 <div 
                   key={idx} 
-                  className="flex items-center space-x-4 border-l-2 border-[#D4AF37] pl-4 py-2 cursor-pointer hover:bg-gray-50 hover:pl-6 transition-all duration-300"
+                  className="flex items-center space-x-2 sm:space-x-4 border-l-2 border-[#D4AF37] pl-2 sm:pl-4 py-1 sm:py-2 cursor-pointer hover:bg-gray-50 hover:pl-3 sm:hover:pl-6 transition-all duration-300 group"
                 >
-                  <i className={`fas ${item.icon} text-[#D4AF37] w-6 text-center`}></i>
-                  <span className="font-creato text-gray-700 text-md font-light group-hover:text-[#111111]">{item.title}</span>
+                  <i className={`fas ${item.icon} text-[#D4AF37] w-4 sm:w-6 text-xs sm:text-base text-center shrink-0`}></i>
+                  <span className="font-creato text-gray-700 text-xs sm:text-sm md:text-md font-light group-hover:text-[#111111] break-words">
+                    {item.title}
+                  </span>
                 </div>
               ))}
             </div>
 
-            <p className="font-creato text-gray-600 font-light text-lg leading-relaxed text-justify mt-8">
+            <p className="font-creato text-gray-600 font-light text-xs sm:text-base md:text-lg leading-relaxed text-justify mt-4 sm:mt-8">
               Notre raison d'être est d'accompagner les marques premium, le secteur touristique, les institutions et projets, tout en contribuant à l'amélioration du niveau de vie de la population vulnérable et à la protection de la biodiversité de Madagascar.
             </p>
-            <p className="font-creato text-gray-600 font-light text-lg leading-relaxed text-justify mt-8">
+            <p className="font-creato text-gray-600 font-light text-xs sm:text-base md:text-lg leading-relaxed text-justify mt-4 sm:mt-8">
               Notre particularité réside dans notre capacité à intégrer les standards du luxe et du premium à chaque projet, afin de transformer une marque en une expérience unique et mémorable.
             </p>
           </div>
           
-          <div className="relative w-full h-auto overflow-hidden group">
+          {/* COLONNE DROITE : IMAGE */}
+          <div className="relative w-full h-auto overflow-hidden group min-w-0">
             <img 
               src={aboutImg} 
               alt="Stratégie Marketing de Luxe" 
