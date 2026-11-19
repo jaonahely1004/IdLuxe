@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import aboutImg from '../assets/about.jpg';
 
 const About = () => {
   const [content, setContent] = useState({ values: [], advantages: [] });
@@ -81,11 +82,11 @@ const About = () => {
             </p>
           </div>
           
-          <div className="relative h-full w-full bg-gray-100 overflow-hidden border border-gray-100 group">
+          <div className="relative h-[340px] sm:h-[400px] w-full overflow-hidden group">
             <img 
-              src="https://images.unsplash.com/photo-1491336477066-31156b5e4f35?auto=format&fit=crop&q=80" 
+              src={aboutImg} 
               alt="Stratégie Marketing de Luxe" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+              className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" 
             />
           </div>
         </div>
