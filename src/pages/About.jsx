@@ -46,7 +46,7 @@ const About = () => {
     <main className="pt-32 bg-white min-h-screen font-creato">
       {/* SECTION 1 : INTRODUCTION */}
       <section className="px-10 max-w-7xl mx-auto mb-32">
-        <div className="grid md:grid-cols-2 gap-16 items-start">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
             <h1 className="font-[CelsiusFlower] font-normal text-4xl md:text-6xl text-[#111111] leading-tight">
               Le premier cabinet de consulting responsable spécialisé en <span className="italic text-[#D4AF37]">marketing de luxe</span> à Madagascar
@@ -82,11 +82,11 @@ const About = () => {
             </p>
           </div>
           
-          <div className="relative h-[340px] sm:h-[400px] w-full overflow-hidden group">
+          <div className="relative w-full h-auto overflow-hidden group">
             <img 
               src={aboutImg} 
               alt="Stratégie Marketing de Luxe" 
-              className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" 
+              className="w-full h-auto block transition-transform duration-700 group-hover:scale-105" 
             />
           </div>
         </div>
